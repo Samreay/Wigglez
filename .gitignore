@@ -3,12 +3,10 @@
 **/.cache/**
 **/temp/**
 .idea/*
-**/doc/out/doctrees/**
-**/doc/out/latex/**
 *.npy
 *.aux
 *.bbl
-*log
+*.log
 *.out
 *.spl
 *.synctex.gz
@@ -19,8 +17,6 @@
 *.cls
 *.sty
 *.q
-.coverage
-htmlcov/**
 *.pyc
 **/__pycache__/*
 *.pkl
