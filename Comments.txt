@@ -1,0 +1,108 @@
+Things to do:
+
+
+
+
+
+
+Fine to use different alphas, just make it explicit
+	- best paper will come from ChrisB
+
+Quote Sam using D_A, and quote Eyal D_A/r_s, just make explicit and clear
+
+
+Discussion of different *results* in section 9, why they are different
+
+Get Eyals fiducial cosmology
+
+
+Comments on Paper:
+
+re 623 realisations, need to phrase this better. Is actually 623 fits to WizCOLA data, each realisation has 3 bins, and fit to 623 of those before I ran out of time on thesis.
+
+Further thoughts on section 9? comparison between techniques?
+
+Need to make sure I can grab all the data again. Trawl through emails, get fits of obelix (for the forth time).
+
+Sample variance increases at high modes because less sample right? Which is why no one bothers going >200Mpc/h generally
+
+
+
+
+
+
+
+Chris's comments:
+
+(*) Throughout : Eyal's alphas do absorb the r_s values, whereas Sam's do not.  That is correct in both cases.  Perhaps you can just note this difference when you are first defining alpha.
+
+(*) Throughout : yes, there are 2 possible sigma_v parameters -- one appears in Equation 2 and the other in Equation 6.  Technically they are modelling different things -- Eq.2 is describing non-linear growth in real-space, and Eq.6 is describing the anisotropic effect of peculiar velocities in redshift-space.  In principle you could determine both with perfect data (since the second has a mu-dependence), although in practice I imagine both are weakly constrained?  I suspect you want to distinguish between them more carefully -- the sigma_v in Eq.2 can also be parameterized by k^*, so you may want to replace it by that parameter to avoid confusion?
+
+(*) Throughout : in a few places you imply that Kazin et al. (2014) didn't use WizCOLA mocks/covariance -- actually they did:
+
+- in the abstract where you say "improve on the lognormal covariance used in previous WiggleZ analyses"
+- also in the abstract: "we redo the angle-averaged WiggleZ BAO analysis with the improved covariance"
+- in the last paragraph of Sec 2, "we revisit the angle-averaged constraints" (you mean, pre-reconstruction)
+- in Sec 9, "improved covariance estimates over previous analyses of the WiggleZ data"
+
+(*) Throughout : in terms of structure, you might want to re-group such that all the pre-reconstruction analysis is presented in a row, and then all the reconstruction analysis, rather than switching to-and-fro (?)
+
+(*) Title : you might want to highlight BAOs in the title ...
+
+(*) Abstract : I think you can delete the 2 sentences, "When fitting for ... line of sight."  I would add statements of the exact distance measurements, and add a motivation that this is providing an independent constraint to BOSS.
+
+(*) Introduction : The 2 paragraphs just below the two itemized points (starting "Using simulations...") do not belong in the introduction and can be moved to Sec 2.  But just to answer your question: yes, the reconstructed fits use wedges.
+
+(*) Fig.1 : I'm attaching the mock mean data files after reconstruction, for wedges and multipoles.
+
+(*) Sec 3.1 : "knowledge of the power of the spectrum, which is marginalised over and thus unavailable".  I'm not sure that makes sense, you don't marginalize over sigma_8 so could assume the fiducial P(k) to compute this.  However, I think the worry is that this equation may not be accurate due to non-linear effects.
+
+(*) Sec 3.1 : "beta is the growth rate..." -> "beta = f/b where f is the growth rate..."
+
+(*) Sec 4 : I suggest absorbing this into Sec 3.1?
+
+(*) Sec 4 : for the red text at the top of page 5, yes -- the distorted model to compare to the measurement at separation s is xi_fiducial(alpha*s), where alpha = D_V/D_V,fid.
+
+(*) Sec 4 : "whether you fit to the correlation function shape, the BAO peak only, or the power spectrum" -- the correlation function and power spectrum should in principle be the same information, so no need to distinguish between those cases.
+
+(*) Sec 4 : "One could in principle have many wedges" ... move this sentence earlier, to where wedges are introduced for the first time.
+
+(*) Sec 4 : the red text at the end of this section -- Eyal's parameter set is described at the end of Sec 3.2 -- we fit for (alpha_perp, alpha_par) and then marginalize over an amplitude parameter and 3 polynomial coefficients for each correlation function.  So we do not vary Omega_c h^2, for example.
+
+(*) Sec 5.1 : suggest deleting the final sentence "As our analysis ... BAO model".
+
+(*) Table 1 : I think the difference in chi-squared is that you are using more separation bins?  5 vs 10 Mpc/h width?  I would list the number of degrees of freedom in the table or caption, to help interpret your chi-squared values.
+
+(*) Sec 5.2 : ignore my red comment at the end -- not sure what I was saying there...
+
+(*) Sec 5.3 : I think some of this sigma_v stuff has already been covered/concluded in Sec 5.1 -- perhaps tweak the ordering of the presentation here.
+
+(*) Sec 5.4 and Table 2 : when you're doing fits to the mock mean, do you divide the covariance matrix by an extra factor of 600 (since you are now wanting the error in the mean).  The reason I ask is, your minimum chi-squared values in Table 2 seem surprisingly low for such an accurate dataset.
+
+(*) Sec 5.4 : in equation 15 and 16, should the first N be N-1?  (assuming N=number of mocks, did you define that?)
+
+(*) Figure 5 caption : "This is expected, as long modes in the simulation would span both bins" -- it is not so much that, but the fact that for each simulation, structure with the same set of initial conditions is output at different snapshots -- so the mocks are not independent and the very same set of modes are imprinted in both measurements.  In earlier work we set the correlation between the first and last redshift bins to zero by definition.
+
+(*) Sec 6 : 1st red text -- Ah yes, Eyal has a typo here.  His first alpha should have a factor r_s/r_s,fid, although it cancels out for epsilon.  You can either delete the D_A, H bits, or use a proportional sign.
+
+(*) Sec 6 : 2nd red text -- Yes, delete the bit "quote their statistics below" -- that is probably an old reference and we have deleted the "below" bit.
+
+(*) Sec 6.1 : the correlation coefficients are derived from the elliptical Gaussian approximation to the full 2D posterior probability distribution (i.e., the dotted blue ellipses over-plotted on Figure 11).  By "unphysical", I think Eyal means that the z=0.44 contour is a mess -- by the way, I agree with your suggestion of flagging that in the results table.
+
+(*) Reporting the data:
+
+- I agree with merging Table 3 and Table 5 to present the pre-reconstruction multipoles.  I would present both the alpha values and the D_A/r_s values (the latter enabling comparison with the post-reconstruction results).
+
+- I agree with deleting the current Table 4.
+
+- I think we should keep the current Table 6 separate.  Feel free to paste Eyal's notes below the table into the caption if you prefer that, and I am also happy to either not report z=0.44, or else flag in the text that it is not reliable.  The significance of the post-reconstruction BAOs in this redshift bin is very weak (even in the 1D case), so we do not expect good results.
+
+(*) Figure 11 : this is the correct figure to use, the T0.15 means the prior on epsilon is +/- 0.15.
+
+(*) Figure 12 : yes, agree with combining all the distance constraints on a single (larger) figure.
+
+(*) Footnote 1 on page 13 -- yes, that statement is correct.
+
+(*) Appendix : I suggest deleting the section on "improving computation speed", deleting Figure 19 and Table 8.  (Comparing those different fitting ranges is not necessarily meaningful, in principle they would be different depending on the galaxy sample / redshift / statistic / precision, so whether they agree or not doesn't matter.)
+
+

@@ -46,7 +46,7 @@
 
 \begin{document}
 
-\title{Measuring the anisotropic clustering of galaxies in WiggleZ: Cosmological constraints} %$H(z)$, $D_A(z)$ and $\Omega_c h^2$}
+\title{Measuring the Baryon Acoustic Oscillation signal of galaxies in WiggleZ: Cosmological constraints} %$H(z)$, $D_A(z)$ and $\Omega_c h^2$}
 
 \author{S. R. Hinton}
 \affil{School of Mathematics and Physics, The University of Queensland, Brisbane, QLD 4072, Australia}
@@ -70,9 +70,9 @@
 
 
 \begin{abstract}
-We present results from the 2D anisotropic Baryon Acoustic Oscillation (BAO) signal present in the final dataset from the WiggleZ Dark Energy Survey.  We analyse the WiggleZ data in two ways: firstly using the full shape of the 2D correlation function and secondly focussing only on the position of the BAO peak in the reconstructed data set.  In both cases we utilise new covariance matrices generated using Comoving Lagrangian Acceleration simulations (WizCOLA) that improve on the lognormal covariances used in previous WiggleZ analyses.  When fitting for the full shape of the 2D correlation function we use a multipole expansion to compare with theory.  When we use the reconstructed data we marginalise over the shape and just measure the position of the BAO peak, analysing the data in wedges separating the signal along the line of sight from that parallel to the line of sight. 
+We present results from the 2D anisotropic Baryon Acoustic Oscillation (BAO) signal present in the final dataset from the WiggleZ Dark Energy Survey.  We analyse the WiggleZ data in two ways: firstly using the full shape of the 2D correlation function and secondly focussing only on the position of the BAO peak in the reconstructed data set.  {\red [Remove] In both cases we utilise covariance matrices generated using Comoving Lagrangian Acceleration simulations (WizCOLA) that improve on the lognormal covariances used in  previous WiggleZ analyses.} When fitting for the full shape of the 2D correlation function we use a multipole expansion to compare with theory.  When we use the reconstructed data we marginalise over the shape and just measure the position of the BAO peak, analysing the data in wedges separating the signal along the line of sight from that parallel to the line of sight. 
 
-We verify our method with mock data and find the results to be free of bias or systematic offsets.  We also redo the angle averaged (1D) WiggleZ BAO analysis with the improved covariance matrix and present an updated result.   The final results are presented in the form of $\Omega_c h^2$, $H(z)$, and $D_A(z)$ for three redshift bins with effective redshifts $z = 0.44, 0.60$, and $0.73$.  
+We verify our method with mock data and find the results to be free of bias or systematic offsets.  We also redo the pre-reconstruction angle averaged (1D) WiggleZ BAO analysis with the improved WizCOLA covariance matrix and present an updated result.   The final results are presented in the form of $\Omega_c h^2$, $H(z)$, and $D_A(z)$ for three redshift bins with effective redshifts $z = 0.44, 0.60$, and $0.73$.  
 %The multipole analysis on the full correlation function determined $\Omega_c h^2$, $H(z)$, and $D_A(z)$ for three redshift bins, of effective redshifts $z = 0.44, 0.60$, and $0.73$. The respective constraints on $\Omega_c h^2$ are $0.119^{+0.029}_{-0.026}$, $0.151^{+0.038}_{-0.025}$ and $0.140^{+0.036}_{-0.022}$. The fits for $H(z)$ are respectively  $87 \pm 16$, $90 \pm 15$ and $82 \pm 13$ \kmsmpc, and for $D_A(z)$ we find values of $1300 \pm  160$, $1300 \pm  180$ and $1350 \pm  160$ Mpc.  
 Our cosmological constraints are consistent with Flat $\Lambda$CDM cosmology and agree with results from the Baryon Oscillation Spectroscopic Survey (BOSS).
 \end{abstract}
@@ -97,6 +97,8 @@ Our cosmological constraints are consistent with Flat $\Lambda$CDM cosmology and
 
 \section{Introduction}
 
+{\red QUESTION Chris - Is there a paper using WizCOLA and 1D pre-recon or post recon?}
+
 Modern cosmological observations have given strict constraints on cosmological parameters and model viability, and indicate a late time accelerated expansion of the universe \citep{RiessFilippenko1998, PerlmutterAldering1999, SpergelVerde2003, RiessStrolger2004, TegmarkBlanton2004, SanchezBaugh2006, SpergelBean2007, Komatsu2009, RiessMacri2009, PercivalReid2010, ReidPercival2010,BlakeKazin2011}. Determining the cause of this accelerating expansion is one of the foremost problems in cosmology.   Continued efforts to measure the expansion history of the universe and growth of structure within it will allow differentiation between many proposed models such as those that invoke ``dark energy'' and those that invoke a modification to general relativity \citep{AlbrechtBernstein2006, SanchezScoccola2012}. One area of rapid development is using Baryon Acoustic Oscillations (BAO) measured in the large scale structure of the universe to provide a robust and precise measurement of the history of the universe's expansion rate and size \citep{EisensteinHu1998,BlakeGlazebrook2003,HuHaiman2003,Linder2003,SeoEisenstein2003}. Analysis of the BAO signal has been performed on several cosmology surveys, providing tight constraints on cosmological parameters \citep{Eisenstein2005,PercivalCole2007,Gaztanaga2009,PercivalReid2010,BlakeDavis2011,BlakeKazin2011, SanchezKazinBeutler2013, AndersonAubourg2014}. The constraints BAO measurements provide are highly complimentary to, and can be used in conjunction with, constraints derived from measurements on the Cosmic Microwave Background  \citep[CMB;][]{BennettHalpern2003, Planck201416}, weak lensing \citep{VanWaerbeke2000,WittmanTyson2000,KaiserWilson2000} and supernova data \citep{KowalskiRubin2008, KesslerBeckerCinabro2009, BetouleKessler2014}.
 
 Here we assess the 2D galaxy correlation function, which groups pairs of galaxies by their angle with respect to the line of sight.  The correlation function of galaxy pair separations along the line of sight is most sensitive to the Hubble parameter, $H(z)$, and  perpendicular to the line of sight is more sensitive to the angular diameter distance, $D_A(z)$.  
@@ -108,10 +110,6 @@ In this paper we analyse the 2D BAO signal using both techniques on the WiggleZ 
 \item {\bf Model the multipole correlation function:} We use the full shape information in the correlation function by modelling its multipoles and fitting it to multipole data extracted from the WiggleZ survey.  This uses the maximal information in the correlation function, but does not include reconstruction and therefore has a weaker BAO peak. 
 \item {\bf Use reconstruction and only measure the BAO peak:}  We perform reconstruction on the WiggleZ data, which recovers a correlation function with a much stronger BAO peak, but loses the shape information.  We therefore marginalise over the shape information and only use the peak itself as a standard ruler. 
 \end{enumerate}
-Using simulations we found that the 2D information is best extracted from the full shape correlation function when it is decomposed into multipoles.  In contrast, after reconstruction the best way to extract the 2D information was by splitting the data into wedges along the line of sight and perpendicular to the line of sight.   {\red **Check true in Eyal's case.**}
-
-Figure~\ref{fig:wizcola} shows the galaxy correlation function for a WiggleZ-like survey in three different forms.  The upper panel splits the 2D correlation function into the first two multipoles.  The middle and lower panels both show versions of the 2D correlation function split into wedges, which present the contributions from the modes parallel to the line of sight (red) and perpendicular to the line of sight (blue).  The middle panel shows the 2D correlation function as observed, whereas the lower panel shows the 2D correlation function after reconstruction has been applied.  You can see that reconstruction eliminates the shape difference between the wedges and strengthens the BAO peak. 
-
 
 In this paper Section \ref{sect:wigglez} begins by describing the data we use.  Then in Section \ref{sec:model} we construct a theoretical model of the full 2D correlation function.  In Section \ref{sect:multiwedge} we decompose that correlation function into our two summary statistics --- multipole expansion and wedges.
 Section \ref{sec:test} evaluates those models against the WizCOLA simulations, and Sections \ref{sec:multi} and \ref{sec:wedge} use the multipole and wedge models to extract cosmological parameters from the unreconstructed and reconstructed WiggleZ data respectively. In Section \ref{sec:disc} we place these results into the larger cosmological context by incorporating the results from other surveys \& other methodologies, and present final conclusions.
@@ -139,7 +137,11 @@ Analyses of the 2D data have also been performed on WiggleZ data, but not yet on
 
 One investigation that has not been undertaken with the WiggleZ data is a two dimensional analysis of the BAO signal.  As the survey meets the criteria for being able to detect the 2D BAO signal -- volumes of order 1 Gpc$^3$ with order of $10^5$ redshifted galaxies \citep{Tegmark1997,BlakeGlazebrook2003,BlakeParkinson2006} -- we present that analysis in this paper.  
 
-This analysis is motivated by two recent improvements to the WiggleZ survey data.  The first improvement is that reconstruction has now been performed to remove some of the effect of peculiar velocities \citep{KazinKoda2014}, which sharpens the BAO peak and thus makes it  easier to measure in the 2D correlation function (previous analyses had amplified the signal by averaging the information across all angles).  The second improvement is the creation of accurate mock catalogues from the WizCOLA simulations \citep{KodaBlake2015} for both the pre- and post-reconstruction data. The simulations provide more accurate covariance estimates than the lognormal realisations used in the early analyses.  We therefore also revisit the angle-averaged (1D) constraints from the final WiggleZ survey and present updated results.  By fitting our theoretical models to the mock data and recovering the correct cosmological model (the model that was used to make the simulations) we are able to perform rigorous checks that our correlation function models are sufficiently accurate, and optimise the range of scales over which the theory is adequate to include in the fits.  
+This analysis is motivated by two recent improvements to the WiggleZ survey data.  The first improvement is that reconstruction has now been performed to remove some of the effect of peculiar velocities \citep{KazinKoda2014}, which sharpens the BAO peak and thus makes it  easier to measure in the 2D correlation function (previous analyses had amplified the signal by averaging the information across all angles).  The second improvement is the creation of accurate mock catalogues from the WizCOLA simulations \citep{KodaBlake2015} for both the pre- and post-reconstruction data. The simulations provide more accurate covariance estimates than the lognormal realisations used in the early analyses.  We therefore also revisit the pre-reconstruction angle-averaged (1D) constraints from the final WiggleZ survey and present updated results.  By fitting our theoretical models to the mock data and recovering the correct cosmological model (the model that was used to make the simulations) we are able to perform rigorous checks that our correlation function models are sufficiently accurate, and optimise the range of scales over which the theory is adequate to include in the fits.  
+
+Using simulations we found that the 2D information is best extracted from the full shape correlation function when it is decomposed into multipoles.  In contrast, after reconstruction the best way to extract the 2D information was by splitting the data into wedges along the line of sight and perpendicular to the line of sight.
+
+Figure~\ref{fig:wizcola} shows the galaxy correlation function for a WiggleZ-like survey in three different forms.  The upper panel splits the 2D correlation function into the first two multipoles.  The middle and lower panels both show versions of the 2D correlation function split into wedges, which present the contributions from the modes parallel to the line of sight (red) and perpendicular to the line of sight (blue).  The middle panel shows the 2D correlation function as observed, whereas the lower panel shows the 2D correlation function after reconstruction has been applied.  You can see that reconstruction eliminates the shape difference between the wedges and strengthens the BAO peak. 
 
 %Whilst this may not give tight cosmological constraints due to the number of galaxies being only barely above the minimum needed to detect the 2D BAO peak, the results obtained will be largely independent of priors from CMB based surveys such as Planck or WMAP and can be combined with other survey results.
 
@@ -152,7 +154,7 @@ This analysis is motivated by two recent improvements to the WiggleZ survey data
 
 \subsection{Base Model --- before reconstruction}
 For fits to the unreconstructed data, we fit against not just the BAO peak, but also to the broad shape of the correlation function. We begin the model with a linear power spectrum $P_{\rm{lin}}(k)$, which is  generated using the \camb{} software created by \citet{Lewis2000}. We limit our analysis to a Flat $\Lambda$CDM cosmology, appropriate as the data are of insufficient strength to tightly constrain more parameters.
-We set $\Omega_c h^2$ as a free parameter, and fix other values to the WizCOLA simulation fiducial cosmology, such that $\sigma_8 = 0.812$, $n_s=0.961$, $h = 0.705$. {\red **Just for testing, or for the full analysis?**}  We fix $\Omega_b h^2$ to $0.0226$, as $\Omega_b h^2$ is well constrained by CMB data and variations even up to $5\sigma$ are negligible to the BAO model when testing Flat $\Lambda$CDM cosmology. This value is consistent with the WizCOLA simulation value $\Omega_b h^2 = 0.02266$. 
+We set $\Omega_c h^2$ as a free parameter, and fix other values to the WizCOLA simulation fiducial cosmology in our analysis, such that $\sigma_8 = 0.812$, $n_s=0.961$, $h = 0.705$. We fix $\Omega_b h^2$ to $0.0226$, as $\Omega_b h^2$ is well constrained by CMB data and variations even up to $5\sigma$ are negligible to the BAO model when testing Flat $\Lambda$CDM cosmology. This value is consistent with the WizCOLA simulation value $\Omega_b h^2 = 0.02266$. 
 
 We model the BAO peak smoothing caused by displacement of matter due to bulk flows with a smoothing parameter \citep{CrocceScoccimarro2008, SanchezBaughAngulo2008, Sanchez2009, BlakeDavis2011, BeutlerBlake2011}. This smoothing parameter takes the form of a Gaussian dampening term which reduces the amplitude of the BAO signal as a function of $k$:
 \begin{align} \label{{eq:blake1}}
@@ -162,7 +164,7 @@ where $P_{\rm{nw}}(k)$ is a power spectrum without the BAO signal. Whilst advanc
 \begin{align} \label{eq:sigmav}
 \sigma_v^2 = \frac{1}{6\pi^2} \int P_{\rm{lin}}(k)\, dk,
 \end{align}
-this requires knowledge of the power of the spectrum, which is marginalised over and thus unavailable.
+however $\sigma_v$ is set to a free parameter due to inaccuracies in the theoretical determination from non-linear effects.
 
 In most studies the power spectrum without the BAO signal present is generated using the \verb;tffit; algorithm given by \citet{EisensteinHu1998}. \citet{ReidPercival2010} investigated an alternate method of generating a no-wiggle power spectrum from the linear \camb{} power spectrum in which an 8 node b-spline was fitted to the linear power spectrum, concluding the likelihood surfaces generated when fitting using splines and the algorithm from \citet{EisensteinHu1998} agree well. For our work we introduce a new method to attain a no-wiggle power spectrum $P_{\mathrm{nw}}(k)$ utilising polynomial subtraction. For a comparison of this methodology against the \verb;tffit; algorithm supplied by \citet{EisensteinHu1998} or spline fitting, please see Appendix \ref{app:dewiggle}.
 
@@ -172,7 +174,7 @@ which generates a power ratio $r_{\rm{halo}}$ as a function of $k$
 \begin{align}
 	P_{\text{nl}} = P_{\text{dw}} r_{\text{halo}}.
 \end{align}
-We take into account galaxy bias $b$ by $\xi_{\rm galaxy}(s) = b^2 \xi(s)$ and we follow \citet{BlakeDavis2011} who incorporate scale dependent bias {\blue derived from simulations to the WiggleZ data}, $B(s)$, into to the model, via
+We take into account galaxy bias $b$ by $\xi_{\rm galaxy}(s) = b^2 \xi(s)$ and we follow \citet{BlakeDavis2011} who incorporate scale dependent bias derived from the Gigglez simulations, $B(s)$, into to the model, via
 \begin{align}
 	\xi_{\rm{galaxy}}(s) = B(s) \xi(s),
 \end{align}
@@ -181,11 +183,11 @@ where $B(s) = 1 + (s/s_0)^\gamma$, with $s_0 = 0.32 h^{-1}\,$Mpc and $\gamma = -
 
 
 
-The Kaiser effect {\blue from coherent infall} can be modelled simply in Fourier space \citep{Kaiser1987}:
+The Kaiser effect from coherent infall can be modelled simply in Fourier space \citep{Kaiser1987}:
 \begin{align} \label{eq:gaztanga1}
 	P_{\rm{nl}}(k, \mu) = (1 + \beta \mu^2)^2 P_{g}(k),
 \end{align}
-where $P_{g}$ is the power spectrum of galaxy density fluctuations $\delta_g$, $\mu$ is the cosine of the angle to line of sight, and $\beta$ is the growth rate of growing modes in linear theory. %This correction for the Kaiser effect has been utilised by \citet{Gaztanaga2009, ChuangWang2012, XuPadmanabhan2012} for identifying the unreconstructed BAO signal in survey data. 
+where $P_{g}$ is the power spectrum of galaxy density fluctuations $\delta_g$, $\mu$ is the cosine of the angle to line of sight, and $\beta = f/b$ and $f$ is the growth rate of growing modes in linear theory. %This correction for the Kaiser effect has been utilised by \citet{Gaztanaga2009, ChuangWang2012, XuPadmanabhan2012} for identifying the unreconstructed BAO signal in survey data. 
 When reconstructing the BAO signal \citep[see][for details]{PadmanabhanXuEisenstein2012,KazinKoda2014}, the Kaiser effect is corrected for and thus does not have to be inserted into the cosmological model.
 
 Peculiar velocity does not have to be coherent to effect observational cosmology, and the random peculiar velocities of galaxies in clusters, which are related to the cluster mass via the virial theorem, create artifacts known as Fingers of God. In the investigation of growth rate with WiggleZ data, \citet{BlakeBroughColless2011} adopts a Lorentzian model of velocity dispersion with
@@ -212,9 +214,9 @@ where $\mathcal{L}_\ell$ represents the $\ell$'th Legendre polynomial. These mul
 \begin{align}
 	\xi_\ell(s) = \frac{1}{(2\pi)^3} \int 4\pi k^2 \ P_\ell(k) \ j_\ell(ks)
 \end{align}
-where $j_\ell(ks)$ are spherical Bessel functions of the first kind. The increased power of small scale oscillations from the non-linear corrections decreases convergence of this function, so we {\blue multiply the integrand} by a Gaussian factor $\exp(-k^2 a^2)$ to improve convergence, where we found $a=0.5 h^{-1} \rm{Mpc}$ {\red **Check Units (I changed from $h$Mpc) **} to be the optimal factor to improve computational speed while maintaining accuracy \citep{HintonThesis2015}.  \citep[The results are not sensitive to the exact choice of $a$;][set $a= 1\, h^{-1}\rm{Mpc}$]{AndersonAubourg2012}. %This is in contrast to other methods that may be used to increase convergence, such as truncating the numerical integral after a specific number of periods in the spherical Bessel function. Whilst the \citet{BlakeDavis2011} WiggleZ analysis does not contain the Gaussian dampening term seen in \citet{AndersonAubourg2012}, it is introduced in the correlation function model used in \citet{BlakeKazin2011}. We performed an investigation of numerical deviations from the true correlation function using an unmodified equation, truncation, and a Gaussian dampening term, and these can be found in Appendix \ref{app:pk2xi}.  Based on these results we introduce a Gaussian dampening factor of  $a= 0.5\, h/\rm{Mpc}$.
+where $j_\ell(ks)$ are spherical Bessel functions of the first kind. The increased power of small scale oscillations from the non-linear corrections decreases convergence of this function, so we multiply the integrand by a Gaussian factor $\exp(-k^2 a^2)$ to improve convergence, where we found $a=0.5 h^{-1} \rm{Mpc}$ to be the optimal factor to improve computational speed while maintaining accuracy \citep{HintonThesis2015}.  \citep[The results are not sensitive to the exact choice of $a$;][set $a= 1\, h^{-1}\rm{Mpc}$]{AndersonAubourg2012}. %This is in contrast to other methods that may be used to increase convergence, such as truncating the numerical integral after a specific number of periods in the spherical Bessel function. Whilst the \citet{BlakeDavis2011} WiggleZ analysis does not contain the Gaussian dampening term seen in \citet{AndersonAubourg2012}, it is introduced in the correlation function model used in \citet{BlakeKazin2011}. We performed an investigation of numerical deviations from the true correlation function using an unmodified equation, truncation, and a Gaussian dampening term, and these can be found in Appendix \ref{app:pk2xi}.  Based on these results we introduce a Gaussian dampening factor of  $a= 0.5\, h/\rm{Mpc}$.
 
-{\blue %start blue
+
 \subsection{Base model --- after reconstruction}
 
 \citet{EisensteinSeoSirko2007} proposed that the ``blurring'' of the baryon
@@ -241,19 +243,19 @@ given in our previous analysis of the SDSS DR9 CMASS galaxies
 correlation function of the reconstructed data in two ``clustering
 wedges''.  We fitted the data assuming a BAO template including
 quasi-linear corrections based on the renormalized perturbation theory
-of \citet{CrocceScoccimarro2008}.  This template is distorted in the tangential
+of \citet{CrocceScoccimarro2008}. {\red [SAM: Introduce $\alpha$ better] This template is distorted in the tangential
 and radial directions by parameters $\alpha_\perp$ and
 $\alpha_\parallel$ which represent, respectively, the ratios of
 $D_{\rm A}/r_{\rm s}$ and $1/(H r_{\rm s})$ to their fiducial values.
 We assume a flat prior in $(\alpha_\perp,\alpha_\parallel)$ between
-0.5 and 1.5.  For each clustering wedge we also marginalized over an
+0.5 and 1.5.}  For each clustering wedge we also marginalized over an
 amplitude parameter and the coefficients of three additive polynomial
 terms, producing a 10-parameter model.  We explore the parameter space
 using MCMC chains, and present results for
 $(\alpha_\perp,\alpha_\parallel)$, marginalizing over the other 8
 parameters.
 
-}%end blue
+
 
 \section{Final model: Multipoles and Wedges}\label{sect:multiwedge}
 It is impractical to fit the data to a full 2D correlation function, as the calculation of the covariance matrix is infeasible.  Instead one typically reduces the 2D information into a simplified measure that encapsulates the essential anisotropy.  Two methods by which this can be done are wedges and multipoles.  
@@ -1061,7 +1063,7 @@ We gratefully acknowledge the input of the many researchers that were consulted 
 
 
 
-
+\begin{comment}
 \section{Improving computation speed from Power Spectrum to Correlation Function} \label{app:pk2xi}
 
 The monopole moment of the power spectrum obtained in model creation is analytically transformed to a correlation function via the first order three dimensional Fourier transformation 
@@ -1104,7 +1106,7 @@ where $a$ was set to $1 h^{-1}$ Mpc to damp signal at high high $k$. In addition
 Whilst Figure \ref{fig:pk2xicomp} shows what appears to be significant difference between the alternate methods (Gaussian with $a=1$ and truncation), we should realise the plots display $s^2 \xi(s)$, and at the scales of divergence ($\sim 100\, h^{-1}$ Mpc), this means any deviations are exaggerated by approximately four orders of magnitude. Considering this, it is unclear if the difference presented in Figure \ref{fig:pk2xicomp} is in any way significant, so a cosmological comparison was run using the combined 600 realisations of the WizCOLA simulation, to test the limits of these differences with data that should give tight constraints. The resulting likelihood surfaces and marginalised distributions detailed in Figure \ref{fig:BcosmoTest} show that the difference between these two algorithms is completely negligible.
 
 
-
+\end{comment}
 
 
 

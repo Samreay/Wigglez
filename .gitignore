@@ -20,3 +20,4 @@
 *.pyc
 **/__pycache__/*
 *.pkl
+*.blg
