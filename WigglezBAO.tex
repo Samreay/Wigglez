@@ -217,6 +217,50 @@ where $\mathcal{L}_\ell$ represents the $\ell$'th Legendre polynomial. These mul
 where $j_\ell(ks)$ are spherical Bessel functions of the first kind. The increased power of small scale oscillations from the non-linear corrections decreases convergence of this function, so we multiply the integrand by a Gaussian factor $\exp(-k^2 a^2)$ to improve convergence, where we found $a=0.5 h^{-1} \rm{Mpc}$ to be the optimal factor to improve computational speed while maintaining accuracy \citep{HintonThesis2015}.  \citep[The results are not sensitive to the exact choice of $a$;][set $a= 1\, h^{-1}\rm{Mpc}$]{AndersonAubourg2012}. %This is in contrast to other methods that may be used to increase convergence, such as truncating the numerical integral after a specific number of periods in the spherical Bessel function. Whilst the \citet{BlakeDavis2011} WiggleZ analysis does not contain the Gaussian dampening term seen in \citet{AndersonAubourg2012}, it is introduced in the correlation function model used in \citet{BlakeKazin2011}. We performed an investigation of numerical deviations from the true correlation function using an unmodified equation, truncation, and a Gaussian dampening term, and these can be found in Appendix \ref{app:pk2xi}.  Based on these results we introduce a Gaussian dampening factor of  $a= 0.5\, h/\rm{Mpc}$.
 
 
+
+\subsubsection{Multipoles and Wedges}
+
+It is impractical to fit the data to a full 2D correlation function, as the calculation of the covariance matrix is infeasible.  Instead one typically reduces the 2D information into a simplified measure that encapsulates the essential anisotropy.  Two methods by which this can be done are wedges and multipoles.  
+
+The wedges method splits the 2D correlation function into wedges based on angle, and averages the correlation function in that wedge.  The multipole method decomposes the correlation function into multipoles.  For extended treatment of the mathematics, see \citet{KazinSanchezBlanton2012, KazinSanchezCuesta2013, SanchezKazinBeutler2013, XuCuesta2013}. 
+
+In all cases we have used a fiducial cosmology to convert observed right ascension, declination, and redshift into distances (separations) and thus generate the correlation function.  So the variables we fit for are not the distances (separations) themselves, but rather the ratio of the distance in the true model to the distance in the fiducial model.  This is achieved by scaling the model distances to give $s_{\rm test}= \alpha s_{\rm model}$.   
+
+	Thus the primary variable we fit for is $\alpha$.  Depending on which type of analysis we are performing, $\alpha$ relates to  distances in different ways.  \citet{BlakeDavis2011} show, for example, the degeneracy lines between $\alpha$ and $\Omega_{\rm M}$ and how they change depending on whether you fit to the correlation function shape, the BAO peak only, or the power spectrum.  When fitting to the BAO peak, the degeneracy direction lies along a line of constant $r_s/D_V$ (in the 1D case) where $D_V=***$ and  $r_s$ is the sound horizon at drag epoch, given by
+	\begin{align}
+	r_s = \frac{c}{\sqrt{3}} \int_0^{1/(1+z)} \frac{da}{a^2 H(a) \sqrt{1 + (3\Omega_b/4\Omega_\gamma) a}}, \label{eq:rs}
+	\end{align}
+	with $\Omega_\gamma = 2.469\times10^{-5} h^{-2}$ for $T_{{\rm cmb}}=2.725$ and $\Omega_r = \Omega_\gamma(1 + 0.2271 N_{{\rm eff}})$, where we utilise $N_{\rm eff} = 3.04$.
+	However, when fitting for the correlation function shape the degeneracy direction lies along a line of constant $A=D_V(z) \sqrt{\Omega_m H_0^2} / zc$, which was a parameter introduced by \citet{Eisenstein2005} for exactly that reason.  Note that $A(z)$ does not depend on $r_s$.  
+
+
+When we update the pre-reconstructed angle averaged 1D measurement of \citet{BlakeKazin2011} we fit for 
+\begin{align}
+\alpha = \frac{D_V(z)}{D_V^{\prime}(z) }.\label{eq:DvDv}
+\end{align}
+
+For the multipole expansion used in the 2D pre-construction fits, we fit a scaling factor $\alpha$ and warping parameter $\epsilon$ such that
+\begin{align}
+\alpha(1 + \epsilon)^2 \approx \alpha(1 + 2\epsilon) &\approx \frac{H^\prime(z)}{H(z)} \label{eq:alpha1}\\
+\alpha(1 + \epsilon)^{-1} \approx \alpha(1 - \epsilon) &\approx \frac{D_A(z)}{D_A^\prime(z) }. \label{eq:alpha2}
+\end{align}
+
+
+
+
+
+%We thus now have two complete models for generating theoretical correlation functions both in wedge and multipole format. %The final concern that needs to be addressed is what data range should be fit on, the optimal range of data to fit is dependent on the data set used and the accuracy of the models.  %which is unfortunately a source of great variability in prior literature.
+
+
+
+
+%\subsection{Final Model}
+
+%Having determined fitting ranges and created a theoretical model piece by piece, we can now summarise. 
+In summary, our model generates a linear power spectrum, with input parameter $\Omega_c h^2$. The dampening term $k_*$ (equivalently $\sigma_v$), galaxy bias $b^2$, growth rate $\beta$, and Lorentzian factor $\sigma_V$ are marginalised over, leaving final constraints in the form of $\Omega_c h^2$, $\alpha$ and $\epsilon$. %Transformation parameters $\alpha$ and $\epsilon$ are used for the multipole data expression that we use for unreconstructed data, and $\alpha_\parallel$ and $\alpha_\perp$ are used for the wedge analysis that we use for the reconstructed data.  Thus when we perform the final fit the set of parameters we vary are $\Omega_c h^2$, $k_*$, $\sigma_V H$, $\beta$, $b^2$ and transformation parameters. We marginalise over all but $\Omega_c h^2$, $\alpha$, \& $\epsilon$ for multipole expansion.
+
+
+
 \subsection{Base model --- after reconstruction}
 
 \citet{EisensteinSeoSirko2007} proposed that the ``blurring'' of the baryon
@@ -241,67 +285,28 @@ broadband shape information.  A full description of our procedure is
 given in our previous analysis of the SDSS DR9 CMASS galaxies
 \citet[][see \S 5.3]{KazinSanchezCuesta2013}.  In brief, we measured the
 correlation function of the reconstructed data in two ``clustering
-wedges''.  We fitted the data assuming a BAO template including
+wedges''.  One could in principle have many wedges, but for our data (and all previous data) the signal to noise limits us to two wedges -- one taking the half of the data along the line of sight ($\mu\ge0.5$), the other perpendicular to it ($\mu<0.5$), where $\mu$ is the cosine of the angle with respect to the line of sight.
+We fitted the data assuming a BAO template including
 quasi-linear corrections based on the renormalized perturbation theory
-of \citet{CrocceScoccimarro2008}. {\red [SAM: Introduce $\alpha$ better] This template is distorted in the tangential
+of \citet{CrocceScoccimarro2008}. This template is distorted in the tangential
 and radial directions by parameters $\alpha_\perp$ and
-$\alpha_\parallel$ which represent, respectively, the ratios of
-$D_{\rm A}/r_{\rm s}$ and $1/(H r_{\rm s})$ to their fiducial values.
+$\alpha_\parallel$ which are given by
+\begin{align}
+\alpha_\perp &\approx \frac{D_A(z) r^\prime_s }{D_A^{\prime}(z) r_s}, \label{eq:alphaperp}\\
+\alpha_\parallel &\approx \frac{H^{\prime}(z) r^\prime_s}{H(z) r_s},\label{eq:alphaparallel}
+\end{align}
+where the $r_s$ term can be found (unlike in the pre-reconstruction $\alpha$) due to the degeneracy direction of fitting only for the BAO peak.
+
+  
+
+
 We assume a flat prior in $(\alpha_\perp,\alpha_\parallel)$ between
-0.5 and 1.5.}  For each clustering wedge we also marginalized over an
+0.5 and 1.5.  For each clustering wedge we also marginalized over an
 amplitude parameter and the coefficients of three additive polynomial
 terms, producing a 10-parameter model.  We explore the parameter space
 using MCMC chains, and present results for
 $(\alpha_\perp,\alpha_\parallel)$, marginalizing over the other 8
 parameters.
-
-
-
-\section{Final model: Multipoles and Wedges}\label{sect:multiwedge}
-It is impractical to fit the data to a full 2D correlation function, as the calculation of the covariance matrix is infeasible.  Instead one typically reduces the 2D information into a simplified measure that encapsulates the essential anisotropy.  Two methods by which this can be done are wedges and multipoles.  
-
-The wedges method splits the 2D correlation function into wedges based on angle, and averages the correlation function in that wedge.  The multipole method decomposes the correlation function into multipoles.  For extended treatment of the mathematics, see \citet{KazinSanchezBlanton2012, KazinSanchezCuesta2013, SanchezKazinBeutler2013, XuCuesta2013}. 
-
-In all cases we have used a fiducial cosmology to convert observed right ascension, declination, and redshift into distances (separations) and thus generate the correlation function.  So the variables we fit for are not the distances (separations) themselves, but rather the ratio of the distance in the true model to the distance in the fiducial model.  This is achieved by scaling the model distances to give $s_{\rm test}= \alpha s_{\rm model}$. {\red **Is that the correct sense (direction) of the transformation?**}   
-
-{\blue
-Thus the primary variable we fit for is $\alpha$.  Depending on which type of analysis we are performing, $\alpha$ relates to  distances in different ways.  \citet{BlakeDavis2011} show, for example, the degeneracy lines between $\alpha$ and $\Omega_{\rm M}$ and how they change depending on whether you fit to the correlation function shape, the BAO peak only, or the power spectrum.  When fitting to the BAO peak, the degeneracy direction lies along a line of constant $r_s/D_V$ (in the 1D case) where $D_V=***$ and  $r_s$ is the sound horizon at drag epoch, given by
-\begin{align}
-r_s = \frac{c}{\sqrt{3}} \int_0^{1/(1+z)} \frac{da}{a^2 H(a) \sqrt{1 + (3\Omega_b/4\Omega_\gamma) a}}, \label{eq:rs}
-\end{align}
-with $\Omega_\gamma = 2.469\times10^{-5} h^{-2}$ for $T_{{\rm cmb}}=2.725$ and $\Omega_r = \Omega_\gamma(1 + 0.2271 N_{{\rm eff}})$, where we utilise $N_{\rm eff} = 3.04$.
-However, when fitting for the correlation function shape the degeneracy direction lies along a line of constant $A=***$, which was a parameter introduced by \citet{Eisenstein2005} for exactly that reason.  Note that $A(z)$ does not depend on $r_s$.  
-}
-
-When we update the angle averaged 1D measurement of \citet{BlakeKazin2011} we fit for 
-\begin{align}
-\alpha = \frac{D_V(z)}{D_V^{\prime}(z) }.\label{eq:DvDv}
-\end{align}
-
-With the reconstructed wedge data we transform the perpendicular and line-of-sight distances independently, and since we are fitting for only the BAO peak this provides constraints via 
-\begin{align}
-\alpha_\perp &\approx \frac{D_A(z) r^\prime_s }{D_A^{\prime}(z) r_s}, \label{eq:alphaperp}\\
-\alpha_\parallel &\approx \frac{H^{\prime}(z) r^\prime_s}{H(z) r_s}.\label{eq:alphaparallel}
-\end{align}
-One could in principle have many wedges, but for our data (and all previous data) the signal to noise limits us to two wedges -- one taking the half of the data along the line of sight ($\mu\ge0.5$), the other perpendicular to it ($\mu<0.5$), where $\mu$ is the cosine of the angle with respect to the line of sight.  
-
-Finally, for the multipole expansion, we fit a scaling factor $\alpha$ and warping parameter $\epsilon$ such that
-\begin{align}
-\alpha(1 + \epsilon)^2 \approx \alpha(1 + 2\epsilon) &\approx \frac{H^\prime(z)}{H(z)} \label{eq:alpha1}\\
-\alpha(1 + \epsilon)^{-1} \approx \alpha(1 - \epsilon) &\approx \frac{D_A(z)}{D_A^\prime(z) }. \label{eq:alpha2}
-\end{align}
-
-
-%We thus now have two complete models for generating theoretical correlation functions both in wedge and multipole format. %The final concern that needs to be addressed is what data range should be fit on, the optimal range of data to fit is dependent on the data set used and the accuracy of the models.  %which is unfortunately a source of great variability in prior literature.
-
-
-
-
-%\subsection{Final Model}
-
-%Having determined fitting ranges and created a theoretical model piece by piece, we can now summarise. 
-In summary, our model generates a linear power spectrum, with input parameter $\Omega_c h^2$. The dampening term $k_*$ (equivalently $\sigma_v$), galaxy bias $b^2$, growth rate $\beta$, and Lorentzian factor $\sigma_V H(z)$ {\red **ARE YOU INTENTIONALLY DISTINGUISHING BETWEEN $\sigma_v$ and $\sigma_V$?**  **When $\sigma_V$ is introduced in Equation 6 it doesn't have a factor of $H(z)$ attached.**} are marginalised over. Transformation parameters $\alpha$ and $\epsilon$ are used for the multipole data expression that we use for unreconstructed data, and $\alpha_\parallel$ and $\alpha_\perp$ are used for the wedge analysis that we use for the reconstructed data.  Thus when we perform the final fit the set of parameters we vary are $\Omega_c h^2$, $k_*$, $\sigma_V H$, $\beta$, $b^2$ and transformation parameters. {\blue We marginalise over all but $\Omega_c h^2$, $\alpha$, \& $\epsilon$ for multipole expansion, and $\Omega_c h^2$, $\alpha_\parallel$, \& $\alpha_\perp$ for wedges. } {\red **CHECK THIS FOR EYAL's WEDGES **}
-
 
 
 \section{Validation of unreconstructed multipole analysis}
@@ -341,7 +346,7 @@ We first fit using $\sigma_v$ as a free parameter, and finding $\sigma_v$ uncons
 	\begin{center}
 		\includegraphics[width=\columnwidth]{images/fMonpole.pdf}
 	\end{center}
-	\caption{Likelihood surfaces when fitting the 1D BAO signal from WiggleZ using the new WizCOLA covariance matrices. Parameters $b^2$, $\beta$, and $\sigma_v H$ are marginalised over, with $\sigma_v$ set to $5 h^{-1}$ Mpc. {\red **Check $\sigma_v H$**}}
+	\caption{Likelihood surfaces when fitting the 1D BAO signal from WiggleZ using the new WizCOLA covariance matrices. Parameters $b^2$, $\beta$, and $\sigma_V$ are marginalised over, with $\sigma_v$ set to $5 h^{-1}$ Mpc.}
 	\label{fig:fmonopole}
 \end{figure}
 
@@ -349,19 +354,21 @@ We first fit using $\sigma_v$ as a free parameter, and finding $\sigma_v$ uncons
 
 \begin{table*}
 	\centering
-	\caption{A comparison between the fits found in this analysis and those found in \citet{BlakeKazin2011}. These analyse the same data, but this analysis uses a slightly different model and an improved covariance matrix. The results given in \citet{BlakeKazin2011} use mean statistics, whilst we utilise maximum likelihood statistics, but the dominant difference comes from the improved covariance matrix. {\red **Why the large difference in $\chi^2$?**} }
+	\caption{A comparison between the fits found in this analysis and those found in \citet{BlakeKazin2011}. These analyse the same data, but this analysis uses a slightly different model and an improved covariance matrix. The results given in \citet{BlakeKazin2011} use mean statistics, whilst we utilise maximum likelihood statistics, but the dominant difference comes from the improved covariance matrix. }
 	\begin{tabular}{cc|ccc|ccc}
 		\specialrule{.1em}{.05em}{.05em} 
 		Sample & $z_{\rm{eff}}$ & \multicolumn{3}{c}{\citet{BlakeKazin2011}}  & \multicolumn{3}{c}{This analysis}\\
-		&  & $\chi^2$ & $\Omega_m h^2$ &$\alpha$ & $\chi^2$ & $\Omega_m h^2$ & $\alpha$ \\
+		&  & $\chi^2{\rm DoF}$ & $\Omega_m h^2$ &$\alpha$ & $\chi^2/{\rm DoF}$ & $\Omega_m h^2$ & $\alpha$ \\
 		\specialrule{.1em}{.05em}{.05em} 
-		$0.2 < z < 0.6$ & $0.44$ & $11.4$ & $0.143\pm0.020$ &$1.024\pm0.093$ & $29.3$ & $0.143\pm 0.017$ & $1.07^{+0.13}_{-0.09}$ \\
-		$0.4 < z < 0.8$ & $0.60$ & $10.1$ & $0.147\pm0.016$ &$1.003\pm0.065$ & $24.7$ & $0.151^{+0.017}_{-0.014}$ & $1.00^{+0.09}_{-0.08}$ \\
-		$0.6 < z < 1.0$ & $0.73$ & $13.7$ & $0.120\pm0.013$ &$1.113\pm0.071$ & $35.6$ & $0.138^{+0.012}_{-0.015}$ & $1.10^{+0.09}_{-0.10}$ \\
+		$0.2 < z < 0.6$ & $0.44$ & $0.88$ & $0.143\pm0.020$ &$1.024\pm0.093$ & $1.01$ & $0.143\pm 0.017$ & $1.07^{+0.13}_{-0.09}$ \\
+		$0.4 < z < 0.8$ & $0.60$ & $0.78$ & $0.147\pm0.016$ &$1.003\pm0.065$ & $0.85$ & $0.151^{+0.017}_{-0.014}$ & $1.00^{+0.09}_{-0.08}$ \\
+		$0.6 < z < 1.0$ & $0.73$ & $1.05$ & $0.120\pm0.013$ &$1.113\pm0.071$ & $1.22$ & $0.138^{+0.012}_{-0.015}$ & $1.10^{+0.09}_{-0.10}$ \\
 		\specialrule{.1em}{.05em}{.05em} 
 	\end{tabular} \label{tab:blakekazintable}
 \end{table*}
-
+\begin{comment}
+BlakeKazin2011 uses larger data pins. 17 bins, 4 parameters, 13DoF, which is why there was a difference. I have 29DoF.
+\end{comment}
 
 
 We see that most results follow closely those obtained in \citet{BlakeKazin2011}, however the result of $\Omega_m h^2 (z_{\rm eff} = 0.73)$ shifts by more than $1\sigma$. This shift increases the value of $\Omega_m h^2 (z_{\rm eff} = 0.73)$, bringing it into agreement with the $\Omega_m h^2$ determination from the other redshift bins. These shifts were confirmed to be due to the change in covariance matrix and not any difference in changes to the modeling process, as rerunning the same fit using the original lognormal realisations bought the deviation to below $0.5\sigma$. %Swapping parameter statistics from maximum likelihood to mean statistics did not significantly improve agreement. 
@@ -374,7 +381,7 @@ We see that most results follow closely those obtained in \citet{BlakeKazin2011}
 
 \subsection{Fitting range} \label{sec:trunc}
 Before fitting our model correlation function to the data, we need to assess the range of scales over which the data are useful.  We expect the model to do poorly at small distances (where non-linearities are strong), while the data's sample variance increases at large distances.  So there will be an optimal range of scales over which to fit the data, and that range will be dependent on the data set (less biased tracers can go to smaller scales, larger volume data sets can go to larger scales).  We determined our optimal fitting range using simulations \citep[see][]{HintonThesis2015}  and conclude that a data range of $25 < s < 180 \hMpc$ allows maximum utilisation of available data without introducing bias into our model. 
-{\red ** Chris said referee will argue the the sample variance increasing at large distance -- why?**}
+{\red **[SAM. Sample variance does increase, and I go over that in my thesis but its not covered here for brevit. Unsure how to address this comment] Chris said referee will argue the the sample variance increasing at large distance -- why?**}
 
 
 
@@ -425,7 +432,7 @@ Within the range $\sigma_v \in [0,10]$, we find no significant difference in $\c
 \end{figure}
 \end{comment}
 
-Some past surveys have included hexadecapole terms {\red \ref{}which?**} in the multipole analysis. In order to test the significance of the hexadecapole term, we ran the above analysis with and without it. We find that the statistical uncertainty dominates any loss of information contained in the hexadecapole signal. Due to computational constraints and the low impact of the term, the hexadecapole contribution was left out of the final model.
+Some past surveys have included hexadecapole terms in the multipole analysis \citep{XuCuesta2013}. In order to test the significance of the hexadecapole term, we ran the above analysis with and without it. We find that the statistical uncertainty dominates any loss of information contained in the hexadecapole signal. Due to computational constraints and the low impact of the term, the hexadecapole contribution was left out of the final model.
 
 % The comparison likelihood surfaces are shown in Figure \ref{fig:wizmpfastComp}, and 
 \begin{comment}
@@ -443,7 +450,7 @@ Some past surveys have included hexadecapole terms {\red \ref{}which?**} in the 
 Finally, we can perform a final validation of the multipole methodology by fitting to individual realisations of the WizCOLA simulation instead of the mean data set. %Due to the decreased data strength, we move from allowing the parameter $\log(k_*)$ to vary, to fixing the parameter $\sigma_v = 5\,$h$^{-1}$ Mpc, which was validated using the mean simulation data. Fixing the parameter was not found to significantly modify output parameters, and a reduction in the number of free parameters results in tighter constraints, in addition to faster MCMC chain convergence. 
 The results are shown in Figure \ref{fig:mpDist2}, which confirms that the recovered parameter distribution matches the simulation.  
 
-For small $\epsilon$, cosmological parameters can be extracted via Eq.~\ref{eq:alpha1} and Eq.~\ref{eq:alpha2}.  {\green The degeneracy direction of $\alpha$---$\Omega_c h^2$ lies along a line of constant (**?**), which justifies our use of $\alpha=(1+\epsilon)^2\approx H^\prime(z)/H(z)$. ***ELABORATE*** }
+For small $\epsilon$, cosmological parameters can be extracted via Eq.~\ref{eq:alpha1} and Eq.~\ref{eq:alpha2}.  {\red [SAM: Not sure what to put here.  Thoughts?] The degeneracy direction of $\alpha$---$\Omega_c h^2$ lies along a line of constant (**?**), which justifies our use of $\alpha=(1+\epsilon)^2\approx H^\prime(z)/H(z)$. ***ELABORATE*** }
 
 
 \begin{figure}[h!]
@@ -451,7 +458,7 @@ For small $\epsilon$, cosmological parameters can be extracted via Eq.~\ref{eq:a
 	\begin{center}
 		\includegraphics[width=\columnwidth]{images/mpDist2.pdf}
 	\end{center}
-	\caption{Maximum likelihood $\Omega_c h^2$, $\alpha$ and $\epsilon$ values from a total of 623 {\blue WizCOLA realisations of the WiggleZ data} {\red **Why 623 not 600?**} are shown in the bottom left corner plots. Dashed black lines indicate simulations parameters, and the solid black distributions in the diagonal subplots represent the final distribution across all bins for the specific parameter.}
+	\caption{Maximum likelihood $\Omega_c h^2$, $\alpha$ and $\epsilon$ values from WizCOLA realisations of the WiggleZ data are shown in the bottom left corner plots. Dashed black lines indicate simulations parameters, and the solid black distributions in the diagonal subplots represent the final distribution across all bins for the specific parameter. {\blue A pre-reconstruction wedge analysis was not performed due to unconstrained parameter distributions, see \citet[\S 4.3]{HintonThesis2015} for more details.}}
 	\label{fig:mpDist2}
 	%\end{wrapfigure}
 \end{figure}
@@ -464,14 +471,13 @@ The data present in the WizCOLA simulations and the final WiggleZ dataset is ava
 
 There are two methods we can use to combine the binned data, and we utilise both methods in our multipole analysis so that we can check they give consistent results. The first method uses the correlation between final parameter values, and the second method calculates the covariance between the correlation function data points across all redshift bins and runs a separate fit that utilises all available data simultaneously.
 
-{\red **CURRENTLY THIS ONLY REFERS TO SAM'S TESTS.  WHAT DID EYAL DO? ... Doesn't matter, moved Eyal's stuff to next section. **}
 
 \subsubsection{First Method: Parameter Covariance} \label{sec:parameterCov}
 
 In order to determine final parametrisations across all redshift bins, the correlation between fit parameters from individual redshift bins needs to be quantified and accounted for. To do this, we fit individual realisations of the WizCOLA simulation, and construct a $9\times 9$ covariance matrix from the peak likelihood fit values for parameters ($\Omega_c h^2$, $\alpha$ and $\epsilon$ for a multipole analysis), %and $\Omega_c h^2$, $\alpha_\perp$ and $\alpha_\parallel$ for the wedge analysis), 
 such that we construct,
 \begin{align}
-C_{ij} = \frac{1}{N} \sum\limits_{n=1}^{N} (\theta_{i,n} - \bar{\theta}_i)(\theta_{j,n} - \bar{\theta}_j),
+C_{ij} = \frac{1}{N-1} \sum\limits_{n=1}^{N} (\theta_{i,n} - \bar{\theta}_i)(\theta_{j,n} - \bar{\theta}_j),
 \end{align}
 where $\theta$ represents the list of parameters, such that $\theta_{i,n}$ represents the value of $\theta_i$ on the $n$th WizCOLA realisation.
 \begin{align*}
@@ -481,7 +487,7 @@ where $\theta$ represents the list of parameters, such that $\theta_{i,n}$ repre
 \end{align*}
 Similarly to the covariance matrix, we can also calculate the correlation matrix, defined as
 \begin{align}
-R_{ij} = \frac{1}{N} \sum\limits_{n=1}^{N} \frac{(\theta_{i,n} - \bar{\theta}_i)(\theta_{j,n} - \bar{\theta}_{j})}{\sigma_i \sigma_j},
+R_{ij} = \frac{1}{N-1} \sum\limits_{n=1}^{N} \frac{(\theta_{i,n} - \bar{\theta}_i)(\theta_{j,n} - \bar{\theta}_{j})}{\sigma_i \sigma_j},
 \end{align}
 where $\sigma_i$ represents the standard deviation of the $i$th parameter. The correlation matrix $R_{ij}$ determined from analysis of the WizCOLA realisations is shown in Figure \ref{fig:correlations}. 
 
@@ -527,21 +533,21 @@ The covariance matrices utilised so far in our analysis have been supplied from 
 
 
 
-When using the full data covariance to simultaneously fit all three redshift bins, a further question becomes whether marginalisation parameters $b^2$, $\beta$, $\sigma H$ {\red**should that be $\sigma$, $H$? or $\sigma_V H(z)$ or...?} and $k_*$ should be free between redshift bins, or consistent across them. 
+When using the full data covariance to simultaneously fit all three redshift bins, a further question becomes whether marginalisation parameters $b^2$, $\beta$, $\sigma_V$ and $k_*$ should be free between redshift bins, or consistent across them. 
 
-From a physical motivation, we expect the bias parameter $b^2$ to be dependent on redshift bin. This is because we only observe the most massive, luminous galaxies at high redshift, which have higher bias than the less massive galaxies we can see at lower redshifts. We can also see that the {\red $\sigma H(z)$} nuisance parameter is explicitly a function of redshift, and so it is expected to change between redshift bins. However, when performing fits, $b^2$ and $\beta$ are well constrained, whilst $k_*$ and {\red $\sigma H(z)$} are not. As this implies that those two parameters do not significantly contribute to the likelihood calculations, it is unknown if setting {\red $\sigma H(z)$} free between bins will have a noticeable benefit. 
+From a physical motivation, we expect the bias parameter $b^2$ to be dependent on redshift bin. This is because we only observe the most massive, luminous galaxies at high redshift, which have higher bias than the less massive galaxies we can see at lower redshifts. However, when performing fits, $b^2$ and $\beta$ are well constrained, whilst $k_*$ and $\sigma_V$ are not. As this implies that those two parameters do not significantly contribute to the likelihood calculations, it is unknown if setting $\sigma_V$ free between bins will have a noticeable benefit. 
 
 
 To investigate this, we ran fits to the combined WizCOLA data where we set no nuisance parameters free between redshift bins, when we only set $b^2$ free, when we set all \textit{but} $b^2$ free, and then when we set all four nuisance parameters free.  These fits indicate a strong preference for fitting with separate $b^2$ values in different redshift bins due to tighter constraints achieved, and an accompanying improvement in $\chi^2$.  However allowing the other nuisance parameters to vary between redshift bins has negligible benefits (it neither increases fit strength nor removes  bias), and adds computational time in the form of delayed chain convergence.
 
-Based on these results, we utilise independent $b^2$ values, whilst fixing $\beta$, $\sigma_v$ and $\sigma H(z)$ between bins when fitting with the full data set and full data covariance.
+Based on these results, we utilise independent $b^2$ values, whilst fixing $\beta$, $\sigma_v$ and $\sigma_V$ between bins when fitting with the full data set and full data covariance.
 % A comparison of their likelihood distributions is shown in Figure \ref{fig:wizcolaAllNormalCovCombined}.
 \begin{comment}
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=\columnwidth]{images/wizcolaAllNormalCovCombined.pdf}
 	\end{center}
-	\caption{Fits to the mean WizCOLA data using the computed covariance matrix. Marginalisation parameters for the fit are $b^2$, $\beta$, $\sigma_v$ and $\sigma H(z)$. There are four fits shown, where the word `free' has been used to indicate that the parameter in question has been allowed to take different values for each redshift bin. We can see that allowing $b^2$ to vary improves the tightness of the fit, but it is the only nuisance parameter that appears to need redshift dependence.}
+	\caption{Fits to the mean WizCOLA data using the computed covariance matrix. Marginalisation parameters for the fit are $b^2$, $\beta$, $\sigma_v$ and $\sigma_V$. There are four fits shown, where the word `free' has been used to indicate that the parameter in question has been allowed to take different values for each redshift bin. We can see that allowing $b^2$ to vary improves the tightness of the fit, but it is the only nuisance parameter that appears to need redshift dependence.}
 	\label{fig:wizcolaAllNormalCovCombined}
 \end{figure}
 \end{comment}
