@@ -591,7 +591,7 @@ Based on these results, we utilise independent $b^2$ values, whilst fixing $\bet
 %\end{figure}
 
 
-{\blue  %BEGIN BLUE
+
 \section{Validating reconstructed wedge data}
 
 For the reconstructed data that we analyse in wedges we also tested our procedure using the WiZCOLA mock catalogues.  We focus
@@ -607,8 +607,8 @@ wedges.  This motivated us to consider, in addition to the $50\%$
 priors on $\alpha_\parallel$ and $\alpha_\perp$ mentioned above,
 additional flat priors on their combination, which we parameterize as
 $\alpha = \alpha_\perp^{2/3} \alpha_\parallel^{1/3} \sim D_{\rm
-  A}^2/H$ and $\epsilon = (\alpha_\parallel/\alpha_\perp)^{1/3} - 1
-\sim 1/(D_{\rm A} H)$.  {\red THESE DO NOT MATCH OUR DEFINITIONS IN Eq.~\ref{eq:alpha1} and Eq.~\ref{eq:alpha2}. CHECK HOW DID EYAL GET THESE?   }
+  A}^2 r^\prime_s /(H r_s)$ and $\epsilon = (\alpha_\parallel/\alpha_\perp)^{1/3} - 1
+\sim 1/(D_{\rm A} H)$.
 The $\alpha$ parameter is mostly sensitive to
 the monopole and $\epsilon$ to the quadrupole, although both terms appear in all
 multipoles \citep[see][for a discussion]{PadmanabhanWhite2008}. In the
@@ -620,8 +620,7 @@ the blue dashed lines in Figure
 \ref{fig:wizcola_hdaModes_z60_epsilonT15}.  We selected from the 600
 realizations those that have a significance of BAO detection equal to
 or greater than that in the real dataset ($2.9\sigma$).  We find 87
-such mocks (15\%; marked as large blue circles), and quote their
-statistics below {\red **WHERE**?}.  In Figure
+such mocks (15\%; marked as large blue circles).  In Figure
 \ref{fig:wizcola_hdaUnc_z60_epsilonT15} we also show our WiggleZ
 $\Delta z^{\rm Far}$ result with a yellow star.
 
@@ -629,11 +628,11 @@ Many WiggleZ mock realizations do not permit good constraints on both
 $\alpha_\perp$ and $\alpha_\parallel$.  However, for the subset of
 realizations with similar detection significance to the WiggleZ data,
 we find that our procedure enables us to extract unbiased distance
-measurements, with median and standard deviations $<\alpha_\perp> =
-1.001 \pm 0.081$ and $<\alpha_\parallel> = 0.999 \pm 0.154$.  The
+measurements, with median and standard deviations $\langle \alpha_\perp \rangle =
+1.001 \pm 0.081$ and $\langle \alpha_\parallel \rangle = 0.999 \pm 0.154$.  The
 median and standard deviation of the errors in these parameters, for
 this subset of mocks, are $<\sigma_{\alpha_\perp}> = 0.052 \pm 0.037$
-and $<\sigma_{\alpha_\parallel}> = 0.107 \pm 0.061$.  Similar results
+and $\langle \sigma_{\alpha_\parallel} \rangle = 0.107 \pm 0.061$.  Similar results
 are obtained when analyzing mocks at $\Delta z^{\rm Mid}$ and $\Delta
 z^{\rm Near}$.  In all cases, the results for the WiggleZ data are
 consistent with range covered by the simulations.
@@ -663,6 +662,8 @@ significantly compromise our model-independence.
 \end{figure}
 
 \subsection{Combining redshift bins for reconstructed wedge data}
+ {\blue
+{\red [SAM Chris has a comment on this but I dont feel comfortably fleshing out that comment here without getting something wrong]}
 **Describe how the correlation coefficients are derived, and how the correlation coefficients $(r)$ are derived in Table~\ref{tab:hda_wigglez_reconstructed}.**  **Why does Eyal say that the positive cross-correlation seen in the 0.44 bin is unphysical?**
 
 } %END BLUE
@@ -700,10 +701,42 @@ The final results for the WiggleZ 2D BAO cosmology analysis for the main paramet
 \end{figure}
 
 
+\begin{table*}
+	\centering
+	\caption{Final parameter constraints from fitting the 2D BAO signal in the pre-reconstruction WiggleZ multipole correlation function.}
+	%\resizebox{\textwidth}{!}{
+	\begin{tabular}{cc|cc|ccc|ccc}
+		\specialrule{.1em}{.05em}{.05em} 
+		Sample & $z_{\rm{eff}}$ & $D^\prime_A(z)$ & $H^\prime(z)$ &  $\Omega_c h^2$  &$\alpha$ & $\epsilon$ & $D_A(z)$ & $H(z)$ & BAO peak significance\\
+		\specialrule{.1em}{.05em}{.05em} 
+		$0.2 < z < 0.6$ &  $0.44$ & 1175.5  & 87.4  & $0.117^{+0.029}_{-0.023}$ & $1.07^{+0.10}_{-0.10}$ & $-0.03^{+0.07}_{-0.10}$ & $1330 \pm  150$ & $85^{+19}_{-12}$  & $2.2\sigma$\\
+		$0.4 < z < 0.8$ &  $0.6$  & 1386.2  & 95.5  & $0.156^{+0.035}_{-0.028}$ & $0.98^{+0.08}_{-0.10}$ & $0.05^{+0.07}_{-0.10}$ & $1280^{+190}_{-160}$ & $91^{+15}_{-14}$  & $2.1\sigma$\\
+		$0.6 < z < 1.0$ &  $0.73$ & 1509.4  & 102.8 & $0.143^{+0.033}_{-0.026}$ & $1.00^{+0.08}_{-0.07}$ & $0.12^{+0.06}_{-0.05}$ & $1340^{+150}_{-130}$ & $80^{+9}_{-10}$  & $2.3\sigma$\\
+		\specialrule{.1em}{.05em}{.05em} 
+	\end{tabular}\label{tab:wigglezBinsParams}
+	%}
+\end{table*}
+
+
 
 
 
 %\clearpage 
+\begin{comment}
+\begin{table}[]
+\centering
+\caption{}
+\label{}
+\begin{tabular}{cccc}
+\hline
+Model & $\Omega_c h^2$ & $D_A(z)$ & $H(z)$ \\ 
+\hline
+$0.2<z<0.6$ & $0.117^{+0.030}_{-0.023}$ & $1334.0^{+152.4}_{-153.6}$ & $85.0^{+18.5}_{-12.4}$ \\ 
+$0.4<z<0.8$ & $0.156^{+0.033}_{-0.030}$ & $1281.1^{+192.1}_{-164.6}$ & $90.5^{+15.4}_{-13.6}$ \\ 
+$0.6<z<1.0$ & $0.143^{+0.033}_{-0.026}$ & $1343.9^{+145.9}_{-134.9}$ & $80.4^{+9.1}_{-10.4}$ \\ 
+\hline
+\end{tabular}
+\end{table}
 
 \begin{table*}
 	\centering
@@ -726,23 +759,6 @@ The final results for the WiggleZ 2D BAO cosmology analysis for the main paramet
 \end{table*}
 
 
-\begin{table*}{\green
-	\centering
-	\caption{{\red CUT} Relative cosmological constraints on $\Omega_c h^2$, $D_A(z)$ and $H(z)$ from the WiggleZ multipole data (transformed using Eq.~\ref{eq:DAtrans} and Eq.~\ref{eq:Hztrans} from Table \ref{tab:wigglezBins}).}
-%	\resizebox{\textwidth}{!}{
-		\begin{tabular}{c|ccccc}
-			\specialrule{.1em}{.05em}{.05em} 
-			Parameter &  $z_{\rm{eff}} = 0.44$ & $z_{\rm{eff}} = 0.60$ & $z_{\rm{eff}} = 0.73$ & All & Combined\\
-			\specialrule{.1em}{.05em}{.05em} 
-			$\Omega_c h^2$                & $0.117^{+0.029}_{-0.023}$ &   $0.154^{+0.035}_{-0.028}$   &   $0.144^{+0.033}_{-0.026}$ &  $0.147^{+0.018}_{-0.018}$ & $0.140^{+0.014}_{-0.017}$ \\
-			$D_A / D_A^{\prime}$     &  $1.11 \pm  0.15$          &   $0.93 \pm  0.12$           &  $0.89 \pm  0.10$          & $0.92 \pm  0.06$          & $ 0.95 \pm  0.07$         \\
-			$H / H^\prime$           &  $1.00 \pm 0.18$           &   $0.94 \pm 0.15$           &  $0.80 \pm 0.10$          & $0.87 \pm 0.09$           & $0.89 \pm 0.08$    \\
-			\specialrule{.1em}{.05em}{.05em} 
-		\end{tabular}\label{tab:wigglezBinsParams2}
-%	}
-}
-\end{table*}
-
 
 \begin{table*}
 	\centering
@@ -756,25 +772,29 @@ The final results for the WiggleZ 2D BAO cosmology analysis for the main paramet
 			$0.4 < z < 0.8$ &  $0.6$  & 1386.2  & 95.5  & $0.154^{+0.035}_{-0.028}$ & $8.3^{+1.3}_{-1.0}$ & $12.7^{+1.9}_{-2.1}$  & $2.1\sigma$\\
 			$0.6 < z < 1.0$ &  $0.73$ & 1509.4  & 102.8 & $0.144^{+0.033}_{-0.026}$ & $8.81^{+0.95}_{-0.89}$ & $17.7^{+2.2}_{-2.1}$  & $2.3\sigma$\\
 			\specialrule{.1em}{.05em}{.05em} 
-		\end{tabular}\label{tab:wigglezBinsParams}
+		\end{tabular}\label{tab:wigglezBinsParams2}
 	%}
 \end{table*}
+
+\end{comment}
+
+
 
 
 %============================================================
 \begin{table*}
 \begin{centering}
-\caption{FROM EYAL: Model-independent measurements using the post-reconstruction $\xi_{||,\perp}$.}
+\caption{Model-independent measurements using the post-reconstruction $\xi_{||,\perp}$.}
 \label{tab:hda_wigglez_reconstructed}
 \begin{tabular}{ l | r | r | c | c | c | c | r }
 \hline
               & \multicolumn{2}{c}{Fiducial} & \multicolumn{5}{c}{Measured} \\  
-              & Fiducial & & Measured & & & & \\
+              &  & & Measured & & & & \\
 $z_{\rm eff}$ & $cz/H/r_{\rm s}$ & $D_{\rm A}/r_{\rm s}$  & $cz/H/r_{\rm s}$ & $D_{\rm A}/r_{\rm s}$  & $r$ & $\chi^2$ & $\Delta\chi^2$ \\
 \hline
   0.73  & 13.87 & 9.84 & 15.3$^{+2.1}_{-1.8}$ (13\%)  &  9.8$^{+1.1}_{-0.4}$ (7\%)   & -0.36  & 35 & 8.4 \\
   0.60  & 12.27 & 9.03 & 11.5$^{+1.3}_{-1.6}$ (13\%)  & 10.3$^{+0.4}_{-0.5}$ (5\%)   & -0.16  & 25 & 7.2 \\
-  0.44  &  9.84 & 8.87 &  7.4$^{+4.5}_{-0.2}$ (32\%)  &  8.7$^{+1.0}_{-2.6}$ (21\%)  & +0.44  & 35 & 2.5 \\
+%  0.44  &  9.84 & 8.87 &  7.4$^{+4.5}_{-0.2}$ (32\%)  &  8.7$^{+1.0}_{-2.6}$ (21\%)  & +0.44  & 35 & 2.5 \\
 %----------
 %$z_{\rm eff}$ & $cz/H/r_{\rm s}$ & $D_{\rm A}/r_{\rm s}$  & $r$ & $\chi^2$ & $\Delta\chi^2$ \\
 %\hline
@@ -785,13 +805,15 @@ $z_{\rm eff}$ & $cz/H/r_{\rm s}$ & $D_{\rm A}/r_{\rm s}$  & $cz/H/r_{\rm s}$ & $
 
 \medskip
 The values quoted are the modes and the $68\%$ CL regions. The percentages indicate half of the $68\%$ CL regions. \\
-Fiducial values for $cz/H/r_{\rm s}$ used ($z=0.73,\ 0.6, \ 0.44$, respectively): 13.87, 12.27, 9.84. \\
-Fiducial values for $D_{\rm A}/r_{\rm s}$ used ($z=0.73,\ 0.6, \ 0.44$, respectively): 9.84, 9.03, 8.87.\\
-{\red The positive cross-correlation $r$ for the $z_{\rm eff}=0.44$ is not physical, but rather due to the flat priors used. **WHY?**} \\
+%Fiducial values for $cz/H/r_{\rm s}$ used ($z=0.73,\ 0.6, \ 0.44$, respectively): 13.87, 12.27, 9.84. \\
+%Fiducial values for $D_{\rm A}/r_{\rm s}$ used ($z=0.73,\ 0.6, \ 0.44$, respectively): 9.84, 9.03, 8.87.\\
+Fiducial values for $cz/H/r_{\rm s}$ used ($z=0.73,\ 0.6$, respectively): 13.87, 12.27. \\
+Fiducial values for $D_{\rm A}/r_{\rm s}$ used ($z=0.73,\ 0.6$, respectively): 9.84, 9.03.\\
+%{\red The positive cross-correlation $r$ for the $z_{\rm eff}=0.44$ is not physical, but rather due to the flat priors used. **WHY?**} \\
+Values for the $z=0.44$ bin are not report as the data was insufficient to provide constraints and final surfaces were heavily dependent on choice of prior.
 In the $\chi^2$ fitting we use 36 dof. \\
 $\Delta\chi^2\equiv \chi^2_{\rm no-wiggle} - \chi^2_{\rm \Lambda CDM-based}$. \\
 These results are displayed in Figure \ref{fig:hubble_diagram}. \\
-{\red TAM: I feel we should not report the constraints on the 0.44 bin at all, because they are so inconclusive.  The contours spill beyond the parameter space explored (I think) and therefore the constraints are not trustworthy, and determined almost as much by the priors as by the data. }
 \end{centering}
 \end{table*}
 %============================================================
