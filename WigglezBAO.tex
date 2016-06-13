@@ -222,11 +222,11 @@ where $j_\ell(ks)$ are spherical Bessel functions of the first kind. The increas
 
 It is impractical to fit the data to a full 2D correlation function, as the calculation of the covariance matrix is infeasible.  Instead one typically reduces the 2D information into a simplified measure that encapsulates the essential anisotropy.  Two methods by which this can be done are wedges and multipoles.  
 
-The wedges method splits the 2D correlation function into wedges based on angle, and averages the correlation function in that wedge.  The multipole method decomposes the correlation function into multipoles.  For extended treatment of the mathematics, see \citet{KazinSanchezBlanton2012, KazinSanchezCuesta2013, SanchezKazinBeutler2013, XuCuesta2013}. 
+The wedges method splits the 2D correlation function into wedges based on angle, and averages the correlation function in that wedge.  One could in principle have many wedges, but for our data (and all previous data) the signal to noise limits us to two wedges -- one taking the half of the data along the line of sight ($\mu\ge0.5$), the other perpendicular to it ($\mu<0.5$), where $\mu$ is the cosine of the angle with respect to the line of sight. The multipole method decomposes the correlation function into multipoles -- with the vast majority of signal being found in the monopole and quadrupole moments.  For extended treatment of the mathematics, see \citet{KazinSanchezBlanton2012, KazinSanchezCuesta2013, SanchezKazinBeutler2013, XuCuesta2013}. 
 
 In all cases we have used a fiducial cosmology to convert observed right ascension, declination, and redshift into distances (separations) and thus generate the correlation function.  So the variables we fit for are not the distances (separations) themselves, but rather the ratio of the distance in the true model to the distance in the fiducial model.  This is achieved by scaling the model distances to give $s_{\rm test}= \alpha s_{\rm model}$.   
 
-	Thus the primary variable we fit for is $\alpha$.  Depending on which type of analysis we are performing, $\alpha$ relates to  distances in different ways.  \citet{BlakeDavis2011} show, for example, the degeneracy lines between $\alpha$ and $\Omega_{\rm M}$ and how they change depending on whether you fit to the correlation function shape, the BAO peak only, or the power spectrum.  When fitting to the BAO peak, the degeneracy direction lies along a line of constant $r_s/D_V$ (in the 1D case) where $D_V=***$ and  $r_s$ is the sound horizon at drag epoch, given by
+	Thus the primary variable we fit for is $\alpha$.  Depending on which type of analysis we are performing, $\alpha$ relates to  distances in different ways.  \citet{BlakeDavis2011} show, for example, the degeneracy lines between $\alpha$ and $\Omega_{\rm m}$ and how they change depending on whether you fit to the correlation function shape or power spectrum, or only the BAO peak.  When fitting to the BAO peak, the degeneracy direction lies along a line of constant $r_s/D_V$ (in the 1D case) {\red where $D_V=***$ and  $r_s$ is the sound }horizon at drag epoch, given by
 	\begin{align}
 	r_s = \frac{c}{\sqrt{3}} \int_0^{1/(1+z)} \frac{da}{a^2 H(a) \sqrt{1 + (3\Omega_b/4\Omega_\gamma) a}}, \label{eq:rs}
 	\end{align}
@@ -285,7 +285,8 @@ broadband shape information.  A full description of our procedure is
 given in our previous analysis of the SDSS DR9 CMASS galaxies
 \citet[][see \S 5.3]{KazinSanchezCuesta2013}.  In brief, we measured the
 correlation function of the reconstructed data in two ``clustering
-wedges''.  One could in principle have many wedges, but for our data (and all previous data) the signal to noise limits us to two wedges -- one taking the half of the data along the line of sight ($\mu\ge0.5$), the other perpendicular to it ($\mu<0.5$), where $\mu$ is the cosine of the angle with respect to the line of sight.
+wedges''. 
+
 We fitted the data assuming a BAO template including
 quasi-linear corrections based on the renormalized perturbation theory
 of \citet{CrocceScoccimarro2008}. This template is distorted in the tangential
@@ -372,7 +373,7 @@ BlakeKazin2011 uses larger data pins. 17 bins, 4 parameters, 13DoF, which is why
 
 
 We see that most results follow closely those obtained in \citet{BlakeKazin2011}, however the result of $\Omega_m h^2 (z_{\rm eff} = 0.73)$ shifts by more than $1\sigma$. This shift increases the value of $\Omega_m h^2 (z_{\rm eff} = 0.73)$, bringing it into agreement with the $\Omega_m h^2$ determination from the other redshift bins. These shifts were confirmed to be due to the change in covariance matrix and not any difference in changes to the modeling process, as rerunning the same fit using the original lognormal realisations bought the deviation to below $0.5\sigma$. %Swapping parameter statistics from maximum likelihood to mean statistics did not significantly improve agreement. 
- Comparison against fits using the WizCOLA covariance and lognormal covariance indicate in all redshift bins that the dominating contribution in fit difference is due to the improved covariance. As our analysis shows no signs of significant bias or difference due to modelling when compared against \citet{BlakeKazin2011}, we proceed to the 2D BAO model.
+ Comparison against fits using the WizCOLA covariance and lognormal covariance indicate in all redshift bins that the dominating contribution in fit difference is due to the improved covariance. %As our analysis shows no signs of significant bias or difference due to modelling when compared against \citet{BlakeKazin2011}, we proceed to the 2D BAO model.
 
 
 
@@ -381,7 +382,6 @@ We see that most results follow closely those obtained in \citet{BlakeKazin2011}
 
 \subsection{Fitting range} \label{sec:trunc}
 Before fitting our model correlation function to the data, we need to assess the range of scales over which the data are useful.  We expect the model to do poorly at small distances (where non-linearities are strong), while the data's sample variance increases at large distances.  So there will be an optimal range of scales over which to fit the data, and that range will be dependent on the data set (less biased tracers can go to smaller scales, larger volume data sets can go to larger scales).  We determined our optimal fitting range using simulations \citep[see][]{HintonThesis2015}  and conclude that a data range of $25 < s < 180 \hMpc$ allows maximum utilisation of available data without introducing bias into our model. 
-{\red **[SAM. Sample variance does increase, and I go over that in my thesis but its not covered here for brevit. Unsure how to address this comment] Chris said referee will argue the the sample variance increasing at large distance -- why?**}
 
 
 
@@ -401,11 +401,11 @@ As the cosmology used in the WizCOLA simulations is identical to the fiducial co
   Prior analyses have found poorly constrained values for $k_*$ \citep{BlakeDavis2011} using Wigglez data, and to validate that the bounds applied to $k_*$ in prior analyses were not influencing or biasing fits, we take the mean realisation dataset (with its increase data strength) and instead fit to $\log(k_*)$, allowing us to check if $k_*$, when unconstrained over order-of-magnitude, provides a best fit value within the bounds imposed in prior results. Final parameter constraints are detailed in Table \ref{tab:wizmp}.
 
 For all redshift bins, our best fits recovered the fiducial parameters well within the $1\sigma$ uncertainty limit. We can also see that, looking at the mean value of the determined values for $\log(k_*) = -2.10$, this gives a $\sigma_v = 5.77 h^{-1}$ Mpc, which is in the magnitude expected by the theory given in equation \eqref{eq:sigmav} and the values found found in \citet{BlakeKazin2011} and \citet{BlakeDavis2011}.
-Within the range $\sigma_v \in [0,10]$, we find no significant difference in $\chi^2$ values, indicating that $\sigma_v$ is not tightly constrained within theoretically predicted ranges. Fixing $\sigma_v = 5 h^{-1}$ Mpc, has negligible effect on the cosmological parameters of interest, and therefore we do that for the rest of our analysis.
+Within the range $\sigma_v \in [0,10]$, we find no significant difference in $\chi^2$ values, indicating that $\sigma_v$ is not tightly constrained within theoretically predicted ranges. Fixing $\sigma_v = 5 h^{-1}$ Mpc, as we did in the 1D example, has negligible effect on the cosmological parameters of interest, and therefore we do that for the rest of our analysis.
 
 \begin{table*}
 	\centering
-	\caption{Recovered parameter constraints when fitting to the combined 600 realisations of the WizCOLA simulation data multipoles.}
+	\caption{Recovered parameter constraints when fitting to the combined 600 realisations of the WizCOLA simulation data multipoles, where the uncertainty given by the WizCOLA simulations has been reduced by a factor of $\sqrt{600}$ to account for the independent nature of each mock.}
 	\begin{tabular}{cc|ccccc}
 		\specialrule{.1em}{.05em}{.05em} 
 		Sample & $z_{\rm{eff}}$ & min $\chi^2$ & $\Omega_c h^2$ &$\alpha$ & $\epsilon$ & $\log(k_*)$\\
@@ -506,7 +506,7 @@ where $\sigma_i$ represents the standard deviation of the $i$th parameter. The c
 	\begin{center}
 		\includegraphics[width=\columnwidth]{images/fullCorrelations.png}
 	\end{center}
-	\caption{Full data correlation matrices constructed for both the multipole expression of the WizCOLA data. The $b=0$, $b=1$ and $b=2$ labels respectively refer to the redshift bins $0.2 < z < 0.6$, $0.4 < z < 0.8$ and $0.6 < z < 1.0$. We can see that, even though the $b=0$ and $b=2$ bins do not overlap, some faint correlation still persists. This is expected, as long modes in the simulation would span both bins.}
+	\caption{Full data correlation matrices constructed for both the multipole expression of the WizCOLA data. The $b=0$, $b=1$ and $b=2$ labels respectively refer to the redshift bins $0.2 < z < 0.6$, $0.4 < z < 0.8$ and $0.6 < z < 1.0$. We can see that, even though the $b=0$ and $b=2$ bins do not overlap, some faint correlation still persists. This is expected, as data is generated using different snapshots of the same initial conditions, and thus the same set of modes are imprinted in both measurements.}
 	\label{fig:fullCorrelations}
 	%\end{wrapfigure}
 \end{figure}
@@ -919,7 +919,7 @@ In Table \ref{tab:external} and Fig.~\ref{fig:external} we show the comparison b
 
 The main results of this analysis can be summarised as follows:
 \begin{itemize}
-	\item We update the unreconstructed 1D BAO measurement from \citet{BlakeKazin2011} using a more accurate covariance matrix based on WizCOLA mocks instead of lognormal realisations. The new best-fit parameters are consistent with the original measurements, with the maximum shift occurring in the highest redshift bin, whose value moved by slightly over 1$\sigma$ bringing it closer in line with the other two bins. See Table~\ref{tab:blakekazintable} for results.  Our results represent the final 1D BAO measurement using the {\em unreconstructed} WiggleZ data.  The most precise 1D BAO measurement from WiggleZ uses the {\em reconstructed} WiggleZ data as found in Kazin et al. (2014), which represents the final WiggleZ constraints from an angle-averaged BAO analysis.\footnote{{\red **CHECK WITH CHRIS: These values supersede those reported in \citet{BlakeKazin2011}, but not \citet{KazinKoda2014}}}
+	\item We update the unreconstructed 1D BAO measurement from \citet{BlakeKazin2011} using a more accurate covariance matrix based on WizCOLA mocks instead of lognormal realisations. The new best-fit parameters are consistent with the original measurements, with the maximum shift occurring in the highest redshift bin, whose value moved by slightly over 1$\sigma$ bringing it closer in line with the other two bins. See Table~\ref{tab:blakekazintable} for results.  Our results represent the final 1D BAO measurement using the {\em unreconstructed} WiggleZ data.  The most precise 1D BAO measurement from WiggleZ uses the {\em reconstructed} WiggleZ data as found in Kazin et al. (2014), which represents the final WiggleZ constraints from an angle-averaged BAO analysis.%\footnote{{\red **CHECK WITH CHRIS: These values supersede those reported in \citet{BlakeKazin2011}, but not \citet{KazinKoda2014}}}
 	\item We investigated two ways to fit the unreconstructed 2D BAO signal -- multipoles and wedges.  We found using the WizCOLA simulations that the multipoles gave a more robust result with higher statistical significance than wedges, and thus adopted multipoles for our final analysis.
 	\item We validated our methodology by fitting 600 realisations of the WiggleZ survey generated by the WizCOLA simulations \citep{KodaBlake2015}. Our analysis recovered the input parameters of the simulation with no evidence for systematic bias. We also validate our methodology by testing agreement of cosmological parameters when analysing the 1D BAO signal with  \citet{BlakeKazin2011}.
 	\item We thoroughly tested subtle methodological differences that could possibly have effected our analysis, such as different ways to combine the data from redshift bins, varying or fixing $\sigma_v$, or including the hexadecapole, which all gave consistent results.
