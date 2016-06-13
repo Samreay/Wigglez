@@ -679,16 +679,16 @@ significantly compromise our model-independence.
 \label{sec:multi}
 {\blue Figure ** displays the multipole data .... (add figure and write something similar to what Eyal writes at the beginning of Section~\ref{sec:wedge}.  The could potentially be combined with Fig.~\ref{fig:wigglez_wedges_z60} but not necessarily. }
 
-Using the methodology outlined in Sections~\ref{sec:test} we fit to the final unreconstructed WiggleZ dataset from \citet{KazinKoda2014} using both methods for combining redshift bins -- firstly fitting in each individual redshift bin and combining the results (Sect.~\ref{sec:parameterCov}), and secondly fitting all redshift bins simultaneously (Sect.~\ref{sec:allData}). The final distributions are given in Table \ref{tab:wigglezBins} and illustrated in Figure~\ref{fig:wigglezBinsMP}.  The two methods give consistent results. 
+Using the methodology outlined in Sections~\ref{sec:test} we fit to the final unreconstructed WiggleZ dataset from \citet{KazinKoda2014} using both methods for combining redshift bins -- firstly fitting in each individual redshift bin and combining the results (Sect.~\ref{sec:parameterCov}), and secondly fitting all redshift bins simultaneously (Sect.~\ref{sec:allData}). The final distributions are given in Table \ref{tab:wigglezBinsParams} and illustrated in Figure~\ref{fig:wigglezBinsMP}.  The two methods give consistent results. 
 
 %The wedge data analysis did not produce well behaved likelihood surfaces and cannot be used for analysis. This mirrors the issues found when attempting to constrain individual WizCOLA simulation realisations, and validates not utilising the wedge analysis.
 
-{\green  **REWRITE DEPENDING ON OUR DECISION ON HOW TO PRESENT THIS DATA**
-The conversion from $\alpha$ and $\epsilon$ to $D_A(z){\red /r_s}$ and $H(z) {\red r_s}$ is given by equations \eqref{eq:alpha1}, \eqref{eq:alpha2} and \eqref{eq:rs}. Using these relationships, we formulate parameter constraints shown in {\red Table \ref{tab:wigglezBinsParams2}. **REPORT AS $D_A(z)$ AND $H(z)$ WITHOUT THE $r_s$?**} }
+
+The conversion from $\alpha$ and $\epsilon$ to $D_A(z)$ and $H(z) $ is given by equations \eqref{eq:alpha1} and \eqref{eq:alpha2}. Using these relationships, we formulate parameter constraints shown, also shown in Table \ref{tab:wigglezBinsParams}.
 
 To determine the significance of the BAO peak detected in our analysis, we reran the multipole analysis with a model devoid of the BAO peak and converted the $\Delta \chi^2$ into a detection significance, which we found to be just over $2\sigma$ in all redshift bins. The low significance of the BAO peak is expected: the 1D BAO analysis from \citet{BlakeDavis2011} found a significance of $3.2\sigma$ when using all data in one combined bin, and as our analysis used the data divided over three bins, and includes extra parameters to model angular dependence, so it is expected the statistical significance of the BAO peak would decrease. The analysis in \citet{BlakeKazin2011}, which utilised three redshift bins, the same as our analysis, found statistical significances between $1.9\sigma$ and $2.4\sigma$, consistent with the results shown below.
 
-The final results for the WiggleZ 2D BAO cosmology analysis for the main parameters of interest are shown in {\red Table \ref{tab:wigglezBinsParams}. **COMBINE WITH TABLE~\ref{tab:wigglezBins}**}
+%The final results for the WiggleZ 2D BAO cosmology analysis for the main parameters of interest are shown in {\red Table \ref{tab:wigglezBinsParams}. **COMBINE WITH TABLE~\ref{tab:wigglezBins}**}
 
 \begin{figure}
 	%\begin{wrapfigure}{r}{0.5\textwidth}
@@ -818,7 +818,7 @@ These results are displayed in Figure \ref{fig:hubble_diagram}. \\
 \end{table*}
 %============================================================
 
-\clearpage
+%\clearpage
 
 
 \section{Reconstructed Results}\label{sec:wedge}
@@ -880,16 +880,14 @@ expectations.
 \includegraphics[width=0.9\columnwidth]{figures/stacked_L2D_rpt_wedges_postRec_T0.15_WiggleZ_z0pt2_0pt1/stacked_L2D_rpt_wedges_postRec_T015_WiggleZ_z0pt2_0pt6.png}
 \includegraphics[width=0.9\columnwidth]{figures/stacked_L2D_rpt_wedges_postRec_T0.15_WiggleZ_z0pt4_0pt8/stacked_L2D_rpt_wedges_postRec_T015_WiggleZ_z0pt4_0pt8.png}
 \includegraphics[width=0.9\columnwidth]{figures/z60_Model/stacked_L2D_rpt_wedges_postRec_T015_WiggleZ_z0pt6_1pt0.png}
-\caption{\label{fig:HDA_z26_epsilon0.15} Marginalized posteriors of $cz/H/r_{\rm s}$ and $D_{\rm A}/r_{\rm s}$ (red solid) obtained with WiggleZ post-reconstruction $\xi_{\perp, ||}$ in the three redshift bins $0.2<z<0.6$ (upper), $0.4<z<0.8$ (mid), $0.6<z<1.0$ (lower), using a flat prior on $\epsilon$ [-0.15,0.15].  The blue dashed lines are the Gaussian approximation when using the mode values, mean of the 68$\%$ CL regions and the cross-correlation $r$. The 2D even contours are the $68\%$ and $95\%$ CL regions and the thin gray dashed line marks the fiducial cosmology.  In the lowest redshift bin the data are not sufficient to constrain these parameters well.%
-{\red **SOME WEIRDNES WITH THE FILE NAMING.  Check the directory z60\_Model is the same as stacked\_L2D... for the first two bins.  And check what the T0.15 means.  This has been cut and pasted from Eyal's write-up. **}
-}
+\caption{\label{fig:HDA_z26_epsilon0.15} Marginalized posteriors of $cz/(Hr_{\rm s})$ and $D_{\rm A}/r_{\rm s}$ (red solid) obtained with WiggleZ post-reconstruction $\xi_{\perp, ||}$ in the three redshift bins $0.2<z<0.6$ (upper), $0.4<z<0.8$ (mid), $0.6<z<1.0$ (lower), using a flat prior on $\epsilon$ [-0.15,0.15].  The blue dashed lines are the Gaussian approximation when using the mode values, mean of the 68$\%$ CL regions and the cross-correlation $r$. The 2D even contours are the $68\%$ and $95\%$ CL regions and the thin gray dashed line marks the fiducial cosmology.  In the lowest redshift bin the data are not sufficient to constrain these parameters well.}
 \end{center}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/hubble_HDa/hubble_HDa}
-\caption{\label{fig:hubble_diagram} The WiggleZ results of $D_{\rm A}/r_{\rm s}$ (left) and $cz/H/r_{\rm s}$ (right) in blue circles are plotted against results from AP+BAO analysis of \cite{BlakeBroughColless2012} (small black circles) and BOSS \cite{AndersonAubourg2014} (red squares), all with 68$\%$ CL regions in the $y$-axis (and redshift range on the $x$). All values are presented in Table \ref{tab:hda_wigglez_reconstructed}. The thick gray bands are $ow$CDM using Planck temperature fluctuations and WMAP9 polarization, and the thin black bands are when assuming and open $w$CDM cosmology. The dashed lines are the fiducial cosmology used in the analysis motivated by the best fit to WMAP7 data (assuming flat $\Lambda$CDM).%
+\caption{\label{fig:hubble_diagram} The WiggleZ results of $D_{\rm A}/r_{\rm s}$ (left) and $cz/(Hr_{\rm s})$ (right) in blue circles are plotted against results from AP+BAO analysis of \cite{BlakeBroughColless2012} (small black circles) and BOSS \cite{AndersonAubourg2014} (red squares), all with 68$\%$ CL regions in the $y$-axis (and redshift range on the $x$). All values are presented in Table \ref{tab:hda_wigglez_reconstructed}. The thick gray bands are $ow$CDM using Planck temperature fluctuations and WMAP9 polarization, and the thin black bands are when assuming and open $w$CDM cosmology. The dashed lines are the fiducial cosmology used in the analysis motivated by the best fit to WMAP7 data (assuming flat $\Lambda$CDM).%
 {\red **PUT ON SAME DIAGRAM AS SAM'S?** }
 }
 \end{center}
