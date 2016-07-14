@@ -1,3 +1,4 @@
+# coding: utf-8
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -63,7 +64,7 @@ for file in [recon_z0_file, recon_z1_file, recon_z2_file]:
     vals_le.append(data[:,5])
     
 f =13
-fig, axes = plt.subplots(4, 3, figsize=(12,14))
+fig, axes = plt.subplots(2, 3, figsize=(12,7))
 
 axes[0,0].set_title("$0.2 < z < 0.6$")
 axes[0,1].set_title("$0.4 < z < 0.8$")
@@ -93,29 +94,31 @@ for i, cov in enumerate(covs):
     axes[1,i].text(25, 5, r"$\xi_0$", color="white", fontsize=f)
     axes[1,i].text(55, 35, r"$\xi_2$", color="white", fontsize=f)
 
-for i,(s,v,e) in enumerate(zip(ssr, vals_t, vals_te)):
-    axes[2,i].errorbar(s, s*s*v, yerr=s*s*e, fmt='o', color='b', label="Transverse")
-    axes[2,i].set_xlabel(r"$s\ \  \left[{\rm Mpc}\, h^{-1}\right]$",fontsize=f)
-    axes[2,i].set_ylabel(r"$s^2 \xi(s) \ \left[ {\rm Mpc}^{2} \, h^{-2}  \right]$",fontsize=f)
-    
-for i,(s,v,e) in enumerate(zip(ssr, vals_l, vals_le)):
-    axes[2,i].errorbar(s, s*s*v, yerr=s*s*e, fmt='o', color='r', label="Line of sight")
-    if i == 0:
-        axes[0,i].legend(frameon=False, loc=3)
-for i, cov in enumerate(rcovs):
-    axes[3,i].imshow(cov, cmap="viridis",interpolation='none')
-    axes[3,i].axvline(30, color='white', alpha=0.3)
-    axes[3,i].axhline(30, color='white', alpha=0.3)
-    axes[3,i].set_xticks([0,15,30,45,59])
-    axes[3,i].set_xticklabels([0,100,200,100,200])
-    axes[3,i].set_yticks([0,15,30,45,59])
-    axes[3,i].set_yticklabels([0,100,200,100,200])
-    axes[3,i].set_xlabel(r"$s\ \  \left[{\rm Mpc}\, h^{-1}\right]$",fontsize=f)
-    axes[3,i].set_ylabel(r"$s\ \  \left[{\rm Mpc}\, h^{-1}\right]$",fontsize=f)
-    axes[3,i].text(45, 5, r"$\xi_\parallel \times \xi_\perp$", color="white", fontsize=f)
-    axes[3,i].text(25, 5, r"$\xi_\parallel$", color="white", fontsize=f)
-    axes[3,i].text(55, 35, r"$\xi_\perp$", color="white", fontsize=f)
-    
+
+#for i,(s,v,e) in enumerate(zip(ssr, vals_t, vals_te)):
+#    axes[2,i].errorbar(s, s*s*v, yerr=s*s*e, fmt='o', color='b', label="Transverse")
+#    axes[2,i].set_xlabel(r"$s\ \  \left[{\rm Mpc}\, h^{-1}\right]$",fontsize=f)
+#    axes[2,i].set_ylabel(r"$s^2 \xi(s) \ \left[ {\rm Mpc}^{2} \, h^{-2}  \right]$",fontsize=f)
+#    
+#for i,(s,v,e) in enumerate(zip(ssr, vals_l, vals_le)):
+#    axes[2,i].errorbar(s, s*s*v, yerr=s*s*e, fmt='o', color='r', label="Line of sight")
+#    if i == 0:
+#        axes[0,i].legend(frameon=False, loc=3)
+#for i, cov in enumerate(rcovs):
+#    axes[3,i].imshow(cov, cmap="viridis",interpolation='none')
+#    axes[3,i].axvline(30, color='white', alpha=0.3)
+#    axes[3,i].axhline(30, color='white', alpha=0.3)
+#    axes[3,i].set_xticks([0,15,30,45,59])
+#    axes[3,i].set_xticklabels([0,100,200,100,200])
+#    axes[3,i].set_yticks([0,15,30,45,59])
+#    axes[3,i].set_yticklabels([0,100,200,100,200])
+#    axes[3,i].set_xlabel(r"$s\ \  \left[{\rm Mpc}\, h^{-1}\right]$",fontsize=f)
+#    axes[3,i].set_ylabel(r"$s\ \  \left[{\rm Mpc}\, h^{-1}\right]$",fontsize=f)
+#    axes[3,i].text(45, 5, r"$\xi_\parallel \times \xi_\perp$", color="white", fontsize=f)
+#    axes[3,i].text(25, 5, r"$\xi_\parallel$", color="white", fontsize=f)
+#    axes[3,i].text(55, 35, r"$\xi_\perp$", color="white", fontsize=f)
+
+
 plt.tight_layout()
 fig.savefig("dataplot.pdf", bbox_inches="tight", dpi=300)
 fig.savefig("dataplot.png", bbox_inches="tight", dpi=300)

@@ -256,7 +256,7 @@ if __name__ == '__main__':
     
     omch2 = 0.2
 
-    if False:
+    if True:
         import methods
         generator = methods.SlowGenerator(debug=True)
         (ks, pklin, pkratio) = generator.getOmch2AndZ(omch2, 0.6)    

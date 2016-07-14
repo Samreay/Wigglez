@@ -281,7 +281,7 @@ class CambGenerator(object):
 '''
 class SlowGenerator(object):
     def __init__(self, debug=False, generate=False, omch2Range=[0.05,0.25], zs=[0.44, 0.6, 0.73]):
-        self.saveFolder = "/home/uqshint1/thesis"
+        self.saveFolder = "C:"
         self.prefix = "wizcola.dat"
         self.removeFromTitle = ['ombh2']
         self.zs = zs
@@ -317,10 +317,10 @@ class SlowGenerator(object):
         if self.debug:
             print("Loading pickle from " + fname)
         try:
-            with open(fname) as f:
-                self.results = pickle.load(f)
+            with open(fname, 'rb') as f:
+                self.results = pickle.load(f, encoding='latin1')
         except:
-            raise Exception("Unable to load file. It may not exist yet: %s" % fname)
+            raise
         if self.debug:
             print("Loaded pickle")
             

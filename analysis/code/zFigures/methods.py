@@ -346,10 +346,11 @@ class SlowGenerator(object):
         if self.debug:
             print("Loading pickle from " + fname)
         try:
-            with open(fname) as f:
-                self.results = pickle.load(f)
+            with open(fname, 'rb') as f:
+                self.results = pickle.load(f, encoding='latin1')
         except:
             print("Unable to load file. It may not exist yet")
+            raise
         if self.debug:
             print("Loaded pickle")
             
