@@ -213,7 +213,7 @@ where $\mathcal{L}_\ell$ represents the $\ell$'th Legendre polynomial. These mul
 \begin{align}
 	\xi_\ell(s) = \frac{1}{(2\pi)^3} \int 4\pi k^2 \ P_\ell(k) \ j_\ell(ks)
 \end{align}
-where $j_\ell(ks)$ are spherical Bessel functions of the first kind. The increased power of small scale oscillations from the non-linear corrections decreases convergence of this function, so we multiply the integrand by a Gaussian factor $\exp(-k^2 a^2)$ to improve convergence, where we found $a=0.5 h^{-1} \rm{Mpc}$ to be the optimal factor to improve computational speed while maintaining accuracy \citep{HintonThesis2015}.  \citep[The results are not sensitive to the exact choice of $a$;][set $a= 1\, h^{-1}\rm{Mpc}$]{AndersonAubourg2012}. %This is in contrast to other methods that may be used to increase convergence, such as truncating the numerical integral after a specific number of periods in the spherical Bessel function. Whilst the \citet{BlakeDavis2011} WiggleZ analysis does not contain the Gaussian dampening term seen in \citet{AndersonAubourg2012}, it is introduced in the correlation function model used in \citet{BlakeKazin2011}. We performed an investigation of numerical deviations from the true correlation function using an unmodified equation, truncation, and a Gaussian dampening term, and these can be found in Appendix \ref{app:pk2xi}.  Based on these results we introduce a Gaussian dampening factor of  $a= 0.5\, h/\rm{Mpc}$.
+where $j_\ell(ks)$ are spherical Bessel functions of the first kind. The increased power of small scale oscillations from the non-linear corrections decreases convergence of this function, so we multiply the integrand by a Gaussian factor $\exp(-k^2 a^2)$ to improve convergence, where we found $a=0.5 h^{-1} \rm{Mpc}$ to be the optimal factor to improve computational speed while maintaining accuracy \citep{HintonThesis2015}.  \citep[The results are not sensitive to the exact choice of $a$;][set $a= 1\, h^{-1}\rm{Mpc}$.]{AndersonAubourg2012} %This is in contrast to other methods that may be used to increase convergence, such as truncating the numerical integral after a specific number of periods in the spherical Bessel function. Whilst the \citet{BlakeDavis2011} WiggleZ analysis does not contain the Gaussian dampening term seen in \citet{AndersonAubourg2012}, it is introduced in the correlation function model used in \citet{BlakeKazin2011}. We performed an investigation of numerical deviations from the true correlation function using an unmodified equation, truncation, and a Gaussian dampening term, and these can be found in Appendix \ref{app:pk2xi}.  Based on these results we introduce a Gaussian dampening factor of  $a= 0.5\, h/\rm{Mpc}$.
 
 
 
@@ -299,7 +299,7 @@ $\alpha_\parallel$ which are given by
 \alpha_\perp &\approx \frac{D_A(z) r^\prime_s }{D_A^{\prime}(z) r_s}, \label{eq:alphaperp}\\
 \alpha_\parallel &\approx \frac{H^{\prime}(z) r^\prime_s}{H(z) r_s},\label{eq:alphaparallel}
 \end{align}
-where the $r_s$ term can be found (unlike in the pre-reconstruction $\alpha$) due to the degeneracy direction of fitting only for the BAO peak.
+where the $r_s$ term is present (unlike in the pre-reconstruction $\alpha$) due to the degeneracy direction of fitting only for the BAO peak.
 
   
 
@@ -401,9 +401,9 @@ Before fitting our model correlation function to the data, we need to assess the
 
 As the cosmology used in the WizCOLA simulations is identical to the fiducial cosmology values used to extract data from the WizCOLA simulations, we do not expect to observe anisotropic warping when fitting to the simulation realisations.   As such, we can validate our model by ensuring that it recovers $\alpha = 1.0$ and $\epsilon = 0.0$ when fitting the WizCOLA correlation functions.
 
-  Prior analyses have found poorly constrained values for $k_*$ \citep{BlakeDavis2011} using WiggleZ data, and to validate that the bounds applied to $k_*$ in prior analyses were not influencing or biasing fits, we take the mean realisation dataset (with its increase data strength) and instead fit to $\log(k_*)$, allowing us to check if $k_*$, when unconstrained over order-of-magnitude, provides a best fit value within the bounds imposed in prior results. Final parameter constraints are detailed in Table \ref{tab:wizmp}.
+  Prior analyses have found poorly constrained values for $\sigma_v*$ \citep{BlakeDavis2011} using WiggleZ data, and to validate that the bounds applied to $\sigma_v$ in prior analyses were not influencing or biasing fits, we take the mean realisation dataset (with its increased data strength) and instead fit to $\log(k_*)$ instead of $\sigma_v$, where the shift into log scale allows us to check values typically outside of allowed prior ranges, and thus we can confirm if the best-fitting $\log(k_*)$ value (and associated value of $\sigma_v$) fall within the predictions of current theory and past priors. Final parameter constraints are detailed in Table \ref{tab:wizmp}.
 
-For all redshift bins, our best fits recovered the fiducial parameters well within the $1\sigma$ uncertainty limit. We can also see that, looking at the mean value of the determined values for $\log(k_*) = -2.10$, this gives a $\sigma_v = 5.77 h^{-1}$ Mpc, which is in the magnitude expected by the theory given in equation \eqref{eq:sigmav} and the values found found in \citet{BlakeKazin2011} and \citet{BlakeDavis2011}.
+For all redshift bins, our best fits recovered the fiducial parameters well within the $1\sigma$ uncertainty limit. We can also see that, looking at the mean value of the determined values for $\log(k_*) = -2.10$, this gives a $\sigma_v = 5.77 h^{-1}$ Mpc, which is in the magnitude expected by the theory given in equation \eqref{eq:sigmav} and the values found in \citet{BlakeKazin2011} and \citet{BlakeDavis2011}.
 Within the range $\sigma_v \in [0,10]$, we find no significant difference in $\chi^2$ values, indicating that $\sigma_v$ is not tightly constrained within theoretically predicted ranges. Fixing $\sigma_v = 5 h^{-1}$ Mpc, as we did in the 1D example, has negligible effect on the cosmological parameters of interest, and therefore we do that for the rest of our analysis.
 
 \begin{table*}
@@ -460,7 +460,7 @@ For small $\epsilon$, cosmological parameters can be extracted via Eq.~\ref{eq:a
 	\begin{center}
 		\includegraphics[width=\columnwidth]{images/mpDist2.pdf}
 	\end{center}
-	\caption{Maximum likelihood $\Omega_c h^2$, $\alpha$ and $\epsilon$ values from WizCOLA realisations of the WiggleZ data are shown in the bottom left corner plots. Dashed black lines indicate simulations parameters, and the solid black distributions in the diagonal subplots represent the final distribution across all bins for the specific parameter. A pre-reconstruction wedge analysis was not performed due to unconstrained parameter distributions, see \citet[\S 4.3]{HintonThesis2015} for more details.}
+	\caption{Maximum likelihood $\Omega_c h^2$, $\alpha$ and $\epsilon$ values from WizCOLA realisations of the WiggleZ multipole data are shown in the bottom left corner plots. Dashed black lines indicate simulation parameters, and the solid black distributions in the diagonal subplots represent the final distribution across all bins for the specific parameter.}
 	\label{fig:mpDist2}
 	%\end{wrapfigure}
 \end{figure}
@@ -535,14 +535,14 @@ The covariance matrices utilised so far in our analysis have been supplied from 
 
 
 
-When using the full data covariance to simultaneously fit all three redshift bins, a further question becomes whether marginalisation parameters $b^2$, $\beta$, $\sigma_V$ and $k_*$ should be free between redshift bins, or consistent across them. 
+When using the full data covariance to simultaneously fit all three redshift bins, a further question becomes whether marginalisation parameters $b^2$, $\beta$, $\sigma_V$, and $\sigma_v$ should be free between redshift bins, or consistent across them. 
 
 From a physical motivation, we expect the bias parameter $b^2$ to be dependent on redshift bin. This is because we only observe the most massive, luminous galaxies at high redshift, which have higher bias than the less massive galaxies we can see at lower redshifts. However, when performing fits, $b^2$ and $\beta$ are well constrained, whilst $k_*$ and $\sigma_V$ are not. As this implies that those two parameters do not significantly contribute to the likelihood calculations, it is unknown if setting $\sigma_V$ free between bins will have a noticeable benefit. 
 
 
 To investigate this, we ran fits to the combined WizCOLA data where we set no nuisance parameters free between redshift bins, when we only set $b^2$ free, when we set all \textit{but} $b^2$ free, and then when we set all four nuisance parameters free.  These fits indicate a strong preference for fitting with separate $b^2$ values in different redshift bins due to tighter constraints achieved, and an accompanying improvement in $\chi^2$.  However allowing the other nuisance parameters to vary between redshift bins has negligible benefits (it neither increases fit strength nor removes  bias), and adds computational time in the form of delayed chain convergence.
 
-Based on these results, we utilise independent $b^2$ values, whilst fixing $\beta$, $\sigma_v$ and $\sigma_V$ between bins when fitting with the full data set and full data covariance.
+Based on these results, we utilise independent $b^2$ values, whilst fixing $\beta$, $\sigma_v$, and $\sigma_V$ between bins when fitting with the full data set and full data covariance.
 % A comparison of their likelihood distributions is shown in Figure \ref{fig:wizcolaAllNormalCovCombined}.
 \begin{comment}
 \begin{figure}
@@ -574,7 +574,7 @@ Based on these results, we utilise independent $b^2$ values, whilst fixing $\bet
 \begin{figure}[h!]
 	%%\begin{wrapfigure}{r}{0.5\textwidth}
 	\begin{center}
-		\includegraphics[width=\columnwidth]{images/corCombinedMPWiz.pdf}
+		\includegraphics[width=\columnwidth]{images/corCombinedMPWiz.png}
 	\end{center}
 	\caption{Fits to the mean data of all 600 WizCOLA realisations %(without reducing data uncertainty) 
 	for the multipole expansion expression of the data. Fits using all three bins simultaneously are shown as the ``All data'' fits, and the combination of maximum likelihood parameters using parameter covariance is shown as the ``Combined'' likelihood surfaces. In all cases we recover simulation cosmology well within $1\sigma$ limits.}
@@ -596,7 +596,7 @@ Based on these results, we utilise independent $b^2$ values, whilst fixing $\bet
 
 \section{Validating reconstructed wedge data}
 
-For the reconstructed data that we analyse in wedges we also tested our procedure using the WiZCOLA mock catalogues.  We focus
+For the reconstructed data that we analyse in wedges we also tested our procedure using the WizCOLA mock catalogues.  We focus
 here on results from the mocks of the $\Delta z^{\rm Far}$ redshift
 slice, which are representative of the behaviour in all redshift bins.
 In Figure \ref{fig:wizcola_hdaModes_z60_epsilonT15} we present the
@@ -631,13 +631,13 @@ $\alpha_\perp$ and $\alpha_\parallel$.  However, for the subset of
 realizations with similar detection significance to the WiggleZ data,
 we find that our procedure enables us to extract unbiased distance
 measurements, with median and standard deviations $\langle \alpha_\perp \rangle =
-1.001 \pm 0.081$ and $\langle \alpha_\parallel \rangle = 0.999 \pm 0.154$.  The
+1.001 \pm 0.081$ and $\langle \alpha_\parallel \rangle = 1.00 \pm 0.15$.  The
 median and standard deviation of the errors in these parameters, for
 this subset of mocks, are $<\sigma_{\alpha_\perp}> = 0.052 \pm 0.037$
 and $\langle \sigma_{\alpha_\parallel} \rangle = 0.107 \pm 0.061$.  Similar results
 are obtained when analyzing mocks at $\Delta z^{\rm Mid}$ and $\Delta
 z^{\rm Near}$.  In all cases, the results for the WiggleZ data are
-consistent with range covered by the simulations.
+consistent with the range covered by the simulations.
 
 We now consider the degree to which our $15\%$ prior in $\epsilon$
 impacts the model-independence of our results.  Using MCMC chains
@@ -650,7 +650,7 @@ significantly compromise our model-independence.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/WiZCOLA_mode_z0pt6_1pt0/WiZCOLA_mode_z0pt6_1pt0}
-\caption{\label{fig:wizcola_hdaModes_z60_epsilonT15} WiZCOLA $0.6<z<1$ $\alpha_{||}$ and $\alpha_\perp$ mode results. The large blue circles (87/600) are realizations that have a significance of detection of 2.9$\sigma$ (as the observation) or higher. The red are below this threshold. The red dot-dashed lines mark the $\pm15\%$ value of the fiducial $\epsilon$ which we use as a flat prior in this calculation. The dashed blue lines mark $\pm25\%$ of the fiducial $\alpha$, but are just for visualisation as we did not apply these as a prior. The thicker lines indicate the higher values of the $\alpha$ and $\epsilon$ limits.%
+\caption{\label{fig:wizcola_hdaModes_z60_epsilonT15} WizCOLA simulation fits for the redshift $0.6<z<1$ bin using the wedge data. The large blue circles (87/600) are realizations that have a significance of detection of 2.9$\sigma$ (as the observation) or higher. The red are below this threshold. The red dot-dashed lines mark the $\pm15\%$ value of the fiducial $\epsilon$ which we use as a flat prior in this calculation. The dashed blue lines mark $\pm25\%$ of the fiducial $\alpha$, but are just for visualisation as we did not apply these as a prior. The thicker lines indicate the higher values of the $\alpha$ and $\epsilon$ limits.%
 }
 \end{center}
 \end{figure}
@@ -658,7 +658,7 @@ significantly compromise our model-independence.
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.7\columnwidth]{figures/WiZCOLA_unc_z0pt6_1pt0/WiZCOLA_unc_z0pt6_1pt0}
-\caption{\label{fig:wizcola_hdaUnc_z60_epsilonT15} WiZCOLA $0.6<z<1$ $\alpha_{||}$ and $\alpha_\perp$ uncertainty results. The large blue circles are realizations that have a significance of detection of 2.9$\sigma$ (same as the observation) or higher. The red are below this threshold. For comparison, the star is the WiggleZ result.%
+\caption{\label{fig:wizcola_hdaUnc_z60_epsilonT15} Uncertainty on the WizCOLA simulation fits for the redshift $0.6<z<1$ bin using the wedge data. The large blue circles are realizations that have a significance of detection of 2.9$\sigma$ (same as the observation) or higher. The red are below this threshold. For comparison, the star is the WiggleZ result.%
 }
 \end{center}
 \end{figure}
@@ -683,7 +683,7 @@ To determine the significance of the BAO peak detected in our analysis, we reran
 \begin{figure}
 	%\begin{wrapfigure}{r}{0.5\textwidth}
 	\begin{center}
-		\includegraphics[width=\columnwidth]{images/corCombinedMPWig.pdf}
+		\includegraphics[width=\columnwidth]{images/corCombinedMPWig.png}
 	\end{center}
 	\caption{Likelihood surfaces and marginalised distributions of $\Omega_ch^2$, $\alpha$ and $\epsilon$ for the WiggleZ multipole expression of the data. }
 	\label{fig:wigglezBinsMP}
@@ -827,7 +827,7 @@ models for which we calculated $\chi^2 = 35.3, 24.8$ and $34.4$,
 respectively, with 36 degrees of freedom.  We see baryonic acoustic
 peak signatures in both $\xi_\perp$ and $\xi_\parallel$ for all three
 redshift ranges.  The fluctuations from zero at large scales are
-consistent with the characteristic sample variance seen in the WiZCOLA
+consistent with the characteristic sample variance seen in the WizCOLA
 simulations.
 
 Figure \ref{fig:HDA_z26_epsilon0.15} displays the posterior
@@ -852,7 +852,7 @@ marginalize over all other shape parameters, as explained in detail in
 \S 6.1 of \citet{KazinSanchezCuesta2013}.  We find that the significance of
 detection, defined as $\sqrt{\Delta\chi^2}$ to be $1.6$, $2.7$ and
 $2.9$ for $\Delta z^{\rm Near}$, $\Delta z^{\rm Mid}$ and $\Delta
-z^{\rm Far}$, respectively.  Applying our pipeline to the WiZCOLA
+z^{\rm Far}$, respectively.  Applying our pipeline to the WizCOLA
 simulations, we find our results are consistent with the range of
 expectations.
 
