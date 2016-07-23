@@ -110,7 +110,7 @@ In this paper we analyse the 2D BAO signal using both techniques on the WiggleZ 
 \item {\bf Use reconstruction and only measure the BAO peak:}  We perform reconstruction on the WiggleZ data, which recovers a correlation function with a much stronger BAO peak, but loses the shape information.  We therefore marginalise over the shape information and only use the peak itself as a standard ruler. 
 \end{enumerate}
 
-In this paper Section \ref{sect:wigglez} begins by describing the data we use.  Then in Section \ref{sec:model} we construct a theoretical model of the full 2D correlation function.  In Section \ref{sect:multiwedge} we decompose that correlation function into our two summary statistics --- multipole expansion and wedges.
+In this paper Section \ref{sect:wigglez} begins by describing the data we use.  Then in Section \ref{sec:model} we construct a theoretical model of the full 2D correlation functio and we decompose that correlation function into our two summary statistics --- multipole expansion and wedges.
 Section \ref{sec:test} evaluates those models against the WizCOLA simulations, and Sections \ref{sec:multi} and \ref{sec:wedge} use the multipole and wedge models to extract cosmological parameters from the unreconstructed and reconstructed WiggleZ data respectively. In Section \ref{sec:disc} we place these results into the larger cosmological context by incorporating the results from other surveys \& other methodologies, and present final conclusions.
 
 \begin{figure*}[t]
@@ -118,7 +118,7 @@ Section \ref{sec:test} evaluates those models against the WizCOLA simulations, a
 	\begin{center}
 		\includegraphics[width=\textwidth]{images/dataplot.pdf}
 	\end{center}
-	\caption{The unreconstructed WiggleZ correlation function, shown with the associated correlation covariance constructed from the WizCOLA mocks \citep{KazinKoda2014,KodaBlake2015}.}
+	\caption{The WizCOLA simulation mean data \citep{KazinKoda2014,KodaBlake2015}, unreconstructed WiggleZ multipoles and reconstructed WiggleZ wedges shown in three respective columns. Rows represent different redshift bins in the data. For the multipole data, the monopole contribution and quadrupole contribution are shown in blue circles and green diamonds respectively. For the wedge data, we show the transverse component (blue circles) and line-of-sight component (green diamonds).}
 	\label{fig:wizcola}
 	%\end{wrapfigure}
 \end{figure*}
@@ -140,7 +140,7 @@ This analysis is motivated by two recent improvements to the WiggleZ survey data
 
 Using simulations we found that the 2D information is best extracted from the full shape correlation function when it is decomposed into multipoles.  In contrast, after reconstruction the best way to extract the 2D information was by splitting the data into wedges along the line of sight and perpendicular to the line of sight.
 
-Figure~\ref{fig:wizcola} shows the galaxy correlation function for a WiggleZ-like survey in three different forms.  The upper panel splits the 2D correlation function into the first two multipoles.  The middle and lower panels both show versions of the 2D correlation function split into wedges, which present the contributions from the modes parallel to the line of sight (red) and perpendicular to the line of sight (blue).  The middle panel shows the 2D correlation function as observed, whereas the lower panel shows the 2D correlation function after reconstruction has been applied.  You can see that reconstruction eliminates the shape difference between the wedges and strengthens the BAO peak. 
+Figure~\ref{fig:wizcola} shows the galaxy correlation function for the WizCOLA mean multipole data, pre-reconstruction WiggleZ miltipole data, and the post-reconstruction WiggleZ wedge data. You can see that reconstruction eliminates the shape difference between the wedges and strengthens the BAO peak. 
 
 %Whilst this may not give tight cosmological constraints due to the number of galaxies being only barely above the minimum needed to detect the 2D BAO peak, the results obtained will be largely independent of priors from CMB based surveys such as Planck or WMAP and can be combined with other survey results.
 
@@ -163,7 +163,7 @@ where $P_{\rm{nw}}(k)$ is a power spectrum without the BAO signal. Whilst advanc
 \begin{align} \label{eq:sigmav}
 \sigma_v^2 = \frac{1}{6\pi^2} \int P_{\rm{lin}}(k)\, dk,
 \end{align}
-however $\sigma_v$ is set to a free parameter due to inaccuracies in the theoretical determination from non-linear effects.
+however $\sigma_v$ is set to a free parameter due to inaccuracies in the theoretical determination from non-linear effects. It is important to note that past studies have also used an analogous term to $\sigma_v$, defining $k_* = 1/(\sqrt{2}\sigma_v)$.
 
 In most studies the power spectrum without the BAO signal present is generated using the \verb;tffit; algorithm given by \citet{EisensteinHu1998}. \citet{ReidPercival2010} investigated an alternate method of generating a no-wiggle power spectrum from the linear \camb{} power spectrum in which an 8 node b-spline was fitted to the linear power spectrum, concluding the likelihood surfaces generated when fitting using splines and the algorithm from \citet{EisensteinHu1998} agree well. For our work we introduce a new method to attain a no-wiggle power spectrum $P_{\mathrm{nw}}(k)$ utilising polynomial subtraction. For a comparison of this methodology against the \verb;tffit; algorithm supplied by \citet{EisensteinHu1998} or spline fitting, please see Appendix \ref{app:dewiggle}.
 
