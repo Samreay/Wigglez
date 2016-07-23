@@ -783,14 +783,13 @@ $0.6<z<1.0$ & $0.143^{+0.033}_{-0.026}$ & $1343.9^{+145.9}_{-134.9}$ & $80.4^{+9
 \begin{centering}
 \caption{Model-independent measurements using the post-reconstruction $\xi_{||,\perp}$.}
 \label{tab:hda_wigglez_reconstructed}
-\begin{tabular}{ l | r | r | c | c | c | c | r }
+\begin{tabular}{ l | r | r | c | c | c | c | c }
 \hline
               & \multicolumn{2}{c}{Fiducial} & \multicolumn{5}{c}{Measured} \\  
-              &  & & Measured & & & & \\
-$z_{\rm eff}$ & $cz/(H r_{\rm s})$ & $D_{\rm A}/r_{\rm s}$  & $cz/(H r_{\rm s})$ & $D_{\rm A}/r_{\rm s}$  & $r$ & $\chi^2$ & $\Delta\chi^2$ \\
+$z_{\rm eff}$ & $cz/(H r_{\rm s})$ & $D_{\rm A}/r_{\rm s}$  & $cz/(H r_{\rm s})$ & $D_{\rm A}/r_{\rm s}$  & $r$ & $\chi^2$ & BAO peak significance \\
 \hline
-  0.73  & 13.87 & 9.84 & 15.3$^{+2.1}_{-1.8}$ (13\%)  &  9.8$^{+1.1}_{-0.4}$ (7\%)   & -0.36  & 35 & 8.4 \\
-  0.60  & 12.27 & 9.03 & 11.5$^{+1.3}_{-1.6}$ (13\%)  & 10.3$^{+0.4}_{-0.5}$ (5\%)   & -0.16  & 25 & 7.2 \\
+  0.73  & 13.87 & 9.84 & 15.3$^{+2.1}_{-1.8}$ (13\%)  &  9.8$^{+1.1}_{-0.4}$ (7\%)   & -0.36  & 35 & $2.9\sigma$ \\
+  0.60  & 12.27 & 9.03 & 11.5$^{+1.3}_{-1.6}$ (13\%)  & 10.3$^{+0.4}_{-0.5}$ (5\%)   & -0.16  & 25 & $2.7\sigma$ \\
 %  0.44  &  9.84 & 8.87 &  7.4$^{+4.5}_{-0.2}$ (32\%)  &  8.7$^{+1.0}_{-2.6}$ (21\%)  & +0.44  & 35 & 2.5 \\
 %----------
 %$z_{\rm eff}$ & $cz/H/r_{\rm s}$ & $D_{\rm A}/r_{\rm s}$  & $r$ & $\chi^2$ & $\Delta\chi^2$ \\
@@ -804,11 +803,11 @@ $z_{\rm eff}$ & $cz/(H r_{\rm s})$ & $D_{\rm A}/r_{\rm s}$  & $cz/(H r_{\rm s})$
 The values quoted are the modes and the $68\%$ CL regions. The percentages indicate half of the $68\%$ CL regions.
 %Fiducial values for $cz/H/r_{\rm s}$ used ($z=0.73,\ 0.6, \ 0.44$, respectively): 13.87, 12.27, 9.84. \\
 %Fiducial values for $D_{\rm A}/r_{\rm s}$ used ($z=0.73,\ 0.6, \ 0.44$, respectively): 9.84, 9.03, 8.87.\\
-Fiducial values for $cz/H/r_{\rm s}$ used ($z=0.73,\ 0.6$, respectively): 13.87, 12.27.
-Fiducial values for $D_{\rm A}/r_{\rm s}$ used ($z=0.73,\ 0.6$, respectively): 9.84, 9.03.\\
+%Fiducial values for $cz/H/r_{\rm s}$ used ($z=0.73,\ 0.6$, respectively): 13.87, 12.27.
+%Fiducial values for $D_{\rm A}/r_{\rm s}$ used ($z=0.73,\ 0.6$, respectively): 9.84, 9.03.\\
 %{\red The positive cross-correlation $r$ for the $z_{\rm eff}=0.44$ is not physical, but rather due to the flat priors used. **WHY?**} \\
-Values for the $z=0.44$ bin are not report as the data was insufficient to provide constraints and final surfaces were heavily dependent on choice of prior.
-In the $\chi^2$ fitting we use 36 DoF, and $\Delta\chi^2\equiv \chi^2_{\rm no-wiggle} - \chi^2_{\rm \Lambda CDM-based}$. These results are displayed in Figure \ref{fig:hubble_diagram}. \\
+Values for the $z=0.44$ bin are not reported as the data was insufficient to provide constraints and final surfaces were heavily dependent on choice of prior.
+In the $\chi^2$ fitting we use 36 DoF. These results are displayed in Figure \ref{fig:hubble_diagram}. \\
 \end{centering}
 \end{table*}
 
@@ -850,12 +849,15 @@ a ``no-wiggles'' template ($\Delta\chi^2 \equiv \chi^2_{\rm min,
 for each model we vary $H r_{\rm s}$ and $D_{\rm A}/r_{\rm s}$ and
 marginalize over all other shape parameters, as explained in detail in
 \S 6.1 of \citet{KazinSanchezCuesta2013}.  We find that the significance of
-detection, defined as $\sqrt{\Delta\chi^2}$ to be $1.6$, $2.7$ and
-$2.9$ for $\Delta z^{\rm Near}$, $\Delta z^{\rm Mid}$ and $\Delta
+detection, defined as $\sqrt{\Delta\chi^2}$ to be $1.6$, $2.7$, and
+$2.9$ for $\Delta z^{\rm Near}$, $\Delta z^{\rm Mid}$, and $\Delta
 z^{\rm Far}$, respectively.  Applying our pipeline to the WizCOLA
 simulations, we find our results are consistent with the range of
 expectations.
 
+The results we find fitting the reconstructed wedges are consistent
+with both prior WiggleZ studies, BOSS constraints from \citet{AndersonAubourg2014}, and
+Planck cosmology \citep{Planck2015Parameters}, as illustrated in figure \ref{fig:hubble_diagram}.
 
 
 
@@ -902,7 +904,7 @@ expectations.
 
 
 
-We have presented the first measurement of the 2D BAO signal in the WiggleZ Dark Energy Survey data \citep{KazinKoda2014}, where we fit for the cosmological parameters $\Omega_c h^2$, $D_A(z)$ and $H(z)$ for the three redshift bins $z \in \left[0.44, 0.60, 0.73\right]$.  Our final pre-reconstruction constraints appear in Table~\ref{tab:wigglezBinsParams}.  These results are consistent with the Flat $\Lambda$CDM cosmology derived from best-fitting Planck cosmological values and with previous large-scale structure measurements. Post-reconstruction results can be found in Table \ref{tab:hda_wigglez_reconstructed}, and are also consistent with best-fitting Plabck cosmology.
+We have presented the first measurement of the 2D BAO signal in the WiggleZ Dark Energy Survey data \citep{KazinKoda2014}, where we fit for the cosmological parameters $\Omega_c h^2$, $D_A(z)$, and $H(z)$ for the three redshift bins $z \in \left[0.44, 0.60, 0.73\right]$.  Our final pre-reconstruction constraints appear in Table~\ref{tab:wigglezBinsParams}.  These results are consistent with the Flat $\Lambda$CDM cosmology derived from best-fitting Planck cosmological values and with previous large-scale structure measurements. Post-reconstruction results can be found in Table \ref{tab:hda_wigglez_reconstructed}, and are also consistent with best-fitting Planck cosmology.
 
 The constraints given by this analysis provide an important high-redshift consistency check against BOSS results as given in \cite{AndersonAubourg2014DR11} against the BOSS $z=0.57$ redshift bin. We find results consistent with the BOSS analysis. The larger uncertainty in our measurements compared to the BOSS is as-expected from the relative sizes of the data sets.  Nevertheless our results show that using a different type of galaxy tracer with much lower bias (bright blue galaxies as opposed to luminous red galaxies), we recover the same standard cosmological model. 
 
@@ -912,7 +914,7 @@ The main results of this analysis can be summarised as follows:
 	\item We investigated two ways to fit the unreconstructed 2D BAO signal -- multipoles and wedges.  We found using the WizCOLA simulations that the multipoles gave a more robust result with higher statistical significance than wedges, and thus adopted multipoles for our final analysis.
 	\item We validated our methodology by fitting 600 realisations of the WiggleZ survey generated by the WizCOLA simulations \citep{KodaBlake2015}. Our analysis recovered the input parameters of the simulation with no evidence for systematic bias. We also validate our methodology by testing agreement of cosmological parameters when analysing the 1D BAO signal with  \citet{BlakeKazin2011}.
 	\item We thoroughly tested subtle methodological differences that could possibly have effected our analysis, such as different ways to combine the data from redshift bins, varying or fixing $\sigma_v$, or including the hexadecapole, which all gave consistent results.
-	\item We performed the first cosmological analysis using the 2D BAO measurement of WiggleZ data using both pre and post reconstruction techniques. We detect the 2D BAO peak at a significance of slightly over 2$\sigma$ in each redshift bin for pre-reconstruction results, and approximately 3$\sigma$ for the $z=0.6$ and $z=0.73$ redshift bins for the reconstructed results, with the $z=0.44$ bin unable to provide convincing constraints. The best fit values of $\Omega_c h^2$, $H(z)$ and $D_A(z)$ for the pre-reconstruction fits are shown in Table~\ref{tab:wigglezBinsParams} and Fig.~\ref{fig:wigglezBinsMP}.  The results for $H(z)$ and $D_A(z)$ for post-reconsturction fitting are given in Table \ref{tab:hda_wigglez_reconstructed} and in Figure \ref{fig:hubble_diagram}. These results are consistent with previous WiggleZ results, BOSS, and best fitting Planck cosmology and provide a consistency check on external survey results with tighter constraints from increased statistical power.
+	\item We performed the first cosmological analysis using the 2D BAO measurement of WiggleZ data using both pre and post reconstruction techniques. We detect the 2D BAO peak at a significance of slightly over 2$\sigma$ in each redshift bin for pre-reconstruction results, and approximately 3$\sigma$ for the $z=0.6$ and $z=0.73$ redshift bins for the reconstructed results, with the $z=0.44$ bin unable to provide convincing constraints. The best fit values of $\Omega_c h^2$, $H(z)$ and $D_A(z)$ for the pre-reconstruction fits are shown in Table~\ref{tab:wigglezBinsParams} and Fig.~\ref{fig:wigglezBinsMP}.  The results for $H(z)$ and $D_A(z)$ for post-reconsturction fitting are given in Table \ref{tab:hda_wigglez_reconstructed} and in Figures \ref{fig:HDA_z26_epsilon0.15} and \ref{fig:hubble_diagram}. These results are consistent with previous WiggleZ results, BOSS, and best fitting Planck cosmology and provide a consistency check on external survey results with tighter constraints from increased statistical power.
 \end{itemize}
 
 
@@ -964,7 +966,7 @@ The main results of this analysis can be summarised as follows:
 
 \section*{Acknowledgments}
 
-We gratefully acknowledge the input of the many researchers that were consulted during the creation of this paper. In particular, David Parkinson for his assistance. Sections of this work were undertaken using the NCI computer under project gi7: `Numerical simulations of stochastic galaxy formation in modified gravity theories'.   We  would also like to thank Joshua Calcino, Carolyn Wood and Sarah Thompson for their input.
+We gratefully acknowledge the input of the many researchers that were consulted during the creation of this paper. In particular, David Parkinson for his assistance. Sections of this work were undertaken using the NCI computer under project gi7: `Numerical simulations of stochastic galaxy formation in modified gravity theories'.   We  would also like to thank Joshua Calcino, Carolyn Wood and Sarah Thompson for their input. Parts of this research were conducted by the Australian Research Council Centre of Excellence for All-sky Astrophysics (CAASTRO), through project number CE110001020. This research has made use of NASA's Astrophysics Data System.
 
 
 \bibliography{bibliography}
@@ -982,7 +984,7 @@ We gratefully acknowledge the input of the many researchers that were consulted 
 	
 	\section{Dewiggling Process} \label{app:dewiggle}
 	
-	In the literature the \verb;tffit; algorithm developed by \citet{EisensteinHu1998} is the most common method used to generate a power spectrum without the BAO feature. However, the use of this algorithm necessarily constrains an analysis to not only the precision of the algorithm, but also to the cosmologies considered when the algorithm was developed. Whilst most changes in cosmological models have been subtle in the past decade, a quick inspection of the changelog for CAMB\footnote{\url{http://camb.info/readme.html}} \citep{Lewis2000} shows over fifty software releases since the publication of the \verb;tffit; algorithm - representing a continual divergence between CAMB and \verb;tffit; as CAMB continues to become more accurate and consistent with modern cosmological models, whilst \verb;tffit; remains static. 
+	In the literature the \verb;tffit; algorithm developed by \citet{EisensteinHu1998} is the most common method used to generate a power spectrum without the BAO feature. However, the use of this algorithm necessarily constrains an analysis to not only the precision of the algorithm, but also to the cosmologies considered when the algorithm was developed. Whilst most changes in cosmological models have been subtle in the past decade, a quick inspection of the changelog for CAMB\footnote{\url{http://camb.info/readme.html}} \citep{Lewis2000} shows over fifty software releases since the publication of the \verb;tffit; algorithm -- representing a continual divergence between CAMB and \verb;tffit; as CAMB continues to become more accurate and consistent with modern cosmological models, whilst \verb;tffit; remains static. 
 	
 	Given these reasons, we decided to develop an alternate method for generating a power spectrum without the BAO feature present. Given the regular updating of the CAMB software, a replacement algorithm would be most useful if it was capable of taking a standard linear power spectrum from CAMB and returning a filtered version, such that any changes in future cosmology would be reflected in the no wiggle power spectrum simply due to its presence in the original linear power spectrum from CAMB. To this end, several different methods of filtering power spectra were investigated, implemented, and tested, and we summarise those efforts here.  For more detail see \citep{HintonThesis2015}. 
 	
@@ -1010,7 +1012,7 @@ We gratefully acknowledge the input of the many researchers that were consulted 
 	
 	\subsubsection{Polynomial regression}
 	
-	Polynomial regression are a tried and tested method for determining broad shape in a given spectrum \citep{baldry2014galaxy}. The higher order the polynomial fit becomes, the better the broad band shape extraction becomes, at the cost of eventually, as one keeps increasing the order, the polynomial model becomes detailed enough it begins to recover BAO signal. To counter this, one can introduce weights on the points, where the data points in the range of the BAO wiggle are down weighted. To make this method more viable, a specific $k/h$ is not chosen as the centre point (as this strongly removes our model independence), instead we can note that the wiggle will appear approximately at the data peak, and down weight this area using a Gaussian weighting function, such that the weights supplied to the polynomial regression take the form $w = 1 - \alpha \exp\left(-k^2/2 \sigma^2\right)$. Using this, we can construct an array of polynomial fits where the polynomial degree, Gaussian width and amount of down weighting are varied to determine the most effective construction to remove the BAO signal. In order to take advantage of the smooth shape of the power spectrum in the log domain, the polynomial regression is applied to the logarithm of the power spectrum.
+	Polynomial regression are a tried and tested method for determining broad shape in a given spectrum \citep{baldry2014galaxy}. The higher order the polynomial fit becomes, the better the broad band shape extraction becomes, at the cost of eventually, as one keeps increasing the order, the polynomial model becomes detailed enough it begins to recover BAO signal. To counter this, one can introduce weights on the points, where the data points in the range of the BAO wiggle are down-weighted. To make this method more viable, a specific $k/h$ is not chosen as the centre point (as this strongly removes our model independence), instead we can note that the wiggle will appear approximately at the data peak, and down weight this area using a Gaussian weighting function, such that the weights supplied to the polynomial regression take the form $w = 1 - \alpha \exp\left(-k^2/2 \sigma^2\right)$. Using this, we can construct an array of polynomial fits where the polynomial degree, Gaussian width and amount of down-weighting are varied to determine the most effective construction to remove the BAO signal. In order to take advantage of the smooth shape of the power spectrum in the log domain, the polynomial regression is applied to the logarithm of the power spectrum.
 	
 	
 	\begin{figure*}
@@ -1036,7 +1038,7 @@ We gratefully acknowledge the input of the many researchers that were consulted 
 	\end{figure*}
 	
 	
-	By comparing a wide array of parametrisations of polynomial degree $n$, Gaussian width $\sigma$ and Gaussian weight $\alpha$, a final combination of $n=13, \sigma=1, \alpha=0.5$ we chosen to act as the best choice for both strong BAO signal subtraction and non distortion of the original linear power spectrum.
+	By comparing a wide array of parametrisations of polynomial degree $n$, Gaussian width $\sigma$, and Gaussian weight $\alpha$, a final combination of $n=13, \sigma=1, \alpha=0.5$ was chosen to act as the best choice for both strong BAO signal subtraction and non-distortion of the original linear power spectrum.
 
 	
 	\subsubsection{Spline Interpolation}
@@ -1153,7 +1155,7 @@ Whilst Figure \ref{fig:pk2xicomp} shows what appears to be significant differenc
 \end{table}
 
 
-The failure of correlation function models at small separations and their similarity at large separations mean it is important to evaluate the range of scales to include in the fit to the BAO signal, as detailed in \S\ref{sec:trunc}.  As the optimal data ranges vary depending on the survey volume, number density, and tracer bias, we investigate the effect of selecting different $s$-ranges on the recovered parameters when fitting to the WizCOLA simulation data. In order to constrain statistical uncertainty as much as possible, fits were performed to the combined dataset, in which the input values are determined from the mean of all 600 realisations of the WizCOLA simulation.  We then compare the output $\Omega_c h^2$ and $\alpha$ with the simulations as a function of the scales fitted. These are shown in Figure \ref{fig:CdatasetTrunc}, and the outcome of the comparison is the decision to use a dataset range of $25 < s < 180 \ h^{-1}$ Mpc.  We compare this to range to previous analyses in Table \ref{tab:truncation}.
+The failure of correlation function models at small separations and their similarity at large separations mean it is important to evaluate the range of scales to include in the fit to the BAO signal, as detailed in \S\ref{sec:trunc}.  As the optimal data ranges vary depending on the survey volume, number density, and tracer bias, we investigate the effect of selecting different $s$-ranges on the recovered parameters when fitting to the WizCOLA simulation data. In order to constrain statistical uncertainty as much as possible, fits were performed to the combined dataset, in which the input values are determined from the mean of all 600 realisations of the WizCOLA simulation.  We then compare the output $\Omega_c h^2$ and $\alpha$ with the simulations as a function of the scales fitted. These are shown in Figure \ref{fig:CdatasetTrunc}, and the outcome of the comparison is the decision to use a dataset range of $25 < s < 180 \ h^{-1}$ Mpc.  We compare this range to previous analyses in Table \ref{tab:truncation}.
 
 
 
