@@ -1,6 +1,6 @@
 import numpy as np
 import os
-from chain import ChainConsumer
+from chainconsumer import ChainConsumer
 from scipy.integrate import simps, cumtrapz
 from scipy.interpolate import interp1d
 

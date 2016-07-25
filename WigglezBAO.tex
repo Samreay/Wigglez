@@ -46,7 +46,7 @@
 
 \begin{document}
 
-\title{Measuring the Baryon Acoustic Oscillation signal of galaxies in WiggleZ: Cosmological constraints} %$H(z)$, $D_A(z)$ and $\Omega_c h^2$}
+\title{Measuring the 2D Baryon Acoustic Oscillation signal of galaxies in WiggleZ: Cosmological constraints} %$H(z)$, $D_A(z)$ and $\Omega_c h^2$}
 
 \author{S. R. Hinton}
 \affil{School of Mathematics and Physics, The University of Queensland, Brisbane, QLD 4072, Australia}
@@ -66,13 +66,13 @@
 \author{C. Lidman}
 \affil{Australian Astronomical Observatory, North Ryde, NSW 2113, Australia}
 
-\author{Others?}
+\author{Others}
 
 
 \begin{abstract}
 We present results from the 2D anisotropic Baryon Acoustic Oscillation (BAO) signal present in the final dataset from the WiggleZ Dark Energy Survey.  We analyse the WiggleZ data in two ways: firstly using the full shape of the 2D correlation function and secondly focussing only on the position of the BAO peak in the reconstructed data set. When fitting for the full shape of the 2D correlation function we use a multipole expansion to compare with theory.  When we use the reconstructed data we marginalise over the shape and just measure the position of the BAO peak, analysing the data in wedges separating the signal along the line of sight from that parallel to the line of sight. 
 
-We verify our method with mock data and find the results to be free of bias or systematic offsets.  We also redo the pre-reconstruction angle averaged (1D) WiggleZ BAO analysis with the improved WizCOLA covariance matrix and present an updated result.   The final results are presented in the form of $\Omega_c h^2$, $H(z)$, and $D_A(z)$ for three redshift bins with effective redshifts $z = 0.44, 0.60$, and $0.73$.  
+We verify our method with mock data and find the results to be free of bias or systematic offsets.  We also redo the pre-reconstruction angle averaged (1D) WiggleZ BAO analysis with an improved covariance and present an updated result.   The final results are presented in the form of $\Omega_c h^2$, $H(z)$, and $D_A(z)$ for three redshift bins with effective redshifts $z = 0.44, 0.60$, and $0.73$. Within these bins and methodologies, we recover constraints between 5\% and 22\% error.
 %The multipole analysis on the full correlation function determined $\Omega_c h^2$, $H(z)$, and $D_A(z)$ for three redshift bins, of effective redshifts $z = 0.44, 0.60$, and $0.73$. The respective constraints on $\Omega_c h^2$ are $0.119^{+0.029}_{-0.026}$, $0.151^{+0.038}_{-0.025}$ and $0.140^{+0.036}_{-0.022}$. The fits for $H(z)$ are respectively  $87 \pm 16$, $90 \pm 15$ and $82 \pm 13$ \kmsmpc, and for $D_A(z)$ we find values of $1300 \pm  160$, $1300 \pm  180$ and $1350 \pm  160$ Mpc.  
 Our cosmological constraints are consistent with Flat $\Lambda$CDM cosmology and agree with results from the Baryon Oscillation Spectroscopic Survey (BOSS).
 \end{abstract}
@@ -110,7 +110,7 @@ In this paper we analyse the 2D BAO signal using both techniques on the WiggleZ 
 \item {\bf Use reconstruction and only measure the BAO peak:}  We perform reconstruction on the WiggleZ data, which recovers a correlation function with a much stronger BAO peak, but loses the shape information.  We therefore marginalise over the shape information and only use the peak itself as a standard ruler. 
 \end{enumerate}
 
-In this paper Section \ref{sect:wigglez} begins by describing the data we use.  Then in Section \ref{sec:model} we construct a theoretical model of the full 2D correlation functio and we decompose that correlation function into our two summary statistics --- multipole expansion and wedges.
+In this paper Section \ref{sect:wigglez} begins by describing the data we use.  Then in Section \ref{sec:model} we construct a theoretical model of the full 2D correlation function and we decompose that correlation function into our two summary statistics --- multipole expansion and wedges.
 Section \ref{sec:test} evaluates those models against the WizCOLA simulations, and Sections \ref{sec:multi} and \ref{sec:wedge} use the multipole and wedge models to extract cosmological parameters from the unreconstructed and reconstructed WiggleZ data respectively. In Section \ref{sec:disc} we place these results into the larger cosmological context by incorporating the results from other surveys \& other methodologies, and present final conclusions.
 
 \begin{figure*}[t]
@@ -138,9 +138,9 @@ One investigation that has not been undertaken with the WiggleZ data is a two di
 
 This analysis is motivated by two recent improvements to the WiggleZ survey data.  The first improvement is that reconstruction has now been performed to remove some of the effect of peculiar velocities \citep{KazinKoda2014}, which sharpens the BAO peak and thus makes it  easier to measure in the 2D correlation function (previous analyses had amplified the signal by averaging the information across all angles).  The second improvement is the creation of accurate mock catalogues from the WizCOLA simulations \citep{KodaBlake2015} for both the pre- and post-reconstruction data. The simulations provide more accurate covariance estimates than the lognormal realisations used in the early analyses.  We therefore also revisit the pre-reconstruction angle-averaged (1D) constraints from the final WiggleZ survey and present updated results.  By fitting our theoretical models to the mock data and recovering the correct cosmological model (the model that was used to make the simulations) we are able to perform rigorous checks that our correlation function models are sufficiently accurate, and optimise the range of scales over which the theory is adequate to include in the fits.  
 
-Using simulations we found that the 2D information is best extracted from the full shape correlation function when it is decomposed into multipoles.  In contrast, after reconstruction the best way to extract the 2D information was by splitting the data into wedges along the line of sight and perpendicular to the line of sight.
+%Using simulations we found that the 2D information is best extracted from the full shape correlation function when it is decomposed into multipoles.  In contrast, after reconstruction the best way to extract the 2D information was by splitting the data into wedges along the line of sight and perpendicular to the line of sight.
 
-Figure~\ref{fig:wizcola} shows the galaxy correlation function for the WizCOLA mean multipole data, pre-reconstruction WiggleZ miltipole data, and the post-reconstruction WiggleZ wedge data. You can see that reconstruction eliminates the shape difference between the wedges and strengthens the BAO peak. 
+Figure~\ref{fig:wizcola} shows the galaxy correlation function for the WizCOLA mean multipole data, pre-reconstruction WiggleZ multipole data, and the post-reconstruction WiggleZ wedge data. Reconstruction eliminates the shape difference between the wedges and strengthens the BAO peak. 
 
 %Whilst this may not give tight cosmological constraints due to the number of galaxies being only barely above the minimum needed to detect the 2D BAO peak, the results obtained will be largely independent of priors from CMB based surveys such as Planck or WMAP and can be combined with other survey results.
 
@@ -189,11 +189,11 @@ The Kaiser effect from coherent infall can be modelled simply in Fourier space \
 where $P_{g}$ is the power spectrum of galaxy density fluctuations $\delta_g$, $\mu$ is the cosine of the angle to line of sight, and $\beta = f/b$ and $f$ is the growth rate of growing modes in linear theory. %This correction for the Kaiser effect has been utilised by \citet{Gaztanaga2009, ChuangWang2012, XuPadmanabhan2012} for identifying the unreconstructed BAO signal in survey data. 
 When reconstructing the BAO signal \citep[see][for details]{PadmanabhanXuEisenstein2012,KazinKoda2014}, the Kaiser effect is corrected for and thus does not have to be inserted into the cosmological model.
 
-Peculiar velocity does not have to be coherent to effect observational cosmology, and the random peculiar velocities of galaxies in clusters, which are related to the cluster mass via the virial theorem, create artifacts known as Fingers of God. In the investigation of growth rate with WiggleZ data, \citet{BlakeBroughColless2011} adopts a Lorentzian model of velocity dispersion with
+Peculiar velocity does not have to be coherent to affect observational cosmology, and the random peculiar velocities of galaxies in clusters, which are related to the cluster mass via the virial theorem, create artifacts known as Fingers of God. In the investigation of growth rate with WiggleZ data, \citet{BlakeBroughColless2011} adopts a Lorentzian model of velocity dispersion with
 \begin{align}
 	P_{\rm{gal}} = \frac{1}{1 + (k \sigma_V \mu)^2}  P_{\rm{nl}}(k, \mu), \label{eq:lorentzian}
 \end{align}
-where $\sigma_V$ is the pairwise peculiar velocity dispersion. We adopt this in our analysis. For a more complete treatment of the underlying model, see \citet{HintonThesis2015}.
+where $\sigma_V$ is the pairwise peculiar velocity dispersion and not to be confused with the $\sigma_v$ term accounting for BAO peak damping. We adopt this in our analysis. For a more complete treatment of the underlying model, see \citet{HintonThesis2015}.
 
 
 
@@ -233,14 +233,15 @@ and $r_s$ is the sound horizon at drag epoch, given by
 \begin{align}
 r_s = \frac{c}{\sqrt{3}} \int_0^{1/(1+z)} \frac{da}{a^2 H(a) \sqrt{1 + (3\Omega_b/4\Omega_\gamma) a}}, \label{eq:rs}
 \end{align}
-with $\Omega_\gamma = 2.469\times10^{-5} h^{-2}$ for $T_{{\rm cmb}}=2.725$ and $\Omega_r = \Omega_\gamma(1 + 0.2271 N_{{\rm eff}})$, where we utilise $N_{\rm eff} = 3.04$.
+with $\Omega_\gamma = 2.469\times10^{-5} h^{-2}$ for $T_{{\rm cmb}}=2.725\,{\rm K}$ and $\Omega_r = \Omega_\gamma(1 + 0.2271 N_{{\rm eff}})$, where we utilise $N_{\rm eff} = 3.04$.
 However, when fitting for the correlation function shape the degeneracy direction lies along a line of constant $A=D_V(z) \sqrt{\Omega_m H_0^2} / zc$, which was a parameter introduced by \citet{Eisenstein2005} for exactly that reason.  Note that $A(z)$ does not depend on $r_s$.  
 
 
 When we update the pre-reconstructed angle averaged 1D measurement of \citet{BlakeKazin2011} we fit for 
 \begin{align}
-\alpha = \frac{D_V(z)}{D_V^{\prime}(z) }.\label{eq:DvDv}
+\alpha = \frac{D_V(z)}{D_V^{\prime}(z) },\label{eq:DvDv}
 \end{align}
+with the prime denoting the value from fiducial cosmology.
 
 For the multipole expansion used in the 2D pre-construction fits, we fit a scaling factor $\alpha$ and warping parameter $\epsilon$ such that
 \begin{align}
@@ -260,7 +261,7 @@ For the multipole expansion used in the 2D pre-construction fits, we fit a scali
 %\subsection{Final Model}
 
 %Having determined fitting ranges and created a theoretical model piece by piece, we can now summarise. 
-In summary, our model generates a linear power spectrum, with input parameter $\Omega_c h^2$. The dampening term $k_*$ (equivalently $\sigma_v$), galaxy bias $b^2$, growth rate $\beta$, and Lorentzian factor $\sigma_V$ are marginalised over, leaving final constraints in the form of $\Omega_c h^2$, $\alpha$ and $\epsilon$. %Transformation parameters $\alpha$ and $\epsilon$ are used for the multipole data expression that we use for unreconstructed data, and $\alpha_\parallel$ and $\alpha_\perp$ are used for the wedge analysis that we use for the reconstructed data.  Thus when we perform the final fit the set of parameters we vary are $\Omega_c h^2$, $k_*$, $\sigma_V H$, $\beta$, $b^2$ and transformation parameters. We marginalise over all but $\Omega_c h^2$, $\alpha$, \& $\epsilon$ for multipole expansion.
+In summary, our model generates a linear power spectrum, with input parameter $\Omega_c h^2$. The damping term $k_*$ (equivalently $\sigma_v$), galaxy bias $b^2$, growth rate $\beta$, and Lorentzian factor $\sigma_V$ are marginalised over, leaving final constraints in the form of $\Omega_c h^2$, $\alpha$ and $\epsilon$. %Transformation parameters $\alpha$ and $\epsilon$ are used for the multipole data expression that we use for unreconstructed data, and $\alpha_\parallel$ and $\alpha_\perp$ are used for the wedge analysis that we use for the reconstructed data.  Thus when we perform the final fit the set of parameters we vary are $\Omega_c h^2$, $k_*$, $\sigma_V H$, $\beta$, $b^2$ and transformation parameters. We marginalise over all but $\Omega_c h^2$, $\alpha$, \& $\epsilon$ for multipole expansion.
 
 
 
@@ -384,14 +385,14 @@ We see that most results follow closely those obtained in \citet{BlakeKazin2011}
 
 
 \subsection{Fitting range} \label{sec:trunc}
-Before fitting our model correlation function to the data, we need to assess the range of scales over which the data are useful.  We expect the model to do poorly at small distances (where non-linearities are strong), while the data's sample variance increases at large distances.  So there will be an optimal range of scales over which to fit the data, and that range will be dependent on the data set (less biased tracers can go to smaller scales, larger volume data sets can go to larger scales).  We determined our optimal fitting range using simulations \citep[see][]{HintonThesis2015}  and conclude that a data range of $25 < s < 180 \hMpc$ allows maximum utilisation of available data without introducing bias into our model. 
+Before fitting our model correlation function to the data, we need to assess the range of scales over which the data are useful.  We expect the model to do poorly at small distances (where non-linearities are strong), while the data's sample variance increases at large distances.  So there will be an optimal range of scales over which to fit the data, and that range will be dependent on the data set (less biased tracers can go to smaller scales, larger volume data sets can go to larger scales).  We determined our optimal fitting range using simulations (see \S\ref{app:truncation})  and conclude that a data range of $25 < s < 180 \hMpc$ allows maximum utilisation of available data without introducing bias into our model. 
 
 
 
 
 \subsection{Validating the multipole expansion model against WizCOLA data}
 
- To validate our model we test it against the WizCOLA simulations.  WizCOLA used known survey geometry and an underlying fiducial cosmology to simulate 600 realisations of the WiggleZ survey, where the fiducial cosmology is parameterised by $\Omega_m = 0.273$, $\Omega_\Lambda = 0.727$, $\Omega_b = 0.0456$, $h=0.705$, $\sigma_8 = 0.812$ and $n_s = 0.961$ following WMAP cosmology \citep{Komatsu2009}.  Putting this in terms of $\Omega_c h^2$, we have $\Omega_c h^2 = 0.113$. We fit against these individual realisations and compare the distribution of our recovered results to the known fiducial cosmology, and also fit to the mean of all 600 simulations to create a single high quality dataset, where the variance of the data was reduced by a factor of $\sqrt{600}$ as the simulations are independent. 
+ To validate our model we test it against the WizCOLA simulations.  WizCOLA used known survey geometry and an underlying fiducial cosmology to simulate 600 realisations of the WiggleZ survey, where the fiducial cosmology is parameterised by $\Omega_m = 0.273$, $\Omega_\Lambda = 0.727$, $\Omega_b = 0.0456$, $h=0.705$, $\sigma_8 = 0.812$ and $n_s = 0.961$ following WMAP cosmology \citep{Komatsu2009}.  Putting this in terms of $\Omega_c h^2$, we have $\Omega_c h^2 = 0.113$. We fit against these individual realisations and compare the distribution of our recovered results to the known fiducial cosmology, and also fit to the mean of all 600 simulations to create a single high quality dataset, where the standard deviation of the data was reduced by a factor of $\sqrt{600}$ as the simulations are independent. 
 
 %\subsubsection{Validating the multipole expansion model}
 
@@ -401,14 +402,14 @@ Before fitting our model correlation function to the data, we need to assess the
 
 As the cosmology used in the WizCOLA simulations is identical to the fiducial cosmology values used to extract data from the WizCOLA simulations, we do not expect to observe anisotropic warping when fitting to the simulation realisations.   As such, we can validate our model by ensuring that it recovers $\alpha = 1.0$ and $\epsilon = 0.0$ when fitting the WizCOLA correlation functions.
 
-  Prior analyses have found poorly constrained values for $\sigma_v*$ \citep{BlakeDavis2011} using WiggleZ data, and to validate that the bounds applied to $\sigma_v$ in prior analyses were not influencing or biasing fits, we take the mean realisation dataset (with its increased data strength) and instead fit to $\log(k_*)$ instead of $\sigma_v$, where the shift into log scale allows us to check values typically outside of allowed prior ranges, and thus we can confirm if the best-fitting $\log(k_*)$ value (and associated value of $\sigma_v$) fall within the predictions of current theory and past priors. Final parameter constraints are detailed in Table \ref{tab:wizmp}.
+  Prior analyses have found poorly constrained values for $\sigma_v$ \citep{BlakeDavis2011} using WiggleZ data, and to validate that the bounds applied to $\sigma_v$ in prior analyses were not influencing or biasing fits, we take the mean realisation dataset (with its increased data strength) and instead fit to $\log(k_*)$ instead of $\sigma_v$, where the shift into log scale allows us to check values typically outside of allowed prior ranges, and thus we can confirm if the best-fitting $\log(k_*)$ value (and associated value of $\sigma_v$) fall within the predictions of current theory and past priors. Final parameter constraints are detailed in Table \ref{tab:wizmp}.
 
 For all redshift bins, our best fits recovered the fiducial parameters well within the $1\sigma$ uncertainty limit. We can also see that, looking at the mean value of the determined values for $\log(k_*) = -2.10$, this gives a $\sigma_v = 5.77 h^{-1}$ Mpc, which is in the magnitude expected by the theory given in equation \eqref{eq:sigmav} and the values found in \citet{BlakeKazin2011} and \citet{BlakeDavis2011}.
 Within the range $\sigma_v \in [0,10]$, we find no significant difference in $\chi^2$ values, indicating that $\sigma_v$ is not tightly constrained within theoretically predicted ranges. Fixing $\sigma_v = 5 h^{-1}$ Mpc, as we did in the 1D example, has negligible effect on the cosmological parameters of interest, and therefore we do that for the rest of our analysis.
 
 \begin{table*}
 	\centering
-	\caption{Recovered parameter constraints when fitting to the combined 600 realisations of the WizCOLA simulation data multipoles, where the uncertainty given by the WizCOLA simulations has been reduced by a factor of $\sqrt{600}$ to account for the independent nature of each mock.}
+	\caption{Recovered parameter constraints when fitting to the combined 600 realisations of the WizCOLA simulation data multipoles, where the uncertainty given by the WizCOLA simulations has been reduced by a factor of $\sqrt{600}$ to account for the independent nature of each mock. Minimum $\chi^2$ values correspond to 39 DoF.}
 	\begin{tabular}{cc|ccccc}
 		\specialrule{.1em}{.05em}{.05em} 
 		Sample & $z_{\rm{eff}}$ & min $\chi^2$ & $\Omega_c h^2$ &$\alpha$ & $\epsilon$ & $\log(k_*)$\\
@@ -469,7 +470,7 @@ For small $\epsilon$, cosmological parameters can be extracted via Eq.~\ref{eq:a
 
 \subsection{Combining redshift bins for multipole data}
 
-The data present in the WizCOLA simulations and the final WiggleZ dataset is available in three redshift bins, $0.2 < z < 0.6$, $0.4 < z < 0.8$, and $0.6 < z < 1.0$. If these bins were independent, we could obtain our final parameter constraints  simply by combining the results for each individual bin. However, the data bins that we have to work with overlap and are thus correlated. 
+The data present in the WizCOLA simulations and the final WiggleZ dataset is available in three redshift bins, $0.2 < z < 0.6$, $0.4 < z < 0.8$, and $0.6 < z < 1.0$. If these bins were independent, we could obtain our final parameter constraints  simply by combining the results for each individual bin. However, the redshift bins that we have chosen overlap and are thus correlated. 
 
 There are two methods we can use to combine the binned data, and we utilise both methods in our multipole analysis so that we can check they give consistent results. The first method uses the correlation between final parameter values, and the second method calculates the covariance between the correlation function data points across all redshift bins and runs a separate fit that utilises all available data simultaneously.
 
@@ -540,7 +541,7 @@ When using the full data covariance to simultaneously fit all three redshift bin
 From a physical motivation, we expect the bias parameter $b^2$ to be dependent on redshift bin. This is because we only observe the most massive, luminous galaxies at high redshift, which have higher bias than the less massive galaxies we can see at lower redshifts. However, when performing fits, $b^2$ and $\beta$ are well constrained, whilst $k_*$ and $\sigma_V$ are not. As this implies that those two parameters do not significantly contribute to the likelihood calculations, it is unknown if setting $\sigma_V$ free between bins will have a noticeable benefit. 
 
 
-To investigate this, we ran fits to the combined WizCOLA data where we set no nuisance parameters free between redshift bins, when we only set $b^2$ free, when we set all \textit{but} $b^2$ free, and then when we set all four nuisance parameters free.  These fits indicate a strong preference for fitting with separate $b^2$ values in different redshift bins due to tighter constraints achieved, and an accompanying improvement in $\chi^2$.  However allowing the other nuisance parameters to vary between redshift bins has negligible benefits (it neither increases fit strength nor removes  bias), and adds computational time in the form of delayed chain convergence.
+To investigate this, we ran fits to the combined WizCOLA data where we set no nuisance parameters free between redshift bins, when we only set $b^2$ free, when we set all \textit{but} $b^2$ free, and then when we set all four nuisance parameters free.  These fits indicate a strong preference for fitting with separate $b^2$ values in different redshift bins due to tighter constraints achieved, and an accompanying improvement in $\chi^2$.  However allowing the other nuisance parameters to vary between redshift bins has negligible benefits (it neither decreases the uncertainty in parameter fits nor removes  bias), and adds computational time in the form of delayed chain convergence.
 
 Based on these results, we utilise independent $b^2$ values, whilst fixing $\beta$, $\sigma_v$, and $\sigma_V$ between bins when fitting with the full data set and full data covariance.
 % A comparison of their likelihood distributions is shown in Figure \ref{fig:wizcolaAllNormalCovCombined}.
@@ -608,9 +609,9 @@ marginal detection of the baryon acoustic peak in the clustering
 wedges.  This motivated us to consider, in addition to the $50\%$
 priors on $\alpha_\parallel$ and $\alpha_\perp$ mentioned above,
 additional flat priors on their combination, which we parameterize as
-$\alpha = \alpha_\perp^{2/3} \alpha_\parallel^{1/3} \sim D_{\rm
+$\alpha = \alpha_\perp^{2/3} \alpha_\parallel^{1/3} \propto D_{\rm
   A}^2 r^\prime_s /(H r_s)$ and $\epsilon = (\alpha_\parallel/\alpha_\perp)^{1/3} - 1
-\sim 1/(D_{\rm A} H)$.
+\propto 1/(D_{\rm A} H)$.
 The $\alpha$ parameter is mostly sensitive to
 the monopole and $\epsilon$ to the quadrupole, although both terms appear in all
 multipoles \citep[see][for a discussion]{PadmanabhanWhite2008}. In the
@@ -668,10 +669,10 @@ significantly compromise our model-independence.
 
 
 
-\section{Unreconstructed Mulitpole Results}
+\section{Unreconstructed Multipole Results}
 \label{sec:multi}
 
-Using the methodology outlined in Sections~\ref{sec:test} we fit to the final unreconstructed WiggleZ dataset from \citet{KazinKoda2014} using both methods for -- firstly fitting in each individual redshift bin and combining the results (Sect.~\ref{sec:parameterCov}), and secondly fitting all redshift bins simultaneously (Sect.~\ref{sec:allData}). The final distributions are given in Table \ref{tab:wigglezBinsParams} and illustrated in Figure~\ref{fig:wigglezBinsMP}.  The two methods give consistent results. 
+Using the methodology outlined in Sections~\ref{sec:test} we fit to the final unreconstructed WiggleZ dataset from \citet{KazinKoda2014} -- firstly fitting in each individual redshift bin and combining the results (Sect.~\ref{sec:parameterCov}), and secondly fitting all redshift bins simultaneously (Sect.~\ref{sec:allData}). The final distributions are given in Table \ref{tab:wigglezBinsParams} and illustrated in Figure~\ref{fig:wigglezBinsMP}.  The two methods give consistent results. 
 
 
 The conversion from $\alpha$ and $\epsilon$ to $D_A(z)$ and $H(z) $ is given by equations \eqref{eq:alpha1} and \eqref{eq:alpha2}. Using these relationships, we formulate parameter constraints. Figure \ref{fig:prerecon_result} displays the WiggleZ monopole and quadrupole data with the best fitting model overplotted in the three redshift ranges investigated. Baryonic acoustic peak signatures are present in all three redshift bins.
@@ -693,15 +694,15 @@ To determine the significance of the BAO peak detected in our analysis, we reran
 
 \begin{table*}
 	\centering
-	\caption{Final parameter constraints from fitting the 2D BAO signal in the pre-reconstruction WiggleZ multipole correlation function.}
+	\caption{Final parameter constraints from fitting the 2D BAO signal in the pre-reconstruction WiggleZ multipole correlation function. Minimum $\chi^2$ values correspond to 39 DoF. $D_A(z)$ given in units of Mpc, and $H(z)$ is presented in ${\rm km}\,{\rm s}^{-1} \, {\rm Mpc}^{-1}$.}
 	%\resizebox{\textwidth}{!}{
-	\begin{tabular}{cc|cc|ccc|ccc}
+	\begin{tabular}{cc|cc|cccc|ccc}
 		\specialrule{.1em}{.05em}{.05em} 
-		Sample & $z_{\rm{eff}}$ & $D^\prime_A(z)$ & $H^\prime(z)$ &  $\Omega_c h^2$  &$\alpha$ & $\epsilon$ & $D_A(z)$ & $H(z)$ & BAO peak significance\\
+		Sample & $z_{\rm{eff}}$ & $D^\prime_A(z)$ & $H^\prime(z)$ &  $\chi^2$ & $\Omega_c h^2$  &$\alpha$ & $\epsilon$ & $D_A(z)$ & $H(z)$ & BAO peak significance\\
 		\specialrule{.1em}{.05em}{.05em} 
-		$0.2 < z < 0.6$ &  $0.44$ & 1175.5  & 87.4  & $0.117^{+0.029}_{-0.023}$ & $1.07^{+0.10}_{-0.10}$ & $-0.03^{+0.07}_{-0.10}$ & $1330 \pm  150$ & $85^{+19}_{-12}$  & $2.2\sigma$\\
-		$0.4 < z < 0.8$ &  $0.6$  & 1386.2  & 95.5  & $0.156^{+0.035}_{-0.028}$ & $0.98^{+0.08}_{-0.10}$ & $0.05^{+0.07}_{-0.10}$ & $1280^{+190}_{-160}$ & $91^{+15}_{-14}$  & $2.1\sigma$\\
-		$0.6 < z < 1.0$ &  $0.73$ & 1509.4  & 102.8 & $0.143^{+0.033}_{-0.026}$ & $1.00^{+0.08}_{-0.07}$ & $0.12^{+0.06}_{-0.05}$ & $1340^{+150}_{-130}$ & $80^{+9}_{-10}$  & $2.3\sigma$\\
+		$0.2 < z < 0.6$ &  $0.44$ & 1175.5  & 87.4 & 55.0  & $0.117^{+0.029}_{-0.023}$ & $1.07^{+0.10}_{-0.10}$ & $-0.03^{+0.07}_{-0.10}$ & $1330 \pm  150$ & $85^{+19}_{-12}$  & $2.2\sigma$\\
+		$0.4 < z < 0.8$ &  $0.6$  & 1386.2  & 95.5  & 69.3  & $0.156^{+0.035}_{-0.028}$ & $0.98^{+0.08}_{-0.10}$ & $0.05^{+0.07}_{-0.10}$ & $1280^{+190}_{-160}$ & $91^{+15}_{-14}$  & $2.1\sigma$\\
+		$0.6 < z < 1.0$ &  $0.73$ & 1509.4  & 102.8 & 59.1 & $0.143^{+0.033}_{-0.026}$ & $1.00^{+0.08}_{-0.07}$ & $0.12^{+0.06}_{-0.05}$ & $1340^{+150}_{-130}$ & $80^{+9}_{-10}$  & $2.3\sigma$\\
 		\specialrule{.1em}{.05em}{.05em} 
 	\end{tabular}\label{tab:wigglezBinsParams}
 	%}
@@ -781,15 +782,15 @@ $0.6<z<1.0$ & $0.143^{+0.033}_{-0.026}$ & $1343.9^{+145.9}_{-134.9}$ & $80.4^{+9
 %============================================================
 \begin{table*}
 \begin{centering}
-\caption{Model-independent measurements using the post-reconstruction $\xi_{||,\perp}$.}
+\caption{Model-independent measurements using the post-reconstruction $\xi_{||,\perp}$. The values quoted are the modes and the $68\%$ CL regions. The percentages indicate half of the $68\%$ CL regions. $r$ denotes the correlation between parameter fits. Values for the $z=0.44$ bin are not reported as the data was insufficient to provide constraints and final surfaces were heavily dependent on choice of prior.In the $\chi^2$ fitting we use 36 DoF. These results are displayed in Figure \ref{fig:hubble_diagram}. \\}
 \label{tab:hda_wigglez_reconstructed}
 \begin{tabular}{ l | r | r | c | c | c | c | c }
 \hline
               & \multicolumn{2}{c}{Fiducial} & \multicolumn{5}{c}{Measured} \\  
 $z_{\rm eff}$ & $cz/(H r_{\rm s})$ & $D_{\rm A}/r_{\rm s}$  & $cz/(H r_{\rm s})$ & $D_{\rm A}/r_{\rm s}$  & $r$ & $\chi^2$ & BAO peak significance \\
 \hline
-  0.73  & 13.87 & 9.84 & 15.3$^{+2.1}_{-1.8}$ (13\%)  &  9.8$^{+1.1}_{-0.4}$ (7\%)   & -0.36  & 35 & $2.9\sigma$ \\
   0.60  & 12.27 & 9.03 & 11.5$^{+1.3}_{-1.6}$ (13\%)  & 10.3$^{+0.4}_{-0.5}$ (5\%)   & -0.16  & 25 & $2.7\sigma$ \\
+  0.73  & 13.87 & 9.84 & 15.3$^{+2.1}_{-1.8}$ (13\%)  &  9.8$^{+1.1}_{-0.4}$ (7\%)   & -0.36  & 35 & $2.9\sigma$ \\
 %  0.44  &  9.84 & 8.87 &  7.4$^{+4.5}_{-0.2}$ (32\%)  &  8.7$^{+1.0}_{-2.6}$ (21\%)  & +0.44  & 35 & 2.5 \\
 %----------
 %$z_{\rm eff}$ & $cz/H/r_{\rm s}$ & $D_{\rm A}/r_{\rm s}$  & $r$ & $\chi^2$ & $\Delta\chi^2$ \\
@@ -799,15 +800,6 @@ $z_{\rm eff}$ & $cz/(H r_{\rm s})$ & $D_{\rm A}/r_{\rm s}$  & $cz/(H r_{\rm s})$
 %  0.44  & 7.40$^{+4.50}_{-0.2}$ (31.8\%)   & 8.72$^{+0.97}_{-2.63}$ (20.6\%)  & +0.44 & 35.3 & 2.5 \\
 \end{tabular}
 
-\medskip
-The values quoted are the modes and the $68\%$ CL regions. The percentages indicate half of the $68\%$ CL regions.
-%Fiducial values for $cz/H/r_{\rm s}$ used ($z=0.73,\ 0.6, \ 0.44$, respectively): 13.87, 12.27, 9.84. \\
-%Fiducial values for $D_{\rm A}/r_{\rm s}$ used ($z=0.73,\ 0.6, \ 0.44$, respectively): 9.84, 9.03, 8.87.\\
-%Fiducial values for $cz/H/r_{\rm s}$ used ($z=0.73,\ 0.6$, respectively): 13.87, 12.27.
-%Fiducial values for $D_{\rm A}/r_{\rm s}$ used ($z=0.73,\ 0.6$, respectively): 9.84, 9.03.\\
-%{\red The positive cross-correlation $r$ for the $z_{\rm eff}=0.44$ is not physical, but rather due to the flat priors used. **WHY?**} \\
-Values for the $z=0.44$ bin are not reported as the data was insufficient to provide constraints and final surfaces were heavily dependent on choice of prior.
-In the $\chi^2$ fitting we use 36 DoF. These results are displayed in Figure \ref{fig:hubble_diagram}. \\
 \end{centering}
 \end{table*}
 
@@ -824,8 +816,8 @@ three redshift ranges investigated $\Delta z^{\rm Near}$, $\Delta
 z^{\rm Mid}$, and $\Delta z^{\rm Far}$.  We overplot best-fitting
 models for which we calculated $\chi^2 = 35.3, 24.8$, and $34.4$,
 respectively, with 36 degrees of freedom.  We see baryonic acoustic
-peak signatures in both $\xi_\perp$ and $\xi_\parallel$ for all three
-redshift ranges.  The fluctuations from zero at large scales are
+peak signatures in both $\xi_\perp$ and $\xi_\parallel$ for the $z=0.60$ and
+$z=0.73$ redshift bins.  The fluctuations from zero at large scales are
 consistent with the characteristic sample variance seen in the WizCOLA
 simulations.
 
@@ -904,17 +896,17 @@ Planck cosmology \citep{Planck2015Parameters}, as illustrated in figure \ref{fig
 
 
 
-We have presented the first measurement of the 2D BAO signal in the WiggleZ Dark Energy Survey data \citep{KazinKoda2014}, where we fit for the cosmological parameters $\Omega_c h^2$, $D_A(z)$, and $H(z)$ for the three redshift bins $z \in \left[0.44, 0.60, 0.73\right]$.  Our final pre-reconstruction constraints appear in Table~\ref{tab:wigglezBinsParams}.  These results are consistent with the Flat $\Lambda$CDM cosmology derived from best-fitting Planck cosmological values and with previous large-scale structure measurements. Post-reconstruction results can be found in Table \ref{tab:hda_wigglez_reconstructed}, and are also consistent with best-fitting Planck cosmology.
+We have presented the first measurement of the 2D BAO signal in the WiggleZ Dark Energy Survey data \citep{KazinKoda2014}, where we fit for the cosmological parameters $\Omega_c h^2$, $D_A(z)$, and $H(z)$ for the three redshift bins $z \in \left[0.44, 0.60, 0.73\right]$.  Our final pre-reconstruction constraints appear in Table~\ref{tab:wigglezBinsParams}.  These results are consistent with the Flat $\Lambda$CDM cosmology derived from best-fitting Planck cosmological values and with previous large-scale structure measurements. Post-reconstruction results can be found in Table \ref{tab:hda_wigglez_reconstructed}, and are also consistent with best-fitting Planck cosmology. Pre and post-reconstruction results are consistent, with their $1\sigma$ parameter bounds overlapping.
 
-The constraints given by this analysis provide an important high-redshift consistency check against BOSS results as given in \cite{AndersonAubourg2014DR11} against the BOSS $z=0.57$ redshift bin. We find results consistent with the BOSS analysis. The larger uncertainty in our measurements compared to the BOSS is as-expected from the relative sizes of the data sets.  Nevertheless our results show that using a different type of galaxy tracer with much lower bias (bright blue galaxies as opposed to luminous red galaxies), we recover the same standard cosmological model. 
+The constraints given by this analysis provide an important high-redshift consistency check against BOSS results as given in \cite{AndersonAubourg2014DR11} against the BOSS $z=0.57$ redshift bin, which reported $D_A= (1421\pm20\, {\rm Mpc}) (r_d/r_{d,{\rm fid}})$ and $H = (96.8\pm3.4 \,{\rm km}\,{\rm s}^{-1}\,{\rm Mpc}^{-1})(r_d/r_{d,{\rm fid}})$. We find results consistent with the BOSS analysis. The larger uncertainty in our measurements compared to the BOSS is as-expected from the relative sizes of the data sets.  Nevertheless our results show that using a different type of galaxy tracer with much lower bias (bright blue galaxies as opposed to luminous red galaxies), we recover the same standard cosmological model. 
 
 The main results of this analysis can be summarised as follows:
 \begin{itemize}
 	\item We update the unreconstructed 1D BAO measurement from \citet{BlakeKazin2011} using a more accurate covariance matrix based on WizCOLA mocks instead of lognormal realisations. The new best-fit parameters are consistent with the original measurements, with the maximum shift occurring in the highest redshift bin, whose value moved by slightly over 1$\sigma$ bringing it closer in line with the other two bins. See Table~\ref{tab:blakekazintable} for results.  Our results represent the final 1D BAO measurement using the {\em unreconstructed} WiggleZ data.  The most precise 1D BAO measurement from WiggleZ uses the {\em reconstructed} WiggleZ data as found in Kazin et al. (2014), which represents the final WiggleZ constraints from an angle-averaged BAO analysis.%\footnote{{\red **CHECK WITH CHRIS: These values supersede those reported in \citet{BlakeKazin2011}, but not \citet{KazinKoda2014}}}
-	\item We investigated two ways to fit the unreconstructed 2D BAO signal -- multipoles and wedges.  We found using the WizCOLA simulations that the multipoles gave a more robust result with higher statistical significance than wedges, and thus adopted multipoles for our final analysis.
+	%\item We investigated two ways to fit the unreconstructed 2D BAO signal -- multipoles and wedges.  We found using the WizCOLA simulations that the multipoles gave a more robust result with higher statistical significance than wedges, and thus adopted multipoles for our final analysis.
 	\item We validated our methodology by fitting 600 realisations of the WiggleZ survey generated by the WizCOLA simulations \citep{KodaBlake2015}. Our analysis recovered the input parameters of the simulation with no evidence for systematic bias. We also validate our methodology by testing agreement of cosmological parameters when analysing the 1D BAO signal with  \citet{BlakeKazin2011}.
 	\item We thoroughly tested subtle methodological differences that could possibly have effected our analysis, such as different ways to combine the data from redshift bins, varying or fixing $\sigma_v$, or including the hexadecapole, which all gave consistent results.
-	\item We performed the first cosmological analysis using the 2D BAO measurement of WiggleZ data using both pre and post reconstruction techniques. We detect the 2D BAO peak at a significance of slightly over 2$\sigma$ in each redshift bin for pre-reconstruction results, and approximately 3$\sigma$ for the $z=0.6$ and $z=0.73$ redshift bins for the reconstructed results, with the $z=0.44$ bin unable to provide convincing constraints. The best fit values of $\Omega_c h^2$, $H(z)$ and $D_A(z)$ for the pre-reconstruction fits are shown in Table~\ref{tab:wigglezBinsParams} and Fig.~\ref{fig:wigglezBinsMP}.  The results for $H(z)$ and $D_A(z)$ for post-reconsturction fitting are given in Table \ref{tab:hda_wigglez_reconstructed} and in Figures \ref{fig:HDA_z26_epsilon0.15} and \ref{fig:hubble_diagram}. These results are consistent with previous WiggleZ results, BOSS, and best fitting Planck cosmology and provide a consistency check on external survey results with tighter constraints from increased statistical power.
+	\item We performed the first cosmological analysis using the 2D BAO measurement of WiggleZ data using both pre and post reconstruction techniques. We detect the 2D BAO peak at a significance of slightly over 2$\sigma$ in each redshift bin for pre-reconstruction results, and approximately 3$\sigma$ for the $z=0.6$ and $z=0.73$ redshift bins for the reconstructed results, with the $z=0.44$ bin unable to provide convincing constraints. The best fit values of $\Omega_c h^2$, $H(z)$ and $D_A(z)$ for the pre-reconstruction fits are shown in Table~\ref{tab:wigglezBinsParams} and Fig.~\ref{fig:wigglezBinsMP}.  The results for $H(z)$ and $D_A(z)$ for post-reconstruction fitting are given in Table \ref{tab:hda_wigglez_reconstructed} and in Figures \ref{fig:HDA_z26_epsilon0.15} and \ref{fig:hubble_diagram}. These results are consistent with previous WiggleZ results, BOSS, and best fitting Planck cosmology.
 \end{itemize}
 
 
@@ -1044,7 +1036,7 @@ We gratefully acknowledge the input of the many researchers that were consulted 
 	\subsubsection{Spline Interpolation}
 	
 	
-	The final method of removing the BAO signal from the linear power spectrum investigated was using spline interpolation. Similarly to the polynomial fits, it has the option of being supplied relevant weights for each data point, and thus a similar investigation as to weights was carried out for spline interpolation as was carried out for polynomial fitting. The spline fitting was found to be completely insensitive to modified weights, but highly sensitive to the positive smoothing factor $s$. A value of $s = 0.18$ compromises between BAO subtraction and low levels of distortion at high $k/h$, as determined by minimising the difference between the resultant spline model and the output of \verb;tffit;. Spline interpolation was similarly investigated in \citet{ReidPercival2010}, who found that use of a cubic b-spline with eight nodes fitted to $P_{\rm{lin}}(k) k^{1.5}$ produced likelihood surfaces in high agreement with formula from \citet{EisensteinHu1998}. In testing this methodology for potential use, no benefit was found to come from rotating the power spectrum via the $k^{1.5}$. This was found for both tests using a univariate spline and a b-spline, however the similarity between the results of the different splines was such that only the univariate spline is documented.
+	The final method of removing the BAO signal from the linear power spectrum investigated was using spline interpolation. Similarly to the polynomial fits, it has the option of being supplied relevant weights for each data point, and thus a similar investigation as to weights was carried out for spline interpolation as was carried out for polynomial fitting. The spline fitting was found to be completely insensitive to modified weights, but highly sensitive to the positive smoothing factor $s$. A value of $s = 0.18$ compromises between BAO subtraction and low levels of distortion at high $k/h$, as determined by minimising the difference between the resultant spline model and the output of \verb;tffit;. Spline interpolation was similarly investigated in \citet{ReidPercival2010}, who found that use of a cubic b-spline with eight nodes fitted to $P_{\rm{lin}}(k) k^{1.5}$ produced likelihood surfaces in high agreement with formula from \citet{EisensteinHu1998}. In testing this methodology for potential use, no benefit was found to come from rotating the power spectrum via the $k^{1.5}$ in our algorithm. This was found for both tests using a univariate spline and a b-spline, however the similarity between the results of the different splines was such that only the univariate spline is documented.
 	
 	
 %	\begin{figure*}[h!]
@@ -1057,7 +1049,7 @@ We gratefully acknowledge the input of the many researchers that were consulted 
 	
 	\subsection{Selection of final model}
 	
-	Selecting the final method of dewiggling input spectra was done via looking explicitly at how the spectra are used in cosmological fitting: they are transformed into correlation functions and compared to observed data points. As such, the chosen optimal configurations for the polynomial and spline method were compared to \verb;tffit; by performing a cosmological sensitivity test wherein fits to WizCOLA data using the polynomial method, spline method and the algorithm given by \citet{EisensteinHu1998} are directly compared. To ensure this is robust, the value $k_*$ is fixed to 0.1, representing a fit with a very high level of dewiggling (hard thresholds are often limited to around this value, ie \citet{ChuangWang2012} have minimum $k_* = 0.09$), whilst still preserving some of the BAO peak with which to match. This analysis is given in Figure \ref{fig:AcosmologyTest}, and shows that for both spline and polynomial methods outlined above, statistical uncertainty in fits far exceeds any difference in matching results due to the change in dewiggling process. The polynomial method was selected to be the final method, due to the observed roughness in spline fitting which is the result of the changing dependence on the positive smoothing factor.
+	Selecting the final method of dewiggling input spectra was done via looking explicitly at how the spectra are used in cosmological fitting: they are transformed into correlation functions and compared to observed data points. As such, the chosen optimal configurations for the polynomial and spline method were compared to \verb;tffit; by performing a cosmological sensitivity test wherein fits to WizCOLA data using the polynomial method, spline method and the algorithm given by \citet{EisensteinHu1998} are directly compared. To ensure this is robust, the value $k_*$ is fixed to 0.1, representing a fit with a very high level of dewiggling (hard thresholds are often limited to around this value, ie \citet{ChuangWang2012} have minimum $k_* = 0.09$), whilst still preserving some of the BAO peak with which to match. This analysis is given in Figure \ref{fig:AcosmologyTest}, and shows that for both spline and polynomial methods outlined above, statistical uncertainty in fits far exceeds any difference in matching results due to the change in dewiggling process. The polynomial method was selected to be the final method.
 	
 	
 	\begin{figure}[t]
