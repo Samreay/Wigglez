@@ -14,7 +14,6 @@
 *.idx
 *.toc
 *.ist
-*.cls
 *.sty
 *.q
 *.pyc

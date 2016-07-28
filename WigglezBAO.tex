@@ -1,4 +1,17 @@
-\documentclass[iop,twocolappendix]{emulateapj}
+\documentclass[a4paper,fleqn,usenatbib]{mnras}
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will be fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+\usepackage{newtxtext,newtxmath}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
 
 \usepackage{epstopdf}
 \usepackage{aas_macros}
@@ -9,10 +22,11 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{appendix}
+\usepackage{graphicx}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage[normalem]{ulem}
 \usepackage{array}
-\bibliographystyle{hapj}
+\bibliographystyle{mnras}
 
 
 \newcommand{\myemail}{samuelreay@gmail.com}
@@ -40,44 +54,48 @@
 \newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
 
 
-\shorttitle{WiggleZ 2D BAO}
-\shortauthors{S. R. Hinton et al.}
 
+%\shortauthors{}
+\title[WiggleZ 2D BAO]{Measuring the 2D Baryon Acoustic Oscillation signal of galaxies in WiggleZ: Cosmological constraints} %$H(z)$, $D_A(z)$ and $\Omega_c h^2$}
+
+\author[S. R. Hinton et al.]{
+Samuel R. Hinton,$^{1,2}$\thanks{E-mail: \href{samuelreay@gmail.com}}
+Eyal Kazin,$^{3,2}$
+Tamara M. Davis,$^{1,2}$
+Chris Blake,$^{3}$\newauthor
+Sarah Brough,$^{5}$
+Matthew Colless,$^{4}$
+Warrick J. Couch,$^{5}$ 
+Michael J. Drinkwater,$^{1}$\newauthor
+Karl Glazebrook,$^{3}$
+David Parkinson,$^{1,2}$
+Kevin A. Pimbblet,$^{6,7,8,9}$
+Michael Pracy$^{10}$
+\\
+% List of institutions
+$^{1}$School of Mathematics and Physics, The University of Queensland, Brisbane, QLD 4072, Australia\\
+$^{2}$ARC Centre of Excellence for All-sky Astrophysics (CAASTRO)\\
+$^{3}$Centre for Astrophysics \& Supercomputing, Swinburne University of Technology, P.O. Box 218, Hawthorn, VIC 3122, Australia\\
+$^{4}$Research School of Astronomy \& Astrophysics, Australian National University, Australia\\
+$^{5}$Australian Astronomical Observatory, PO Box 915, North Ryde, NSW 1670, Australia\\
+$^{6}$Department of Physics and Mathematics, University of Hull, Cottingham Road, Hull HU6 7RX, UK\\
+$^{7}$School of Physics, Monash University, Clayton, Victoria 3800, Australia;\\ $^{8}$Monash Centre for Astrophysics (MoCA), Monash University, Clayton, Victoria 3800, Australia\\
+$^{9}$Department of Physics, University of Oxford, Denys Wilkinson Building, Keble Road, Oxford OX1 3RH, UK\\
+$^{10}$Sydney Institute for Astronomy, School of Physics, University of Sydney, NSW 2006, Australia
+}
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Enter the current year, for the copyright statements etc.
+\pubyear{2016}
 
 \begin{document}
 
-\title{Measuring the 2D Baryon Acoustic Oscillation signal of galaxies in WiggleZ: Cosmological constraints} %$H(z)$, $D_A(z)$ and $\Omega_c h^2$}
 
-\author{S. R. Hinton}
-\affil{School of Mathematics and Physics, The University of Queensland, Brisbane, QLD 4072, Australia}
-\affil{ARC Centre of Excellence for All-sky Astrophysics (CAASTRO)}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
 
-\author{E. Kazin}
-\affil{Centre for Astrophysics \& Supercomputing, Swinburne University of Technology, P.O. Box 218, Hawthorn, VIC 3122, Australia}
-\affil{ARC Centre of Excellence for All-sky Astrophysics (CAASTRO)}
-
-\author{T. M. Davis}
-\affil{School of Mathematics and Physics, The University of Queensland, Brisbane, QLD 4072, Australia}
-\affil{ARC Centre of Excellence for All-sky Astrophysics (CAASTRO)}
-
-\author{C. Blake}
-\affil{Centre for Astrophysics \& Supercomputing, Swinburne University of Technology, P.O. Box 218, Hawthorn, VIC 3122, Australia}
- 
-\author{K. Glazebrook}
-\affil{Centre for Astrophysics and Supercomputing, Swinburne, University of Technology, Hawthorn, VIC 3122, Australia}
- 
-%\author{C. Lidman}
-%\affil{Australian Astronomical Observatory, North Ryde, NSW 2113, Australia}
-
-\author{M. Colless}
-\affil{Research School of Astronomy \& Astrophysics, Australian National University, Australia}
-
-\author{W. J. Couch}
-\affil{Australian Astronomical Observatory, PO Box 915, North Ryde, NSW 1670, Australia}
-
-
-
-\author{Others}
 
 
 \begin{abstract}
@@ -793,7 +811,7 @@ $0.6<z<1.0$ & $0.143^{+0.033}_{-0.026}$ & $1343.9^{+145.9}_{-134.9}$ & $80.4^{+9
 %============================================================
 \begin{table*}
 \begin{centering}
-\caption{Model-independent measurements using the post-reconstruction $\xi_{||,\perp}$. The values quoted are the modes and the $68\%$ CL regions. The percentages indicate half of the $68\%$ CL regions. $r$ denotes the correlation between parameter fits. Values for the $z=0.44$ bin are not reported as the data was insufficient to provide constraints and final surfaces were heavily dependent on choice of prior.In the $\chi^2$ fitting we use 36 DoF. These results are displayed in Figure \ref{fig:hubble_diagram}. \\}
+\caption{Model-independent measurements using the post-reconstruction $\xi_{||,\perp}$. The values quoted are the modes and the $68\%$ CL regions. The percentages indicate half of the $68\%$ CL regions. $r$ denotes the correlation between parameter fits. Values for the $z=0.44$ bin are not reported as the data was insufficient to provide constraints and final surfaces were heavily dependent on choice of prior.In the $\chi^2$ fitting we use 36 DoF. These results are displayed in Figure \ref{fig:hubble_diagram}.}
 \label{tab:hda_wigglez_reconstructed}
 \begin{tabular}{ l | r | r | c | c | c | c | c }
 \hline
@@ -880,14 +898,16 @@ Planck cosmology \citep{Planck2015Parameters}, as illustrated in figure \ref{fig
 \includegraphics[width=0.9\columnwidth]{figures/stacked_L2D_rpt_wedges_postRec_T0.15_WiggleZ_z0pt2_0pt1/stacked_L2D_rpt_wedges_postRec_T015_WiggleZ_z0pt2_0pt6.png}
 \includegraphics[width=0.9\columnwidth]{figures/stacked_L2D_rpt_wedges_postRec_T0.15_WiggleZ_z0pt4_0pt8/stacked_L2D_rpt_wedges_postRec_T015_WiggleZ_z0pt4_0pt8.png}
 \includegraphics[width=0.9\columnwidth]{figures/z60_Model/stacked_L2D_rpt_wedges_postRec_T015_WiggleZ_z0pt6_1pt0.png}
-\caption{\label{fig:HDA_z26_epsilon0.15} Marginalized posteriors of $cz/(Hr_{\rm s})$ and $D_{\rm A}/r_{\rm s}$ (red solid) obtained with WiggleZ post-reconstruction $\xi_{\perp, ||}$ in the three redshift bins $0.2<z<0.6$ (upper), $0.4<z<0.8$ (mid), $0.6<z<1.0$ (lower), using a flat prior on $\epsilon$ [-0.15,0.15].  The blue dashed lines are the Gaussian approximation when using the mode values, mean of the 68$\%$ CL regions and the cross-correlation $r$. The 2D even contours are the $68\%$ and $95\%$ CL regions and the thin gray dashed line marks the fiducial cosmology.  In the lowest redshift bin the data are not sufficient to constrain these parameters well.}
+\caption{ Marginalized posteriors of $cz/(Hr_{\rm s})$ and $D_{\rm A}/r_{\rm s}$ (red solid) obtained with WiggleZ post-reconstruction $\xi_{\perp, ||}$ in the three redshift bins $0.2<z<0.6$ (upper), $0.4<z<0.8$ (mid), $0.6<z<1.0$ (lower), using a flat prior on $\epsilon$ [-0.15,0.15].  The blue dashed lines are the Gaussian approximation when using the mode values, mean of the 68$\%$ CL regions and the cross-correlation $r$. The 2D even contours are the $68\%$ and $95\%$ CL regions and the thin gray dashed line marks the fiducial cosmology.  In the lowest redshift bin the data are not sufficient to constrain these parameters well.}
+\label{fig:HDA_z26_epsilon0.15}
 \end{center}
 \end{figure}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=\columnwidth]{figures/hubble_HDa/hubble_HDa}
-\caption{\label{fig:hubble_diagram} The WiggleZ results of $D_{\rm A}/r_{\rm s}$ (left) and $cz/(Hr_{\rm s})$ (right) in blue circles are plotted against results from AP+BAO analysis of \cite{BlakeBroughColless2012} (small black circles) and BOSS \cite{AndersonAubourg2014} (red squares), all with 68$\%$ CL regions in the $y$-axis (and redshift range on the $x$). All values are presented in Table \ref{tab:hda_wigglez_reconstructed}. The thick gray bands are $ow$CDM using Planck temperature fluctuations and WMAP9 polarization, and the thin black bands are when assuming and open $w$CDM cosmology. The dashed lines are the fiducial cosmology used in the analysis motivated by the best fit to WMAP7 data (assuming flat $\Lambda$CDM).}
+\caption{The WiggleZ results of $D_{\rm A}/r_{\rm s}$ (left) and $cz/(Hr_{\rm s})$ (right) in blue circles are plotted against results from AP+BAO analysis of \citet{BlakeBroughColless2012} (small black circles) and BOSS \citep{AndersonAubourg2014} (red squares), all with 68$\%$ CL regions in the $y$-axis (and redshift range on the $x$). All values are presented in Table \ref{tab:hda_wigglez_reconstructed}. The thick gray bands are $ow$CDM using Planck temperature fluctuations and WMAP9 polarization, and the thin black bands are when assuming and open $w$CDM cosmology. The dashed lines are the fiducial cosmology used in the analysis motivated by the best fit to WMAP7 data (assuming flat $\Lambda$CDM).}
+\label{fig:hubble_diagram}
 \end{center}
 \end{figure}
 
