@@ -58,19 +58,19 @@
 %\shortauthors{}
 \title[WiggleZ 2D BAO]{Measuring the 2D Baryon Acoustic Oscillation signal of galaxies in WiggleZ: Cosmological constraints} %$H(z)$, $D_A(z)$ and $\Omega_c h^2$}
 
-\author[S. R. Hinton et al.]{
-Samuel R. Hinton,$^{1,2}$\thanks{E-mail: \href{samuelreay@gmail.com}}
+\author[S. R. Hinton et al.]{Samuel R. Hinton,$^{1,2}$\thanks{E-mail: \href{samuelreay@gmail.com}}
 Eyal Kazin,$^{3,2}$
 Tamara M. Davis,$^{1,2}$
 Chris Blake,$^{3}$\newauthor
 Sarah Brough,$^{5}$
 Matthew Colless,$^{4}$
-Warrick J. Couch,$^{5}$ 
-Michael J. Drinkwater,$^{1}$\newauthor
+Warrick J. Couch,$^{5}$ \newauthor
+Michael J. Drinkwater,$^{1}$
 Karl Glazebrook,$^{3}$
-David Parkinson,$^{1,2}$
-Kevin A. Pimbblet,$^{6,7,8,9}$
-Michael Pracy$^{10}$
+Russell J. Jurek,$^{6}$\newauthor
+David Parkinson,$^{1,2}$ 
+Kevin A. Pimbblet,$^{7,8,9,10}$
+Michael Pracy$^{11}$
 \\
 % List of institutions
 $^{1}$School of Mathematics and Physics, The University of Queensland, Brisbane, QLD 4072, Australia\\
@@ -78,10 +78,11 @@ $^{2}$ARC Centre of Excellence for All-sky Astrophysics (CAASTRO)\\
 $^{3}$Centre for Astrophysics \& Supercomputing, Swinburne University of Technology, P.O. Box 218, Hawthorn, VIC 3122, Australia\\
 $^{4}$Research School of Astronomy \& Astrophysics, Australian National University, Australia\\
 $^{5}$Australian Astronomical Observatory, PO Box 915, North Ryde, NSW 1670, Australia\\
-$^{6}$Department of Physics and Mathematics, University of Hull, Cottingham Road, Hull HU6 7RX, UK\\
-$^{7}$School of Physics, Monash University, Clayton, Victoria 3800, Australia;\\ $^{8}$Monash Centre for Astrophysics (MoCA), Monash University, Clayton, Victoria 3800, Australia\\
-$^{9}$Department of Physics, University of Oxford, Denys Wilkinson Building, Keble Road, Oxford OX1 3RH, UK\\
-$^{10}$Sydney Institute for Astronomy, School of Physics, University of Sydney, NSW 2006, Australia
+$^{6}$Australia Telescope National Facility, CSIRO, Epping, NSW 1710, Australia\\
+$^{7}$Department of Physics and Mathematics, University of Hull, Cottingham Road, Hull HU6 7RX, UK\\
+$^{8}$School of Physics, Monash University, Clayton, Victoria 3800, Australia;\\ $^{9}$Monash Centre for Astrophysics (MoCA), Monash University, Clayton, Victoria 3800, Australia\\
+$^{10}$Department of Physics, University of Oxford, Denys Wilkinson Building, Keble Road, Oxford OX1 3RH, UK\\
+$^{11}$Sydney Institute for Astronomy, School of Physics, University of Sydney, NSW 2006, Australia
 }
 % These dates will be filled out by the publisher
 \date{Accepted XXX. Received YYY; in original form ZZZ}
@@ -125,7 +126,7 @@ In this paper we analyse the 2D BAO signal using both techniques on the WiggleZ 
 In this paper Section \ref{sect:wigglez} begins by describing the data we use.  Then in Section \ref{sec:model} we construct a theoretical model of the full 2D correlation function and we decompose that correlation function into our two summary statistics --- multipole expansion and wedges.
 Section \ref{sec:test} evaluates those models against the WizCOLA simulations, and Sections \ref{sec:multi} and \ref{sec:wedge} use the multipole and wedge models to extract cosmological parameters from the unreconstructed and reconstructed WiggleZ data respectively. In Section \ref{sec:disc} we place these results into the larger cosmological context by incorporating the results from other surveys \& other methodologies, and present final conclusions.
 
-\begin{figure*}[t]
+\begin{figure*}
 	\begin{center}
 		\includegraphics[width=\textwidth]{images/dataplot.pdf}
 	\end{center}
@@ -401,12 +402,29 @@ The results are shown in Figure \ref{fig:mpDist2}, which confirms that the recov
 
 For small $\epsilon$, cosmological parameters can be extracted via Eq.~\ref{eq:alpha1} and Eq.~\ref{eq:alpha2}.
 
-\begin{figure}[h!]
+\begin{figure}
 	\begin{center}
 		\includegraphics[width=\columnwidth]{images/mpDist2.pdf}
 	\end{center}
 	\caption{Maximum likelihood $\Omega_c h^2$, $\alpha$ and $\epsilon$ values from WizCOLA realisations of the WiggleZ multipole data are shown in the bottom left corner plots. Dashed black lines indicate simulation parameters, and the solid black distributions in the diagonal subplots represent the final distribution across all bins for the specific parameter.}
 	\label{fig:mpDist2}
+\end{figure}
+
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.85\columnwidth]{images/correlations.png}
+	\end{center}
+	\caption{Correlations between final cosmological parameters when fitting to the three redshift bins of each WizCOLA simulation for the multipole data. The subscript numbers after each parameter are used to denote the redshift bin, with $0$, $1$, and $2$ respectively denoting the $0.2 < z < 0.6$, $0.4 < z < 0.8$, and $0.6 < z < 1.0$ bins. }
+	\label{fig:correlations}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=\columnwidth]{images/fullCorrelations.png}
+	\end{center}
+	\caption{Full data correlation matrices constructed for both the multipole expression of the WizCOLA data. The $b=0$, $b=1$ and $b=2$ labels respectively refer to the redshift bins $0.2 < z < 0.6$, $0.4 < z < 0.8$ and $0.6 < z < 1.0$. We can see that, even though the $b=0$ and $b=2$ bins do not overlap, some faint correlation still persists. This is expected, as data is generated using different snapshots of the same initial conditions, and thus the same set of modes are imprinted in both measurements.}
+	\label{fig:fullCorrelations}
 \end{figure}
 
 
@@ -416,6 +434,7 @@ For small $\epsilon$, cosmological parameters can be extracted via Eq.~\ref{eq:a
 The data present in the WizCOLA simulations and the final WiggleZ dataset is available in three redshift bins, $0.2 < z < 0.6$, $0.4 < z < 0.8$, and $0.6 < z < 1.0$. If these bins were independent, we could obtain our final parameter constraints  simply by combining the results for each individual bin. However, the redshift bins that we have chosen overlap and are thus correlated. 
 
 There are two methods we can use to combine the binned data, and we utilise both methods in our multipole analysis so that we can check they give consistent results. The first method uses the correlation between final parameter values, and the second method calculates the covariance between the correlation function data points across all redshift bins and runs a separate fit that utilises all available data simultaneously.
+
 
 
 \subsubsection{First Method: Parameter Covariance} \label{sec:parameterCov}
@@ -437,20 +456,6 @@ R_{ij} = \frac{1}{N-1} \sum\limits_{n=1}^{N} \frac{(\theta_{i,n} - \bar{\theta}_
 where $\sigma_i$ represents the standard deviation of the $i$th parameter. The correlation matrix $R_{ij}$ determined from analysis of the WizCOLA realisations is shown in Figure \ref{fig:correlations}. 
 
 
-\begin{figure}[t]
-	\begin{center}
-		\includegraphics[width=0.85\columnwidth]{images/correlations.png}
-	\end{center}
-	\caption{Correlations between final cosmological parameters when fitting to the three redshift bins of each WizCOLA simulation for the multipole data. The subscript numbers after each parameter are used to denote the redshift bin, with $0$, $1$, and $2$ respectively denoting the $0.2 < z < 0.6$, $0.4 < z < 0.8$, and $0.6 < z < 1.0$ bins. }
-	\label{fig:correlations}
-\end{figure}
-\begin{figure}[t]
-	\begin{center}
-		\includegraphics[width=\columnwidth]{images/fullCorrelations.png}
-	\end{center}
-	\caption{Full data correlation matrices constructed for both the multipole expression of the WizCOLA data. The $b=0$, $b=1$ and $b=2$ labels respectively refer to the redshift bins $0.2 < z < 0.6$, $0.4 < z < 0.8$ and $0.6 < z < 1.0$. We can see that, even though the $b=0$ and $b=2$ bins do not overlap, some faint correlation still persists. This is expected, as data is generated using different snapshots of the same initial conditions, and thus the same set of modes are imprinted in both measurements.}
-	\label{fig:fullCorrelations}
-\end{figure}
 
 
 
@@ -469,6 +474,14 @@ where again the subscript indices on the $\Omega_c h^2$, $\alpha$ and $\epsilon$
 
 The covariance matrices utilised so far in our analysis have been supplied from the WizCOLA simulations, and give data covariance inside each redshift bin. However, also having the 600 WizCOLA realisations, we can reconstruct a full covariance matrix to give the covariance between values of the correlation function across redshift bins. The correlation matrices for the multipole data are shown in Figure \ref{fig:fullCorrelations}.
 
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=\columnwidth]{images/corCombinedMPWiz.png}
+	\end{center}
+	\caption{Fits to the mean data of all 600 WizCOLA realisations 
+		for the multipole expansion expression of the data. Fits using all three bins simultaneously are shown as the ``All data'' fits, and the combination of maximum likelihood parameters using parameter covariance is shown as the ``Combined'' likelihood surfaces. In all cases we recover simulation cosmology well within $1\sigma$ limits.}
+	\label{fig:corCombinedMPWiz}
+\end{figure}
 
 
 
@@ -491,14 +504,6 @@ Based on these results, we utilise independent $b^2$ values, whilst fixing $\bet
 
 
 
-\begin{figure}[h!]
-	\begin{center}
-		\includegraphics[width=\columnwidth]{images/corCombinedMPWiz.png}
-	\end{center}
-	\caption{Fits to the mean data of all 600 WizCOLA realisations 
-	for the multipole expansion expression of the data. Fits using all three bins simultaneously are shown as the ``All data'' fits, and the combination of maximum likelihood parameters using parameter covariance is shown as the ``Combined'' likelihood surfaces. In all cases we recover simulation cosmology well within $1\sigma$ limits.}
-	\label{fig:corCombinedMPWiz}
-\end{figure}
 
 
 \section{Validating reconstructed wedge data}
@@ -573,6 +578,21 @@ significantly compromise our model-independence.
 
 
 
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=\columnwidth]{images/corCombinedMPWig.png}
+	\end{center}
+	\caption{Likelihood surfaces and marginalised distributions of $\Omega_ch^2$, $\alpha$ and $\epsilon$ for the WiggleZ multipole expression of the data. }
+	\label{fig:wigglezBinsMP}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=\columnwidth]{images/prerecon_result.pdf}
+		\caption{\label{fig:prerecon_result}  WiggleZ pre-reconstruction $0.2<z<0.6$ (upper), $0.4<z<0.8$ (mid), $0.6<z<1$ (lower) monopole $\xi_{0}$ (blue), $\xi_{2}$ (red) and best-fit models.%
+		}
+	\end{center}
+\end{figure}
 
 
 \section{Unreconstructed Multipole Results}
@@ -586,13 +606,6 @@ The conversion from $\alpha$ and $\epsilon$ to $D_A(z)$ and $H(z) $ is given by 
 To determine the significance of the BAO peak detected in our analysis, we reran the multipole analysis with a model devoid of the BAO peak and converted the $\Delta \chi^2$ into a detection significance, which we found to be just over $2\sigma$ in all redshift bins. The low significance of the BAO peak is expected: the 1D BAO analysis from \citet{BlakeDavis2011} found a significance of $3.2\sigma$ when using all data in one combined bin, while our analysis used the data divided over three bins, and includes extra parameters to model angular dependence, so it is expected the statistical significance of the BAO peak would decrease. The analysis in \citet{BlakeKazin2011}, which utilised three redshift bins, the same as our analysis, found statistical significances between $1.9\sigma$ and $2.4\sigma$, consistent with our results.
 
 
-\begin{figure}
-	\begin{center}
-		\includegraphics[width=\columnwidth]{images/corCombinedMPWig.png}
-	\end{center}
-	\caption{Likelihood surfaces and marginalised distributions of $\Omega_ch^2$, $\alpha$ and $\epsilon$ for the WiggleZ multipole expression of the data. }
-	\label{fig:wigglezBinsMP}
-\end{figure}
 
 
 \begin{table*}
@@ -604,20 +617,13 @@ To determine the significance of the BAO peak detected in our analysis, we reran
 		Sample & $z_{\rm{eff}}$ & $D^\prime_A(z)$ & $H^\prime(z)$ &  $\chi^2$ & $\Omega_c h^2$  &$\alpha$ & $\epsilon$ & $D_A(z)$ & $H(z)$ & BAO peak significance\\
 		\specialrule{.1em}{.05em}{.05em} 
 		$0.2 < z < 0.6$ &  $0.44$ & 1175.5  & 87.4 & 55.0  & $0.117^{+0.029}_{-0.023}$ & $1.07^{+0.10}_{-0.10}$ & $-0.03^{+0.07}_{-0.10}$ & $1330 \pm  150$ & $85^{+19}_{-12}$  & $2.2\sigma$\\
-		$0.4 < z < 0.8$ &  $0.6$  & 1386.2  & 95.5  & 69.3  & $0.156^{+0.035}_{-0.028}$ & $0.98^{+0.08}_{-0.10}$ & $0.05^{+0.07}_{-0.10}$ & $1280^{+190}_{-160}$ & $91^{+15}_{-14}$  & $2.1\sigma$\\
+		$0.4 < z < 0.8$ &  $0.60$  & 1386.2  & 95.5  & 69.3  & $0.156^{+0.035}_{-0.028}$ & $0.98^{+0.08}_{-0.10}$ & $0.05^{+0.07}_{-0.10}$ & $1280^{+190}_{-160}$ & $91^{+15}_{-14}$  & $2.1\sigma$\\
 		$0.6 < z < 1.0$ &  $0.73$ & 1509.4  & 102.8 & 59.1 & $0.143^{+0.033}_{-0.026}$ & $1.00^{+0.08}_{-0.07}$ & $0.12^{+0.06}_{-0.05}$ & $1340^{+150}_{-130}$ & $80^{+9}_{-10}$  & $2.3\sigma$\\
 		\specialrule{.1em}{.05em}{.05em} 
 	\end{tabular}\label{tab:wigglezBinsParams}
 	%}
 \end{table*}
 
-\begin{figure}[!h]
-	\begin{center}
-		\includegraphics[width=\columnwidth]{images/prerecon_result.pdf}
-		\caption{\label{fig:prerecon_result}  WiggleZ pre-reconstruction $0.2<z<0.6$ (upper), $0.4<z<0.8$ (mid), $0.6<z<1$ (lower) monopole $\xi_{0}$ (blue), $\xi_{2}$ (red) and best-fit models.%
-		}
-	\end{center}
-\end{figure}
 
 
 
@@ -629,7 +635,7 @@ To determine the significance of the BAO peak detected in our analysis, we reran
 \label{tab:hda_wigglez_reconstructed}
 \begin{tabular}{ l | r | r | c | c | c | c | c }
 \hline
-              & \multicolumn{2}{c}{Fiducial} & \multicolumn{5}{c}{Measured} \\  
+              & \multicolumn{2}{c|}{Fiducial} & \multicolumn{5}{c}{Measured} \\  
 $z_{\rm eff}$ & $cz/(H r_{\rm s})$ & $D_{\rm A}/r_{\rm s}$  & $cz/(H r_{\rm s})$ & $D_{\rm A}/r_{\rm s}$  & $r$ & $\chi^2$ & BAO peak significance \\
 \hline
   0.60  & 12.27 & 9.03 & 11.5$^{+1.3}_{-1.6}$ (13\%)  & 10.3$^{+0.4}_{-0.5}$ (5\%)   & -0.16  & 25 & $2.7\sigma$ \\
@@ -641,7 +647,15 @@ $z_{\rm eff}$ & $cz/(H r_{\rm s})$ & $D_{\rm A}/r_{\rm s}$  & $cz/(H r_{\rm s})$
 
 
 
-
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.9\columnwidth]{figures/WiggleZ_post_rec_Xiwedges_z26/WiggleZ_pre_post_rec_Xiwedges_z26}
+		\includegraphics[width=0.9\columnwidth]{figures/WiggleZ_post_rec_Xiwedges_z48/WiggleZ_pre_post_rec_Xiwedges_z48}
+		\includegraphics[width=0.9\columnwidth]{figures/WiggleZ_post_rec_Xiwedges_z60/WiggleZ_pre_post_rec_Xiwedges_z60}
+		\caption{\label{fig:wigglez_wedges_z60}  WiggleZ post-reconstruction $0.2<z<0.6$ (upper), $0.4<z<0.8$ (mid), $0.6<z<1$ (lower) clustering $\xi_{||}$ (red line-of-sight; red circles), $\xi_{\perp}$ (transverse; blue squares) and best-fit models.%
+		}
+	\end{center}
+\end{figure}
 
 \section{Reconstructed Results}\label{sec:wedge}
 
@@ -685,19 +699,11 @@ expectations.
 
 The results we find fitting the reconstructed wedges are consistent
 with both prior WiggleZ studies, BOSS constraints from \citet{AndersonAubourg2014}, and
-Planck cosmology \citep{Planck2015Parameters}, as illustrated in figure \ref{fig:hubble_diagram}.
+Planck cosmology \citep{Planck2015Parameters}, as illustrated in Figure \ref{fig:hubble_diagram}.
 
 
 
-\begin{figure}[!h]
-\begin{center}
-\includegraphics[width=0.9\columnwidth]{figures/WiggleZ_post_rec_Xiwedges_z26/WiggleZ_pre_post_rec_Xiwedges_z26}
-\includegraphics[width=0.9\columnwidth]{figures/WiggleZ_post_rec_Xiwedges_z48/WiggleZ_pre_post_rec_Xiwedges_z48}
-\includegraphics[width=0.9\columnwidth]{figures/WiggleZ_post_rec_Xiwedges_z60/WiggleZ_pre_post_rec_Xiwedges_z60}
-\caption{\label{fig:wigglez_wedges_z60}  WiggleZ post-reconstruction $0.2<z<0.6$ (upper), $0.4<z<0.8$ (mid), $0.6<z<1$ (lower) clustering $\xi_{||}$ (red line-of-sight; red circles), $\xi_{\perp}$ (transverse; blue squares) and best-fit models.%
-}
-\end{center}
-\end{figure}
+
 
 
 \begin{figure}
@@ -752,13 +758,12 @@ The main results of this analysis can be summarised as follows:
 
 We gratefully acknowledge the input of the many researchers that were consulted during the creation of this paper. In particular, David Parkinson for his assistance. Sections of this work were undertaken using the NCI computer under project gi7: `Numerical simulations of stochastic galaxy formation in modified gravity theories'.   We  would also like to thank Joshua Calcino, Carolyn Wood and Sarah Thompson for their input. Parts of this research were conducted by the Australian Research Council Centre of Excellence for All-sky Astrophysics (CAASTRO), through project number CE110001020. This research has made use of NASA's Astrophysics Data System.
 
-
+\clearpage
 \bibliography{bibliography}
 
 
 
-\clearpage
-\newpage
+
 \appendix
 
 	
