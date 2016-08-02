@@ -131,7 +131,7 @@ Section \ref{sec:test} evaluates those models against the WizCOLA simulations, a
 	\begin{center}
 		\includegraphics[width=\textwidth]{images/dataplot.pdf}
 	\end{center}
-	\caption{The WizCOLA simulation mean data \citep{KazinKoda2014,KodaBlake2015}, unreconstructed WiggleZ multipoles and reconstructed WiggleZ wedges shown in three respective columns. Rows represent different redshift bins in the data. For the multipole data, the monopole contribution and quadrupole contribution are shown in blue circles and green diamonds respectively. For the wedge data, we show the transverse component (blue circles) and line-of-sight component (green diamonds). Uncertainty is determined by looking at simulation variance over 600 realisations of fiducial cosmology.}
+	\caption{The WizCOLA simulation mean data \citep{KazinKoda2014,KodaBlake2015}, unreconstructed WiggleZ multipoles and reconstructed WiggleZ wedges shown in three respective columns. Rows represent different redshift bins in the data. For the multipole data, the monopole contribution and quadrupole contribution are shown in blue circles and green diamonds respectively. For the wedge data, we show the transverse component (blue circles) and line-of-sight component (green diamonds). Uncertainty is determined by looking at simulation variance over 600 realisations of fiducial cosmology. For details on multipole and wedge constructions of the 2D correlation function, see \S\ref{sec:model}.}
 	\label{fig:wizcola}
 \end{figure*}
 
@@ -146,9 +146,9 @@ The one dimensional BAO signal was analysed for a subset of WiggleZ data in \cit
 
 Analyses of the 2D data have also been performed on WiggleZ data, but not yet on scales large enough to include the BAO peak.  \citet{BlakeBroughColless2011} and \citet{ContrerasBlake2013} use redshift space distortions to measure the rate of growth  of structure, while \citet{BlakeGlazebrook2011} used the Alcock-Paczynski test on galaxy clustering as a {\em standard sphere} to measure expansion history. Cosmological results from the WiggleZ papers were combined with other surveys and datasets in \citet{Parkinson2012}.
 
-One investigation that has not been undertaken with the WiggleZ data is a two dimensional analysis of the BAO signal.  As the survey meets the criteria for being able to detect the 2D BAO signal -- volumes of order 1 Gpc$^3$ with order of $10^5$ redshifted galaxies \citep{Tegmark1997,BlakeGlazebrook2003,BlakeParkinson2006} -- we present that analysis in this paper.  
+One investigation that has not been undertaken with the WiggleZ data is a two dimensional analysis of the BAO signal.  As the survey meets the criteria for being able to detect the 2D BAO signal -- volumes of order 1 Gpc$^3$ with order of $10^5$ redshifted galaxies \citep{Tegmark1997,BlakeGlazebrook2003,BlakeParkinson2006} -- we present that analysis in this paper. The high-redshift range and low-bias galaxy selection of the WiggleZ survey makes such an analysis a useful consistency check on larger current surveys such as BOSS \citep{AndersonAubourg2014}.
 
-This analysis is motivated by two recent improvements to the WiggleZ survey data.  The first improvement is that reconstruction has now been performed to remove some of the effect of peculiar velocities \citep{KazinKoda2014}, which sharpens the BAO peak and thus makes it  easier to measure in the 2D correlation function (previous analyses had amplified the signal by averaging the information across all angles).  The second improvement is the creation of accurate mock catalogues from the WizCOLA simulations \citep{KodaBlake2015} for both the pre- and post-reconstruction data. The simulations provide more accurate covariance estimates than the lognormal realisations used in the early analyses.  We therefore also revisit the pre-reconstruction angle-averaged (1D) constraints from the final WiggleZ survey and present updated results.  By fitting our theoretical models to the mock data and recovering the correct cosmological model (the model that was used to make the simulations) we are able to perform rigorous checks that our correlation function models are sufficiently accurate, and optimise the range of scales over which the theory is adequate to include in the fits. Figure~\ref{fig:wizcola} shows these improvements - detail the galaxy correlation function for the WizCOLA mean multipole data, pre-reconstruction WiggleZ multipole data, and the post-reconstruction WiggleZ wedge data.
+This analysis is motivated by two recent improvements to the WiggleZ survey data.  The first improvement is that reconstruction has now been performed to remove some of the effect of peculiar velocities \citep{KazinKoda2014}, which sharpens the BAO peak and thus makes it  easier to measure in the 2D correlation function (previous analyses had amplified the signal by averaging the information across all angles).  The second improvement is the creation of accurate mock catalogues from the WizCOLA simulations \citep{KodaBlake2015} for both the pre- and post-reconstruction data. The simulations provide more accurate covariance estimates than the lognormal realisations used in the early analyses.  We therefore also revisit the pre-reconstruction angle-averaged (1D) constraints from the final WiggleZ survey and present updated results.  By fitting our theoretical models to the mock data and recovering the correct cosmological model (the model that was used to make the simulations) we are able to perform rigorous checks that our correlation function models are sufficiently accurate, and optimise the range of scales over which the theory is adequate to include in the fits. Figure~\ref{fig:wizcola} shows these improvements - detailing the galaxy correlation function for the WizCOLA mean multipole data, pre-reconstruction WiggleZ multipole data, and the post-reconstruction WiggleZ wedge data.
 
 
 \section{The 2D Correlation Function}
@@ -738,7 +738,7 @@ Planck cosmology \citep{Planck2015Parameters}, as illustrated in Figure \ref{fig
 
 We have presented the first measurement of the 2D BAO signal in the WiggleZ Dark Energy Survey data \citep{KazinKoda2014}, where we fit for the cosmological parameters $\Omega_c h^2$, $D_A(z)$, and $H(z)$ for the three redshift bins $z \in \left[0.44, 0.60, 0.73\right]$.  Our final pre-reconstruction constraints appear in Table~\ref{tab:wigglezBinsParams}.  These results are consistent with the Flat $\Lambda$CDM cosmology derived from best-fitting Planck cosmological values and with previous large-scale structure measurements. Post-reconstruction results can be found in Table \ref{tab:hda_wigglez_reconstructed}, and are also consistent with best-fitting Planck cosmology. Pre and post-reconstruction results are consistent, with their $1\sigma$ parameter bounds overlapping.
 
-The constraints given by this analysis provide an important high-redshift consistency check against BOSS results as given in \cite{AndersonAubourg2014DR11}, who reported for their $z=0.57$ redshift bin, constraints of $D_A= (1421\pm20\, {\rm Mpc}) (r_d/r_{d,{\rm fid}})$ and $H = (96.8\pm3.4 \,{\rm km}\,{\rm s}^{-1}\,{\rm Mpc}^{-1})(r_d/r_{d,{\rm fid}})$. We find results consistent with the BOSS analysis. During the preparation of this manuscript, BOSS released a new analysis in \citet{AlamAta2016}, which are also consistent with the results we find. The larger uncertainty in our measurements compared to the BOSS is as-expected from the relative sizes of the data sets.  Nevertheless our results show that using a different type of galaxy tracer with much lower bias (bright blue galaxies as opposed to luminous red galaxies), we recover the same standard cosmological model. 
+The constraints given by this analysis provide an important high-redshift consistency check against BOSS results as given in \cite{AndersonAubourg2014DR11}, who reported for their $z=0.57$ redshift bin, constraints of $D_A= (1421\pm20\, {\rm Mpc}) (r_d/r_{d,{\rm fid}})$ and $H = (96.8\pm3.4 \,{\rm km}\,{\rm s}^{-1}\,{\rm Mpc}^{-1})(r_d/r_{d,{\rm fid}})$. We find results consistent with the BOSS analysis, and show the BOSS constraints alongside our constraints and Planck cosmology in Figure~\ref{fig:hubble_diagram}. During the preparation of this manuscript, BOSS released a new analysis in \citet{AlamAta2016}, which are also consistent with the results we find. The larger uncertainty in our measurements compared to the BOSS is as-expected from the relative sizes of the data sets.  Nevertheless our results show that using a different type of galaxy tracer with much lower bias (bright blue galaxies as opposed to luminous red galaxies), we recover the same standard cosmological model. 
 
 The main results of this analysis can be summarised as follows:
 \begin{itemize}
@@ -818,7 +818,7 @@ We gratefully acknowledge the input of the many researchers that were consulted 
 	Selecting the final method of dewiggling input spectra was done via looking explicitly at how the spectra are used in cosmological fitting: they are transformed into correlation functions and compared to observed data points. As such, the chosen optimal configurations for the polynomial and spline method were compared to \verb;tffit; by performing a cosmological sensitivity test wherein fits to WizCOLA data using the polynomial method, spline method and the algorithm given by \citet{EisensteinHu1998} are directly compared. To ensure this is robust, the value $k_*$ is fixed to 0.1, representing a fit with a very high level of dewiggling (hard thresholds are often limited to around this value, ie \citet{ChuangWang2012} have minimum $k_* = 0.09$), whilst still preserving some of the BAO peak with which to match. This analysis is given in Figure \ref{fig:AcosmologyTest}, and shows that for both spline and polynomial methods outlined above, statistical uncertainty in fits far exceeds any difference in matching results due to the change in dewiggling process. The polynomial method was selected to be the final method due to computational speed.
 	
 	
-	\begin{figure}[t]
+	\begin{figure}
 		\begin{center}
 			\includegraphics[width=\columnwidth]{images/AcosmologyTest.pdf}
 		\end{center}
@@ -843,7 +843,7 @@ We gratefully acknowledge the input of the many researchers that were consulted 
 \section{Optimising range of scale included in fit} \label{app:truncation}
 
 
-\begin{table}[t]
+\begin{table}
 	\centering
 	\caption{A comparison of data fitting ranges found in prior literature}
 	\label{tab:truncation}
@@ -872,7 +872,7 @@ The failure of correlation function models at small separations and their simila
 
 
 
-\begin{figure}[t]
+\begin{figure}
 	\begin{center}
 		\includegraphics[width=\columnwidth]{images/CdatasetTrunc.pdf}
 	\end{center}
