@@ -106,7 +106,7 @@ top_div = top_da / top_h
 bottom_div = bottom_da / bottom_h
 
 
-fig, ax = plt.subplots(nrows=3, figsize=(5,14), sharex=True)
+fig, ax = plt.subplots(nrows=2, figsize=(5,9), sharex=True)
 fig.subplots_adjust(hspace=0.05)
 
 r = "#D62F2F"
@@ -121,42 +121,41 @@ ax[0].fill_between(zs, bottom_da, top_da, color='k', alpha=0.2, label="Planck (2
 ax[1].plot(zs, bottom_h, color='k', alpha=0.2)
 ax[1].plot(zs, top_h, color='k', alpha=0.2)
 ax[1].fill_between(zs, bottom_h, top_h, color='k', alpha=0.2)
-ax[2].plot(zs, top_div, color='k', alpha=0.2)
-ax[2].plot(zs, bottom_div, color='k', alpha=0.2)
-ax[2].fill_between(zs,top_div, bottom_div, color='k', alpha=0.2, label="Planck (2015)")
+# ax[2].plot(zs, top_div, color='k', alpha=0.2)
+# ax[2].plot(zs, bottom_div, color='k', alpha=0.2)
+# ax[2].fill_between(zs,top_div, bottom_div, color='k', alpha=0.2, label="Planck (2015)")
 
 # Plot Alam points
 offset = 0.005
 
 ax[0].errorbar(alam_zs - offset, alam_da, yerr=alam_da_error, fmt='o', ms=4, label="Alam et al. (2016)", color=r, mec=r)
 ax[1].errorbar(alam_zs - offset, alam_h, yerr=alam_h_error, fmt='o', ms=4, color=r, mec=r)
-ax[2].errorbar(alam_zs - offset, alam_daonh, yerr=alam_daonh_error, fmt='o', ms=4, color=r, mec=r)
+# ax[2].errorbar(alam_zs - offset, alam_daonh, yerr=alam_daonh_error, fmt='o', ms=4, color=r, mec=r)
 
 # Plot Anderson points
 ax[0].errorbar(anderson_zs + offset, anderson_da, yerr=anderson_da_error, fmt='o', ms=4, label="Anderson et al. (2014)", color=g, mec=g)
 ax[1].errorbar(anderson_zs + offset, anderson_h, yerr=anderson_h_error, fmt='o', ms=4, color=g, mec=g)
-ax[2].errorbar(anderson_zs + offset, anderson_daonh, yerr=anderson_daonh_error, fmt='o', ms=4, color=g, mec=g)
+# ax[2].errorbar(anderson_zs + offset, anderson_daonh, yerr=anderson_daonh_error, fmt='o', ms=4, color=g, mec=g)
 
 # Plot pre-recon
 ax[0].errorbar(wig_pre_zs - offset, wig_pre_da, yerr=[wig_pre_da_error_up, wig_pre_da_error_down], fmt='o', ms=ms, color=b, mec=b, label="WiggleZ pre-recon.")
 ax[1].errorbar(wig_pre_zs - offset, wig_pre_h, yerr=[wig_pre_h_error_up, wig_pre_h_error_down], fmt='o', ms=ms, color=b, mec=b, label="WiggleZ pre-recon.")
-ax[2].errorbar(wig_pre_zs - offset, wig_pre_daonh, yerr=wig_pre_daonh_error, fmt='o', ms=ms, mec=b, color=b)
+# ax[2].errorbar(wig_pre_zs - offset, wig_pre_daonh, yerr=wig_pre_daonh_error, fmt='o', ms=ms, mec=b, color=b)
 
 # Plot post-recon
 ax[0].errorbar(wig_post_zs + offset, wig_post_da, yerr=[wig_post_da_error_up, wig_post_da_error_down], fmt='s', ms=ms, mec=c, color=c, label="WiggleZ post-recon.")
 ax[1].errorbar(wig_post_zs + offset, wig_post_h, yerr=[wig_post_h_error_up, wig_post_h_error_down], fmt='s', ms=ms, mec=c,color=c, label="WiggleZ post-recon.")
-ax[2].errorbar(wig_post_zs + offset, wig_post_daonh, yerr=wig_post_daonh_error, fmt='s', mec=c,ms=ms, color=c)
+# ax[2].errorbar(wig_post_zs + offset, wig_post_daonh, yerr=wig_post_daonh_error, fmt='s', mec=c,ms=ms, color=c)
 
 
-ax[0].legend(frameon=False, loc=4)
-ax[2].set_xlabel("$z$", fontsize=16)
+ax[0].legend(frameon=False, loc=4, fontsize=12)
+ax[1].set_xlabel("$z$", fontsize=16)
 ax[0].set_ylabel(r"$D_A(z)\ {\rm[Mpc]}$", fontsize=16)
 ax[1].set_ylabel(r"$H(z)\ {\rm[km}\ {\rm s}^{-1}\ {\rm Mpc}^{-1}{\rm]}$", fontsize=16)
-ax[2].set_ylabel(r"$D_A(z)/H(z)\ {\rm[Mpc}^2\ {\rm s}\ {\rm km}^{-1}]$", fontsize=16)
+# ax[2].set_ylabel(r"$D_A(z)/H(z)\ {\rm[Mpc}^2\ {\rm s}\ {\rm km}^{-1}]$", fontsize=16)
 
 ax[1].yaxis.get_major_ticks()[-1].set_visible(False)
-ax[2].yaxis.get_major_ticks()[-1].set_visible(False)
-
+# ax[2].yaxis.get_major_ticks()[-1].set_visible(False)
 fig.savefig("karl.pdf", transparent=True, dpi=300, bbox_inches="tight")
 fig.savefig("karl.png", transparent=True, dpi=300, bbox_inches="tight")
 
