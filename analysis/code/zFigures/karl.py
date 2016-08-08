@@ -73,6 +73,7 @@ def get_r_s():
     integrand = (c/100) * fac / (a*a*hs)
     integral = simps(integrand, x=a)
     return integral
+
 rs = get_r_s()
 
 # Adjust wig post recon to remove r_s
@@ -106,6 +107,26 @@ top_div = top_da / top_h
 bottom_div = bottom_da / bottom_h
 
 
+def clamp(val, minimum=0, maximum=255):  # pragma: no cover
+    if val < minimum:
+        return minimum
+    if val > maximum:
+        return maximum
+    return val
+
+def scale_colour(colour, scalefactor):  # pragma: no cover
+    if isinstance(colour, np.ndarray):
+        r, g, b = colour[:3] * 255.0
+    else:
+        hex = colour.strip('#')
+        if scalefactor < 0 or len(hex) != 6:
+            return hex
+        r, g, b = int(hex[:2], 16), int(hex[2:4], 16), int(hex[4:], 16)
+    r = clamp(int(r * scalefactor))
+    g = clamp(int(g * scalefactor))
+    b = clamp(int(b * scalefactor))
+    return "#%02x%02x%02x" % (r, g, b)
+
 fig, ax = plt.subplots(nrows=2, figsize=(5,9), sharex=True)
 fig.subplots_adjust(hspace=0.05)
 
@@ -113,6 +134,12 @@ r = "#D62F2F"
 g = "#2FCF29"
 b = "#0A76F2"
 c = "#1CCAED"
+scale = 0.8
+re = scale_colour(r, scale)
+ge = scale_colour(g, scale)
+be = scale_colour(b, scale)
+ce = scale_colour(c, scale)
+
 ms = 8
 # Plot planck cosmology
 ax[0].plot(zs, bottom_da, color='k', alpha=0.2)
@@ -128,23 +155,23 @@ ax[1].fill_between(zs, bottom_h, top_h, color='k', alpha=0.2)
 # Plot Alam points
 offset = 0.005
 
-ax[0].errorbar(alam_zs - offset, alam_da, yerr=alam_da_error, fmt='o', ms=4, label="Alam et al. (2016)", color=r, mec=r)
-ax[1].errorbar(alam_zs - offset, alam_h, yerr=alam_h_error, fmt='o', ms=4, color=r, mec=r)
+ax[0].errorbar(alam_zs - offset, alam_da, yerr=alam_da_error, fmt='o', ms=4, label="Alam et al. (2016)", color=r, mec=re)
+ax[1].errorbar(alam_zs - offset, alam_h, yerr=alam_h_error, fmt='o', ms=4, color=r, mec=re)
 # ax[2].errorbar(alam_zs - offset, alam_daonh, yerr=alam_daonh_error, fmt='o', ms=4, color=r, mec=r)
 
 # Plot Anderson points
-ax[0].errorbar(anderson_zs + offset, anderson_da, yerr=anderson_da_error, fmt='o', ms=4, label="Anderson et al. (2014)", color=g, mec=g)
-ax[1].errorbar(anderson_zs + offset, anderson_h, yerr=anderson_h_error, fmt='o', ms=4, color=g, mec=g)
+ax[0].errorbar(anderson_zs + offset, anderson_da, yerr=anderson_da_error, fmt='o', ms=4, label="Anderson et al. (2014)", color=g, mec=ge)
+ax[1].errorbar(anderson_zs + offset, anderson_h, yerr=anderson_h_error, fmt='o', ms=4, color=g, mec=ge)
 # ax[2].errorbar(anderson_zs + offset, anderson_daonh, yerr=anderson_daonh_error, fmt='o', ms=4, color=g, mec=g)
 
 # Plot pre-recon
-ax[0].errorbar(wig_pre_zs - offset, wig_pre_da, yerr=[wig_pre_da_error_up, wig_pre_da_error_down], fmt='o', ms=ms, color=b, mec=b, label="WiggleZ pre-recon.")
-ax[1].errorbar(wig_pre_zs - offset, wig_pre_h, yerr=[wig_pre_h_error_up, wig_pre_h_error_down], fmt='o', ms=ms, color=b, mec=b, label="WiggleZ pre-recon.")
+ax[0].errorbar(wig_pre_zs - offset, wig_pre_da, yerr=[wig_pre_da_error_up, wig_pre_da_error_down], fmt='o', ms=ms, color=b, mec=be, label="WiggleZ pre-recon.")
+ax[1].errorbar(wig_pre_zs - offset, wig_pre_h, yerr=[wig_pre_h_error_up, wig_pre_h_error_down], fmt='o', ms=ms, color=b, mec=be, label="WiggleZ pre-recon.")
 # ax[2].errorbar(wig_pre_zs - offset, wig_pre_daonh, yerr=wig_pre_daonh_error, fmt='o', ms=ms, mec=b, color=b)
 
 # Plot post-recon
-ax[0].errorbar(wig_post_zs + offset, wig_post_da, yerr=[wig_post_da_error_up, wig_post_da_error_down], fmt='s', ms=ms, mec=c, color=c, label="WiggleZ post-recon.")
-ax[1].errorbar(wig_post_zs + offset, wig_post_h, yerr=[wig_post_h_error_up, wig_post_h_error_down], fmt='s', ms=ms, mec=c,color=c, label="WiggleZ post-recon.")
+ax[0].errorbar(wig_post_zs + offset, wig_post_da, yerr=[wig_post_da_error_up, wig_post_da_error_down], fmt='s', ms=ms, mec=ce, color=c, label="WiggleZ post-recon.")
+ax[1].errorbar(wig_post_zs + offset, wig_post_h, yerr=[wig_post_h_error_up, wig_post_h_error_down], fmt='s', ms=ms, mec=ce,color=c, label="WiggleZ post-recon.")
 # ax[2].errorbar(wig_post_zs + offset, wig_post_daonh, yerr=wig_post_daonh_error, fmt='s', mec=c,ms=ms, color=c)
 
 
