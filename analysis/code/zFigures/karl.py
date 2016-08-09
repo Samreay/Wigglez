@@ -151,7 +151,7 @@ ax[1].plot(zs, top_h, color='k', alpha=0.2)
 ax[1].fill_between(zs, bottom_h, top_h, color='k', alpha=0.2)
 
 ax[0].plot(zs, daconst, ls="--", label="No acceleration", color="k")
-ax[1].plot(zs, hconst, ls="--", label="No acceleration", color="k")
+ax[1].plot(zs, hconst, ls="--", color="k")
 # ax[2].plot(zs, top_div, color='k', alpha=0.2)
 # ax[2].plot(zs, bottom_div, color='k', alpha=0.2)
 # ax[2].fill_between(zs,top_div, bottom_div, color='k', alpha=0.2, label="Planck (2015)")
@@ -180,7 +180,7 @@ ax[1].errorbar(wig_post_zs + offset, wig_post_h, yerr=[wig_post_h_error_up, wig_
 
 
 ax[0].legend(frameon=False, loc=4, fontsize=12, markerfirst=False)
-ax[1].legend(frameon=False, loc=4, fontsize=12, markerfirst=False)
+#ax[1].legend(frameon=False, loc=4, fontsize=12, markerfirst=False)
 ax[1].set_xlabel("$z$", fontsize=16)
 ax[0].set_ylabel(r"$D_A(z)\ {\rm[Mpc]}$", fontsize=16)
 ax[1].set_ylabel(r"$H(z)\ {\rm[km}\ {\rm s}^{-1}\ {\rm Mpc}^{-1}{\rm]}$", fontsize=16)
