@@ -106,7 +106,7 @@ bottom_h = bottom_cosmology.H(zs).value
 top_div = top_da / top_h
 bottom_div = bottom_da / bottom_h
 hconst = 67.74 * (1 + zs)
-
+daconst = 3e5 / (67.74 * (1 + zs)) * np.log(1 + zs)
 
 def clamp(val, minimum=0, maximum=255):  # pragma: no cover
     if val < minimum:
@@ -150,6 +150,7 @@ ax[1].plot(zs, bottom_h, color='k', alpha=0.2)
 ax[1].plot(zs, top_h, color='k', alpha=0.2)
 ax[1].fill_between(zs, bottom_h, top_h, color='k', alpha=0.2)
 
+ax[0].plot(zs, daconst, ls="--", label="No acceleration", color="k")
 ax[1].plot(zs, hconst, ls="--", label="No acceleration", color="k")
 # ax[2].plot(zs, top_div, color='k', alpha=0.2)
 # ax[2].plot(zs, bottom_div, color='k', alpha=0.2)
@@ -187,6 +188,8 @@ ax[1].set_ylabel(r"$H(z)\ {\rm[km}\ {\rm s}^{-1}\ {\rm Mpc}^{-1}{\rm]}$", fontsi
 
 ax[1].yaxis.get_major_ticks()[-1].set_visible(False)
 # ax[2].yaxis.get_major_ticks()[-1].set_visible(False)
+
+ax[0].set_ylim(400, 1800)
 fig.savefig("karl.pdf", transparent=True, dpi=300, bbox_inches="tight")
 fig.savefig("karl.png", transparent=True, dpi=300, bbox_inches="tight")
 
