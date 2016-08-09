@@ -105,6 +105,7 @@ top_h = top_cosmology.H(zs).value
 bottom_h = bottom_cosmology.H(zs).value
 top_div = top_da / top_h
 bottom_div = bottom_da / bottom_h
+hconst = 67.74 * (1 + zs)
 
 
 def clamp(val, minimum=0, maximum=255):  # pragma: no cover
@@ -148,6 +149,8 @@ ax[0].fill_between(zs, bottom_da, top_da, color='k', alpha=0.2, label="Planck (2
 ax[1].plot(zs, bottom_h, color='k', alpha=0.2)
 ax[1].plot(zs, top_h, color='k', alpha=0.2)
 ax[1].fill_between(zs, bottom_h, top_h, color='k', alpha=0.2)
+
+ax[1].plot(zs, hconst, ls="--", label="No acceleration", color="k")
 # ax[2].plot(zs, top_div, color='k', alpha=0.2)
 # ax[2].plot(zs, bottom_div, color='k', alpha=0.2)
 # ax[2].fill_between(zs,top_div, bottom_div, color='k', alpha=0.2, label="Planck (2015)")
@@ -166,16 +169,17 @@ ax[1].errorbar(anderson_zs + offset, anderson_h, yerr=anderson_h_error, fmt='o',
 
 # Plot pre-recon
 ax[0].errorbar(wig_pre_zs - offset, wig_pre_da, yerr=[wig_pre_da_error_up, wig_pre_da_error_down], fmt='o', ms=ms, color=b, mec=be, label="WiggleZ pre-recon.")
-ax[1].errorbar(wig_pre_zs - offset, wig_pre_h, yerr=[wig_pre_h_error_up, wig_pre_h_error_down], fmt='o', ms=ms, color=b, mec=be, label="WiggleZ pre-recon.")
+ax[1].errorbar(wig_pre_zs - offset, wig_pre_h, yerr=[wig_pre_h_error_up, wig_pre_h_error_down], fmt='o', ms=ms, color=b, mec=be)
 # ax[2].errorbar(wig_pre_zs - offset, wig_pre_daonh, yerr=wig_pre_daonh_error, fmt='o', ms=ms, mec=b, color=b)
 
 # Plot post-recon
 ax[0].errorbar(wig_post_zs + offset, wig_post_da, yerr=[wig_post_da_error_up, wig_post_da_error_down], fmt='s', ms=ms, mec=ce, color=c, label="WiggleZ post-recon.")
-ax[1].errorbar(wig_post_zs + offset, wig_post_h, yerr=[wig_post_h_error_up, wig_post_h_error_down], fmt='s', ms=ms, mec=ce,color=c, label="WiggleZ post-recon.")
+ax[1].errorbar(wig_post_zs + offset, wig_post_h, yerr=[wig_post_h_error_up, wig_post_h_error_down], fmt='s', ms=ms, mec=ce,color=c)
 # ax[2].errorbar(wig_post_zs + offset, wig_post_daonh, yerr=wig_post_daonh_error, fmt='s', mec=c,ms=ms, color=c)
 
 
-ax[0].legend(frameon=False, loc=4, fontsize=12)
+ax[0].legend(frameon=False, loc=4, fontsize=12, markerfirst=False)
+ax[1].legend(frameon=False, loc=4, fontsize=12, markerfirst=False)
 ax[1].set_xlabel("$z$", fontsize=16)
 ax[0].set_ylabel(r"$D_A(z)\ {\rm[Mpc]}$", fontsize=16)
 ax[1].set_ylabel(r"$H(z)\ {\rm[km}\ {\rm s}^{-1}\ {\rm Mpc}^{-1}{\rm]}$", fontsize=16)
