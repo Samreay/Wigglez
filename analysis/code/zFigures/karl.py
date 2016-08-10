@@ -19,6 +19,8 @@ alam_h = np.array([78.4, 96.6])
 alam_h_error = np.array([2.3, 2.4])
 alam_daonh = alam_da / alam_h
 alam_daonh_error = np.sqrt((alam_da_error/alam_da)**2 + (alam_h_error/alam_h)**2) * alam_daonh
+alam_dadt = alam_h / (67.74 * (1 + alam_zs))
+alam_dadt_error = (alam_h_error / alam_h) * alam_dadt
 
 #Anderson 2014
 anderson_zs = np.array([0.57])
@@ -28,6 +30,8 @@ anderson_h = np.array([96.8])
 anderson_h_error = np.array([3.4])
 anderson_daonh = anderson_da / anderson_h
 anderson_daonh_error = np.sqrt((anderson_da_error/anderson_da)**2 + (anderson_h_error/anderson_h)**2) * anderson_daonh
+anderson_dadt = anderson_h / (67.74 * (1 + anderson_zs))
+anderson_dadt_error = (anderson_h_error / anderson_h) * anderson_dadt
 
 # Wigglez pre recon
 wig_pre_zs = np.array([0.44, 0.6, 0.73])
@@ -41,6 +45,9 @@ wig_pre_h_error_down = np.array([12, 14, 10])
 wig_pre_h_error = 0.5 * (wig_pre_h_error_up + wig_pre_h_error_down)
 wig_pre_daonh = wig_pre_da / wig_pre_h
 wig_pre_daonh_error = np.sqrt((wig_pre_da_error/wig_pre_da)**2 + (wig_pre_h_error/wig_pre_h)**2) * wig_pre_daonh
+wig_pre_dadt = wig_pre_h / (67.74 * (1 + wig_pre_zs))
+wig_pre_dadt_error = (wig_pre_h_error / wig_pre_h) * wig_pre_dadt
+
 
 # Wigglez post recon
 wig_post_zs = np.array([0.60, 0.73])
@@ -87,7 +94,8 @@ wig_post_h_error_down = (3e5 * np.array(wig_post_zs) / ((np.array(wig_post_czonH
 wig_post_h_error = 0.5 * (wig_post_h_error_up + wig_post_h_error_down)
 wig_post_daonh = wig_post_da / wig_post_h
 wig_post_daonh_error = np.sqrt((wig_post_da_error/wig_post_da)**2 + (wig_post_h_error/wig_post_h)**2) * wig_post_daonh
-
+wig_post_dadt = wig_post_h / (67.74 * (1 + wig_post_zs))
+wig_post_dadt_error = (wig_post_h_error / wig_post_h) * wig_post_dadt
 
 planck_om = 0.3089
 planck_om_error = 0.0062
@@ -107,6 +115,9 @@ top_div = top_da / top_h
 bottom_div = bottom_da / bottom_h
 hconst = 67.74 * (1 + zs)
 daconst = 3e5 / (67.74 * (1 + zs)) * np.log(1 + zs)
+hup = top_h / (67.74 * (1 + zs))
+hdown = bottom_h / (67.74 * (1 + zs))
+
 
 def clamp(val, minimum=0, maximum=255):  # pragma: no cover
     if val < minimum:
@@ -128,7 +139,7 @@ def scale_colour(colour, scalefactor):  # pragma: no cover
     b = clamp(int(b * scalefactor))
     return "#%02x%02x%02x" % (r, g, b)
 
-fig, ax = plt.subplots(nrows=2, figsize=(5,9), sharex=True)
+fig, ax = plt.subplots(nrows=3, figsize=(5,13), sharex=True)
 fig.subplots_adjust(hspace=0.05)
 
 r = "#D62F2F"
@@ -152,6 +163,12 @@ ax[1].fill_between(zs, bottom_h, top_h, color='k', alpha=0.2)
 
 ax[0].plot(zs, daconst, ls="--", label="No acceleration", color="k")
 ax[1].plot(zs, hconst, ls="--", color="k")
+ax[2].axhline(1, ls="--", color="k")
+
+ax[2].plot(zs, hup, color='k', alpha=0.2)
+ax[2].plot(zs, hdown, color='k', alpha=0.2)
+ax[2].fill_between(zs, hup, hdown, color='k', alpha=0.2)
+
 # ax[2].plot(zs, top_div, color='k', alpha=0.2)
 # ax[2].plot(zs, bottom_div, color='k', alpha=0.2)
 # ax[2].fill_between(zs,top_div, bottom_div, color='k', alpha=0.2, label="Planck (2015)")
@@ -161,35 +178,41 @@ offset = 0.005
 
 ax[0].errorbar(alam_zs - offset, alam_da, yerr=alam_da_error, fmt='o', ms=4, label="Alam et al. (2016)", color=r, mec=re)
 ax[1].errorbar(alam_zs - offset, alam_h, yerr=alam_h_error, fmt='o', ms=4, color=r, mec=re)
+ax[2].errorbar(alam_zs - offset, alam_dadt, yerr=alam_dadt_error, fmt='o', ms=4, color=r, mec=re)
 # ax[2].errorbar(alam_zs - offset, alam_daonh, yerr=alam_daonh_error, fmt='o', ms=4, color=r, mec=r)
 
 # Plot Anderson points
 ax[0].errorbar(anderson_zs + offset, anderson_da, yerr=anderson_da_error, fmt='o', ms=4, label="Anderson et al. (2014)", color=g, mec=ge)
 ax[1].errorbar(anderson_zs + offset, anderson_h, yerr=anderson_h_error, fmt='o', ms=4, color=g, mec=ge)
+ax[2].errorbar(anderson_zs + offset, anderson_dadt, yerr=anderson_dadt_error, fmt='o', ms=4, color=g, mec=ge)
 # ax[2].errorbar(anderson_zs + offset, anderson_daonh, yerr=anderson_daonh_error, fmt='o', ms=4, color=g, mec=g)
 
 # Plot pre-recon
 ax[0].errorbar(wig_pre_zs - offset, wig_pre_da, yerr=[wig_pre_da_error_up, wig_pre_da_error_down], fmt='o', ms=ms, color=b, mec=be, label="WiggleZ pre-recon.")
 ax[1].errorbar(wig_pre_zs - offset, wig_pre_h, yerr=[wig_pre_h_error_up, wig_pre_h_error_down], fmt='o', ms=ms, color=b, mec=be)
+ax[2].errorbar(wig_pre_zs - offset, wig_pre_dadt, yerr=wig_pre_dadt_error, fmt='o', ms=ms, color=b, mec=be)
 # ax[2].errorbar(wig_pre_zs - offset, wig_pre_daonh, yerr=wig_pre_daonh_error, fmt='o', ms=ms, mec=b, color=b)
 
 # Plot post-recon
 ax[0].errorbar(wig_post_zs + offset, wig_post_da, yerr=[wig_post_da_error_up, wig_post_da_error_down], fmt='s', ms=ms, mec=ce, color=c, label="WiggleZ post-recon.")
 ax[1].errorbar(wig_post_zs + offset, wig_post_h, yerr=[wig_post_h_error_up, wig_post_h_error_down], fmt='s', ms=ms, mec=ce,color=c)
+ax[2].errorbar(wig_post_zs + offset, wig_post_dadt, yerr=wig_post_dadt_error, fmt='o', ms=ms, color=c, mec=ce)
 # ax[2].errorbar(wig_post_zs + offset, wig_post_daonh, yerr=wig_post_daonh_error, fmt='s', mec=c,ms=ms, color=c)
 
 
 ax[0].legend(frameon=False, loc=4, fontsize=12, markerfirst=False)
 #ax[1].legend(frameon=False, loc=4, fontsize=12, markerfirst=False)
-ax[1].set_xlabel("$z$", fontsize=16)
+ax[2].set_xlabel("$z$", fontsize=16)
 ax[0].set_ylabel(r"$D_A(z)\ {\rm[Mpc]}$", fontsize=16)
 ax[1].set_ylabel(r"$H(z)\ {\rm[km}\ {\rm s}^{-1}\ {\rm Mpc}^{-1}{\rm]}$", fontsize=16)
+ax[2].set_ylabel(r"$da/dt\ \mathrm{[normalised\ to\ }z=0]}$", fontsize=16)
 # ax[2].set_ylabel(r"$D_A(z)/H(z)\ {\rm[Mpc}^2\ {\rm s}\ {\rm km}^{-1}]$", fontsize=16)
 
 ax[1].yaxis.get_major_ticks()[-1].set_visible(False)
+ax[2].yaxis.get_major_ticks()[-1].set_visible(False)
 # ax[2].yaxis.get_major_ticks()[-1].set_visible(False)
 
-ax[0].set_ylim(400, 1800)
+ax[0].set_ylim(400, 1700)
 fig.savefig("karl.pdf", transparent=True, dpi=300, bbox_inches="tight")
 fig.savefig("karl.png", transparent=True, dpi=300, bbox_inches="tight")
 
