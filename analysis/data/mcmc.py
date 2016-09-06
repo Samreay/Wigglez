@@ -76,7 +76,8 @@ class CambMCMCManager(object):
                     self.allSteps[uid] = np.vstack((self.allSteps[uid], steps))
             index += 1
         toUse = []
-        for x,v in self.steps[uid].iteritems():
+        #for x,v in self.steps[uid].iteritems():
+        for x,v in self.steps[uid].items():
             if v[:,0].size > self.calibrationLength * self.numCalibrations:
                 dataArray = v[self.calibrationLength * self.numCalibrations :: self.thinning, :]
                 dataArray[:,2] = x

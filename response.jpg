@@ -1,0 +1,116 @@
+
+-In Figure 1, the WizCOLA simulation mean data are pre-reconstructed or post-reconstructed? If they are in the pre-reconstruction case, it would be clear to include the corresponding plot for the reconstructed simulation mean data.
+
+TALK TO CHRIS
+
+
+
+
+
+
+
+-Section 3.1 reads “…we follow Blake et al. (2011b) who incorporate scale dependent bias derived from the GiggleZ simulations, B(s), into to the model, via eq 4” , but while doing the BAO fittings later, the galaxy bias b^2 is regarded as a parameter. Please make it clear that which galaxy bias model is used in the text.
+
+B(s) is an additional scale correction on top of b^2. Have made this clearer in the text and updated the maths to clarify as well.
+
+
+
+
+
+
+
+
+-In section 4.1 and Table 1, the comparisons with the previous WiggleZ results in Blake et al (2011c) show that the difference between them is dominated by the improved covariance. It would be useful to present the comparison with the results in Kazin et al (2014).
+
+
+I am hesitant to add in a comparison to Kazin 2014 post-reconstruction, as Table 1 presents a verification of the pre-reconstruction method. Post-reconstruction analysis follows different methodology, and importantly does not fit matter density, nor does it use the old log-normal covariance (where the new covariance is one of the things being validated). This leaves only alpha as a comparison, however this is not a useful comparison in itself due to different fiducial cosmology. The only direct comparison that could be made is converting alpha to D_V, however I wish to keep the comparison in alpha as it shows the deviation from 1 and it is important to show that this remains small.
+
+
+
+
+
+
+-In section 4.1, “Comparison against fits using the WizCOLA covariance and lognormal covariance indicate …” →“Comparisons against fits using the WizCOLA covariance and lognormal covariance indicate …”
+
+Updated
+
+
+
+
+
+-About the fitting range, on what scales the reconstructed data are useful? Still within 25-180 Mpc/h ? It would be helpful to include a discussion on this point. And what is the bin width or how many bins are used to do the fitting.
+
+ASK CHRIS
+
+
+
+
+
+
+
+
+-In section 4.3, while performing the pre-reconstructed mock tests through fitting to the mean of mocks, the chi^2 and error bars of parameters in Table 2 looks much smaller than that from the measurements in Table 3. This is why?
+
+Table 2 is when fitting to the combined 600 realisations, not any individual realisation. It was put in to test a lack of systematics even with far higher S/N data than we currently have. 
+
+
+
+
+
+
+
+
+-In section 4.3, the pre-reconstructed mock tests through fitting to each mock catalogue have been performed, it would be useful to list a statistical table, including such as the fitting mean value, the standard derivation.
+
+I believe the scientific case for this (check for systematics across mock fits) is filled by Table 2 and fitting to the combined data. Figure 3 then illustrates the general convergence and spread of the mock results, given we have no confirmed systamtics are of negligible effect. Furthermore, I believe the fit to combined data provides a better check, as providing a summary statistic of what are summary statistics throws away both the information of the posterior shape and potential asymmetry, but also is susceptible to change when reported statistics chain (mean/cumulative/maximum_likelihood statistics).
+
+
+
+
+-In section 5, the author says that “Many WiggleZ mock realizations do not permit good constraints on both \alpha_{perp} and \alpha_{||}”, so how many post-reconstructed mocks are used to estimate the covariance matrix/error in each redshift slice? It would be convincing to present the exact results of mock tests in near and mid redshift bin, instead of the general description: “Similar results are obtained when analyzing mocks at…”
+
+ASK CHRIS
+
+
+
+
+-In section 6, it would be better to include a table to present the covariance matrix of the measurements in three overlapping redshift bins after Table3.
+
+We wish to present the post-reconstruction results as the final output of the paper, as the pre-reconstruction mocks have in their posterior surface large uncertainty on matter density (enough that adding Wigglez results to other datasets will give results dominated by the other datasets).
+
+ASK TAM
+
+
+
+
+-In section 7, while comparing with other results, can the author add the comparison with the final BOSS measurement results( arXiv:1607.03155 ) into Figure 13? It would be good to update the Planck cosmology using from Planck+WP to Planck temperature+Planck polarization.
+
+Have added the latest BOSS results to the plot. Also added the pre-reconstruction results for comparison. To not overdo information presented on plot display only Planck best fitting cosmology using all data (TT,TE,EE+lowP+lensing+ext). Also added third panel showing da/dt, as it is a parameter of interest for some parties
+
+
+
+
+
+
+-In Figure 10, “…monopole xi_0(blue), xi_2(red)…”→  “…monopole xi_0(blue), quadruple xi_2(red)…”
+
+Updated
+
+
+
+
+
+-In Figure 11, “…clustering xi_{parallel} (red line-of-sight; red circles)…”→ “…clustering xi_{parallel} (line-of-sight; red circles)…”
+
+Updated
+
+
+
+-In Table B1, “A comparison of data fitting ranges found in prior literature” → “A comparison of data fitting ranges found in prior literatures”
+
+Updated
+
+
+-In Figure A4, “…any deviation between the different methodologies should represented in the likelihood surfaces represents extremal values…”→ “…any deviation between the different methodologies resented in the likelihood surfaces represents extremal values…”
+
+Updated sentence to: "With the low value of $k_*$ to increase the significance of the dewiggling algorithm and high data quality to reduce statistical uncertainty beyond the scope of the WiggleZ dataset, any deviation between the different methodologies should be represented in changes in the likelihood surface."

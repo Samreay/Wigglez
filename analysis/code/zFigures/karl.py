@@ -196,7 +196,7 @@ ax[2].errorbar(wig_pre_zs - offset, wig_pre_dadt, yerr=wig_pre_dadt_error, fmt='
 # Plot post-recon
 ax[0].errorbar(wig_post_zs + offset, wig_post_da, yerr=[wig_post_da_error_up, wig_post_da_error_down], fmt='s', ms=ms, mec=ce, color=c, label="WiggleZ post-recon.")
 ax[1].errorbar(wig_post_zs + offset, wig_post_h, yerr=[wig_post_h_error_up, wig_post_h_error_down], fmt='s', ms=ms, mec=ce,color=c)
-ax[2].errorbar(wig_post_zs + offset, wig_post_dadt, yerr=wig_post_dadt_error, fmt='o', ms=ms, color=c, mec=ce)
+ax[2].errorbar(wig_post_zs + offset, wig_post_dadt, yerr=wig_post_dadt_error, fmt='s', ms=ms, color=c, mec=ce)
 # ax[2].errorbar(wig_post_zs + offset, wig_post_daonh, yerr=wig_post_daonh_error, fmt='s', mec=c,ms=ms, color=c)
 
 

@@ -179,9 +179,9 @@ The non-linear effects of gravitational growth are incorporated by using \halofi
 \begin{align}
 	P_{\text{nl}} = P_{\text{dw}} r_{\text{halo}}.
 \end{align}
-We take into account galaxy bias $b$ by $\xi_{\rm galaxy}(s) = b^2 \xi(s)$ and we follow \citet{BlakeDavis2011} who incorporate scale dependent bias derived from the GiggleZ simulations, $B(s)$, into to the model, via
+We take into account galaxy bias $b$ and also follow \citet{BlakeDavis2011} who incorporate extra scale dependent bias derived from the GiggleZ simulations, $B(s)$, into to the model, via
 \begin{align}
-	\xi_{\rm{galaxy}}(s) = B(s) \xi(s),
+	\xi_{\rm{galaxy}}(s) = B(s) b^2 \xi(s),
 \end{align}
 where $B(s) = 1 + (s/s_0)^\gamma$, with $s_0 = 0.32 h^{-1}\,$Mpc and $\gamma = -1.36$.
 
@@ -350,7 +350,7 @@ We first fit using $\sigma_v$ as a free parameter, and finding $\sigma_v$ uncons
 \end{table*}
 
 
-We see that most results follow closely those obtained in \citet{BlakeKazin2011}, however the result of $\Omega_m h^2 (z_{\rm eff} = 0.73)$ shifts by more than $1\sigma$. This shift increases the value of $\Omega_m h^2 (z_{\rm eff} = 0.73)$, bringing it into agreement with the $\Omega_m h^2$ determination from the other redshift bins. These shifts were confirmed to be due to the change in covariance matrix and not any difference in changes to the modeling process, as rerunning the same fit using the original lognormal realisations bought the deviation to below $0.5\sigma$. Comparison against fits using the WizCOLA covariance and lognormal covariance indicate in all redshift bins that the dominating contribution in fit difference is due to the improved covariance. 
+We see that most results follow closely those obtained in \citet{BlakeKazin2011}, however the result of $\Omega_m h^2 (z_{\rm eff} = 0.73)$ shifts by more than $1\sigma$. This shift increases the value of $\Omega_m h^2 (z_{\rm eff} = 0.73)$, bringing it into agreement with the $\Omega_m h^2$ determination from the other redshift bins. These shifts were confirmed to be due to the change in covariance matrix and not any difference in changes to the modeling process, as rerunning the same fit using the original lognormal realisations bought the deviation to below $0.5\sigma$. Comparisons against fits using the WizCOLA covariance and lognormal covariance indicate in all redshift bins that the dominating contribution in fit difference is due to the improved covariance. 
 
 
 
@@ -589,7 +589,7 @@ significantly compromise our model-independence.
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=\columnwidth]{prerecon_result.pdf}
-		\caption{\label{fig:prerecon_result}  WiggleZ pre-reconstruction $0.2<z<0.6$ (upper), $0.4<z<0.8$ (mid), $0.6<z<1$ (lower) monopole $\xi_{0}$ (blue), $\xi_{2}$ (red) and best-fit models.%
+		\caption{\label{fig:prerecon_result}  WiggleZ pre-reconstruction $0.2<z<0.6$ (upper), $0.4<z<0.8$ (mid), $0.6<z<1$ (lower) monopole $\xi_{0}$ (blue), quadrupole $\xi_{2}$ (red) and best-fit models.%
 		}
 	\end{center}
 \end{figure}
@@ -652,7 +652,7 @@ $z_{\rm eff}$ & $cz/(H r_{\rm s})$ & $D_{\rm A}/r_{\rm s}$  & $cz/(H r_{\rm s})$
 		\includegraphics[width=0.9\columnwidth]{WiggleZ_pre_post_rec_Xiwedges_z26.png}
 		\includegraphics[width=0.9\columnwidth]{WiggleZ_pre_post_rec_Xiwedges_z48.png}
 		\includegraphics[width=0.9\columnwidth]{WiggleZ_pre_post_rec_Xiwedges_z60.png}
-		\caption{\label{fig:wigglez_wedges_z60}  WiggleZ post-reconstruction $0.2<z<0.6$ (upper), $0.4<z<0.8$ (mid), $0.6<z<1$ (lower) clustering $\xi_{||}$ (red line-of-sight; red circles), $\xi_{\perp}$ (transverse; blue squares) and best-fit models.%
+		\caption{\label{fig:wigglez_wedges_z60}  WiggleZ post-reconstruction $0.2<z<0.6$ (upper), $0.4<z<0.8$ (mid), $0.6<z<1$ (lower) clustering $\xi_{||}$ (line-of-sight; red circles), $\xi_{\perp}$ (transverse; blue squares) and best-fit models.%
 		}
 	\end{center}
 \end{figure}
@@ -718,8 +718,8 @@ Planck cosmology \citep{Planck2015Parameters}, as illustrated in Figure \ref{fig
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=\columnwidth]{hubble_HDa.png}
-\caption{The WiggleZ results of $D_{\rm A}/r_{\rm s}$ (left) and $cz/(Hr_{\rm s})$ (right) in blue circles are plotted against results from AP+BAO analysis of \citet{BlakeBroughColless2012} (small black circles) and BOSS \citep{AndersonAubourg2014} (red squares), all with 68$\%$ CL regions in the $y$-axis (and redshift range on the $x$). We choose to display the results of our Gaussian approximation for the $z=0.44$ redshift bin for illustrative purposes. All values are presented in Table \ref{tab:hda_wigglez_reconstructed}. The thick gray bands are $ow$CDM using Planck temperature fluctuations and WMAP9 polarization, and the thin black bands are when assuming flat $w$CDM cosmology. The dashed lines are the fiducial cosmology used in the analysis motivated by the best fit to WMAP7 data (assuming flat $\Lambda$CDM).}
+\includegraphics[width=\columnwidth]{karl.pdf}
+\caption{The WiggleZ results of $D_{\rm A}(z)$ and $H(z)$ and $da/dt$ for the pre-reconstruction results (dark blue circles) and post-reconstruction results (light blue squares). This is plotted against results from BOSS (both the results from \citet{AndersonAubourg2014} in green and \citet{AlamAta2016} in red), all with 68$\%$ CL regions in the $y$-axis (and redshift range on the $x$). The thick gray bands show the $1\sigma$ contour using Planck final constraints (TT,TE,EE+lowP+lensing+ext) \citep{Planck2015Parameters}. The dashed line indicates a cosmology with no acceleration (assuming Planck $H_0$ as required).}
 \label{fig:hubble_diagram}
 \end{center}
 \end{figure}
@@ -826,7 +826,7 @@ We gratefully acknowledge the input of the many researchers that were consulted 
 		\begin{center}
 			\includegraphics[width=\columnwidth]{AcosmologyTest.pdf}
 		\end{center}
-		\caption{A cosmological sensitivity test between the algorithm from \citet{EisensteinHu1998}, polynomial fitting and spline fitting. Likelihood surfaces and marginalised distributions were calculated using the WizCOLA simulation data at the $z=0.6$ redshift bin, where all 600 realisations have been used as input data, and $k_*$ fixed to $0.1$. With the low value of $k_*$ to increase the significance of the dewiggling algorithm and high data quality to reduce statistical uncertainty beyond the scope of the WiggleZ dataset, any deviation between the different methodologies should represented in the likelihood surfaces represents extremal values of diverge. However, as all likelihood surfaces agree to a high degree, we can conclude any difference in methodology is negligible in comparison to statistical uncertainty.}
+		\caption{A cosmological sensitivity test between the algorithm from \citet{EisensteinHu1998}, polynomial fitting and spline fitting. Likelihood surfaces and marginalised distributions were calculated using the WizCOLA simulation data at the $z=0.6$ redshift bin, where all 600 realisations have been used as input data, and $k_*$ fixed to $0.1$. With the low value of $k_*$ to increase the significance of the dewiggling algorithm and high data quality to reduce statistical uncertainty beyond the scope of the WiggleZ dataset, any deviation between the different methodologies should be represented in the likelihood surfaces represents extremal values of diverge. However, as all likelihood surfaces agree to a high degree, we can conclude any difference in methodology is negligible in comparison to statistical uncertainty.}
 		\label{fig:AcosmologyTest}
 	\end{figure}
 	
@@ -849,7 +849,7 @@ We gratefully acknowledge the input of the many researchers that were consulted 
 
 \begin{table}
 	\centering
-	\caption{A comparison of data fitting ranges found in prior literature}
+	\caption{A comparison of data fitting ranges found in prior literatures.}
 	\label{tab:truncation}
 	\begin{tabular}{lll}
 		\specialrule{.1em}{.05em}{.05em} 
