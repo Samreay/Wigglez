@@ -610,7 +610,7 @@ To determine the significance of the BAO peak detected in our analysis, we reran
 
 \begin{table*}
 	\centering
-	\caption{Final parameter constraints from fitting the 2D BAO signal in the pre-reconstruction WiggleZ multipole correlation function. Minimum $\chi^2$ values correspond to 39 DoF. $D_A(z)$ given in units of Mpc, and $H(z)$ is presented in ${\rm km}\,{\rm s}^{-1} \, {\rm Mpc}^{-1}$.}
+	\caption{Final parameter constraints from fitting the 2D BAO signal in the pre-reconstruction WiggleZ multipole correlation function. Minimum $\chi^2$ values correspond to 39 DoF. $D_A(z)$ given in units of Mpc, and $H(z)$ is presented in ${\rm km}\,{\rm s}^{-1} \, {\rm Mpc}^{-1}$. Correlation values are given in Appendix \ref{app:cor}.}
 	%\resizebox{\textwidth}{!}{
 	\begin{tabular}{cc|cc|cccc|ccc}
 		\specialrule{.1em}{.05em}{.05em} 
@@ -888,8 +888,29 @@ The failure of correlation function models at small separations and their simila
 
 
 
+\section{Pre-reconstruction correlation} \label{app:cor}
 
-
+The correlation between output parameter results, calibrated from WizCOLA mocks, is shown in Table \ref{tab:cor}.
+\begin{table}
+	\centering
+	\caption{Correlation values for the pre-reconstruction fits detailed in Table \ref{tab:wigglezBinsParams}. Redshift bins are placed in brackets after the parameter name.}
+	\label{tab:cor}
+	\begin{tabular}{rrrrrrrrrr}
+		\hline
+		~ & $\Omega_m h^2(0.44)$ &  $\Omega_m h^2(0.60)$ &   $\Omega_m h^2(0.73)$ &   $D_A(0.44)$ &   $D_A(0.60)$ &   $D_A(0.73)$ &    $H(0.44)$ &   $H(0.60)$ &   $H(0.73)$ \\
+		\hline
+	    $\Omega_m h^2(0.44)$ &    1    &        0.09 &        0.06 &       -0.11 &        0.04 &       -0.03 &        0.08 &       -0.03 &       -0.05 \\
+	    $\Omega_m h^2(0.60)$ &    0.09 &        1    &        0.01 &        0    &       -0.17 &       -0    &        0.02 &        0.12 &       -0.06 \\
+	    $\Omega_m h^2(0.73)$ &    0.06 &        0.01 &        1    &        0    &       -0    &       -0.21 &       -0.07 &        0.02 &        0.12 \\
+	    $D_A(0.44)$ &    -0.11 &        0    &        0    &        1    &        0.01 &        0.03 &        0.12 &        0.02 &        0.04 \\
+	    $D_A(0.60)$ &     0.04 &       -0.17 &       -0    &        0.01 &        1    &       -0.01 &        0    &        0.11 &       -0.01 \\
+	    $D_A(0.73)$ &    -0.03 &       -0    &       -0.21 &        0.03 &       -0.01 &        1    &        0.01 &        0.01 &        0.08 \\
+        $H(0.44)$ &    0.08 &        0.02 &       -0.07 &        0.12 &        0    &        0.01 &        1    &        0.05 &        0.03 \\
+	    $H(0.60)$ &     -0.03 &        0.12 &        0.02 &        0.02 &        0.11 &        0.01 &        0.05 &        1    &       -0.01 \\
+	    $H(0.73)$ &    -0.05 &       -0.06 &        0.12 &        0.04 &       -0.01 &        0.08 &        0.03 &       -0.01 &        1    \\
+		\hline
+	\end{tabular}
+\end{table}
 
 % Don't change these lines
 \bsp	% typesetting comment

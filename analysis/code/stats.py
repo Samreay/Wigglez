@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib, matplotlib.pyplot as plt
 
-
+from scipy.stats import skewnorm
 from scipy import linspace
 from scipy import pi,sqrt,exp
 from scipy.special import erf
@@ -34,7 +34,7 @@ def getBounds(xs,ys, desiredArea=0.6827):
             x1 = 0
             x2 = 0
             good = 0
-            print("Parameter %s is not constrained" % param)
+            print("Parameter is not constrained")
         area = yscumsum[i2] - yscumsum[i1]
         a = np.abs(area - desiredArea)
         #print(maxVal, minVal, area)
@@ -63,13 +63,19 @@ def skew(x,e=0,w=1,a=0):
     # return 2 * norm.pdf(t) * norm.cdf(a*t)
 
 
-n = 2**10
+n = 2**12
 e = 1.0 # location
 w = 2.0 # scale
 x = linspace(0,7,n) 
-p = skew(x,e,w,9)
-c = p.cumsum()
-c /= c.max()
+#p = skew(x,e,w,9)
+
+p = skewnorm.pdf(x, 5, loc=1, scale=1.5)
+print(x[p.argmax()])
+c = skewnorm.cdf(x, 5, loc=1, scale=1.5)
+#c = p.cumsum()
+#c /= c.max()
+
+
 
 b0 = np.where(c > 0.15865)[0][0]
 bm = np.where(c > 0.5)[0][0]
@@ -90,6 +96,10 @@ ax[1].plot([0, x[b0]], [c[b0], c[b0]], color='r', ls='--')
 
 ax[0].plot([x[b1], x[b1]], [0, p[b1]], color='r', ls='--')
 ax[1].plot([0, x[b1]], [c[b1], c[b1]], color='r', ls='--')
+
+print("mean", x[b0], mid, x[b1])
+print("cum", x[b0], x[bm], x[b1])
+print("max", bounds[0], bounds[1], bounds[2])
 
 midi = int(0.5 * (b0 + b1))
 mid = x[midi]
@@ -114,11 +124,12 @@ ax[1].set_ylabel("$C(x)$", fontsize=14)
 
 fig.tight_layout()
 
-ax[0].set_xlim(0,7)
-ax[1].set_xlim(0,7)
+ax[0].set_xlim(0,5)
+ax[1].set_xlim(0,5)
 ax[1].set_ylim(0,1)
-ax[0].set_ylim(0, 0.4)
+ax[0].set_ylim(0, 0.6)
 
 ax[0].legend(frameon=False, scatterpoints = 1)
 fig.savefig("stats.pdf", bbox_inches="tight")
+fig.savefig("stats.png", bbox_inches="tight", dpi=150)
 
