@@ -14,7 +14,6 @@
 *.idx
 *.toc
 *.ist
-*.sty
 *.q
 *.pyc
 **/__pycache__/*
