@@ -1,10 +1,7 @@
 
 -In Figure 1, the WizCOLA simulation mean data are pre-reconstructed or post-reconstructed? If they are in the pre-reconstruction case, it would be clear to include the corresponding plot for the reconstructed simulation mean data.
 
-TALK TO CHRIS
-
-
-
+Have included post-reconstruction data column in the plot.
 
 
 
@@ -40,8 +37,7 @@ Updated
 
 -About the fitting range, on what scales the reconstructed data are useful? Still within 25-180 Mpc/h ? It would be helpful to include a discussion on this point. And what is the bin width or how many bins are used to do the fitting.
 
-ASK CHRIS
-
+Added in the fitting ranges to the section 5.
 
 
 
@@ -69,16 +65,14 @@ I believe the scientific case for this (check for systematics across mock fits) 
 
 -In section 5, the author says that “Many WiggleZ mock realizations do not permit good constraints on both \alpha_{perp} and \alpha_{||}”, so how many post-reconstructed mocks are used to estimate the covariance matrix/error in each redshift slice? It would be convincing to present the exact results of mock tests in near and mid redshift bin, instead of the general description: “Similar results are obtained when analyzing mocks at…”
 
-ASK CHRIS
+
 
 
 
 
 -In section 6, it would be better to include a table to present the covariance matrix of the measurements in three overlapping redshift bins after Table3.
 
-We wish to present the post-reconstruction results as the final output of the paper, as the pre-reconstruction mocks have in their posterior surface large uncertainty on matter density (enough that adding Wigglez results to other datasets will give results dominated by the other datasets).
-
-ASK TAM
+I have added in the correlations (in an appendix), which can be combined with constraints given in Table 3.
 
 
 

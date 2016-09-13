@@ -2,6 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
+import pickle
 
 wizcola_z0_file = "../data/wizcola/multipoles/WizCOLA_xi0xi2_combined_z0pt2_0pt6.dat"
 wizcola_z1_file = "../data/wizcola/multipoles/WizCOLA_xi0xi2_combined_z0pt4_0pt8.dat"
@@ -16,6 +17,8 @@ recon_z0_file = "../data/wigglezrecon/WiggleZ_xiLxiT_z26.ascii"
 recon_z1_file = "../data/wigglezrecon/WiggleZ_xiLxiT_z48.ascii"
 recon_z2_file = "../data/wigglezrecon/WiggleZ_xiLxiT_z60.ascii"
 
+wizcola_recon_file = "shifted/consolidated.pickle"
+wizcola_recon = pickle.load(open(wizcola_recon_file, 'rb'))
 valsw_m = []
 valsw_me = []
 valsw_q = []
@@ -57,69 +60,86 @@ for file in [recon_z0_file, recon_z1_file, recon_z2_file]:
     vals_le.append(data[:,5])
     
 f =13
-fig = plt.figure(figsize=(10,10))
+fig = plt.figure(figsize=(12,10))
 axes = []
-ax0 = fig.add_subplot(3,3,1)
-ax1 = fig.add_subplot(3,3,2, sharey=ax0)
-ax2 = fig.add_subplot(3,3,3, sharey=ax0)
+ax0 = fig.add_subplot(3,4,1)
+ax1 = fig.add_subplot(3,4,2, sharey=ax0)
+ax2 = fig.add_subplot(3,4,3, sharey=ax0)
+ax3 = fig.add_subplot(3,4,4, sharey=ax0)
 
 
-ax3 = fig.add_subplot(3,3,4, sharex=ax0)
-ax4 = fig.add_subplot(3,3,5, sharex=ax1, sharey=ax3)
-ax5 = fig.add_subplot(3,3,6, sharex=ax2, sharey=ax3)
+ax4 = fig.add_subplot(3,4,5, sharex=ax0)
+ax5 = fig.add_subplot(3,4,6, sharex=ax1, sharey=ax4)
+ax6 = fig.add_subplot(3,4,7, sharex=ax2, sharey=ax4)
+ax7 = fig.add_subplot(3,4,8, sharex=ax3, sharey=ax4)
 
-ax6 = fig.add_subplot(3,3,7, sharex=ax0)
-ax7 = fig.add_subplot(3,3,8, sharex=ax1, sharey=ax6)
-ax8 = fig.add_subplot(3,3,9, sharex=ax2, sharey=ax6)
+ax8 = fig.add_subplot(3,4,9, sharex=ax0)
+ax9 = fig.add_subplot(3,4,10, sharex=ax1, sharey=ax8)
+ax10 = fig.add_subplot(3,4,11, sharex=ax2, sharey=ax8)
+ax11 = fig.add_subplot(3,4,12, sharex=ax3, sharey=ax8)
 
-axes = np.array([[ax0,ax1,ax2],[ax3,ax4,ax5],[ax6,ax7,ax8]])
+axes = np.array([[ax0,ax1,ax2,ax3],[ax4,ax5,ax6,ax7],[ax8,ax9,ax10,ax11]])
   
 #fig, axes = plt.subplots(3, 3, figsize=(10,10), sharey=True)
 fig.subplots_adjust(hspace=0, wspace=0)
 #axes[0,0].set_title("$0.2 < z < 0.6$")
 #axes[1,0].set_title("$0.4 < z < 0.8$")
 #axes[2,0].set_title("$0.6 < z < 1.0$")
-axes[0,0].set_title("WizCOLA mean")
-axes[0,1].set_title("WiggleZ Unreconstructed")
-axes[0,2].set_title("WiggleZ Reconstructed")
+axes[0,0].set_title("WizCOLA pre-recon mean")
+axes[0,1].set_title("WizCOLA post-recon mean")
+axes[0,2].set_title("WiggleZ pre-recon")
+axes[0,3].set_title("WiggleZ post-recon")
 
 for i in range(3):
     axes[i, 0].yaxis.set_major_locator(MaxNLocator(6, prune="lower"))
     axes[i, 0].set_ylabel(r"$s^2 \xi(s) \ \left[ {\rm Mpc}^{2} \, h^{-2}  \right]$",fontsize=f)
+    
+for i in range(4):
+
     axes[2, i].set_xlabel(r"$s\ \  \left[{\rm Mpc}\, h^{-1}\right]$",fontsize=f)
     axes[2, i].xaxis.set_major_locator(MaxNLocator(6, prune="lower"))
     
 
     for j in range(3):
         if j == 0:
-            axes[j, i].text(0.7, 0.9,'$z=0.44$', transform = axes[j, i].transAxes, fontsize=f)
+            axes[j, i].text(0.6, 0.9,'$z=0.44$', transform = axes[j, i].transAxes, fontsize=f)
         elif j == 1:
-            axes[j, i].text(0.7, 0.9,'$z=0.60$', transform = axes[j, i].transAxes, fontsize=f)
+            axes[j, i].text(0.6, 0.9,'$z=0.60$', transform = axes[j, i].transAxes, fontsize=f)
         elif j == 2:
-            axes[j, i].text(0.7, 0.9,'$z=0.73$', transform = axes[j, i].transAxes, fontsize=f)
+            axes[j, i].text(0.6, 0.9,'$z=0.73$', transform = axes[j, i].transAxes, fontsize=f)
+
 
 for i,(s,v,e) in enumerate(zip(ssw, valsw_m, valsw_me)):
     axes[i, 0].errorbar(s, s*s*v, yerr=s*s*e, fmt='o', color='#303F9F', label=r"$\xi_0$")
         
 for i,(s,v,e) in enumerate(zip(ss, vals_m, vals_me)):
-    axes[i, 1].errorbar(s, s*s*v, yerr=s*s*e, fmt='o', color='#303F9F', label=r"$\xi_0$")
+    axes[i, 2].errorbar(s, s*s*v, yerr=s*s*e, fmt='o', color='#303F9F', label=r"$\xi_0$")
         
 for i,(s,v,e) in enumerate(zip(ssr, vals_t, vals_te)):
-    axes[i, 2].errorbar(s, s*s*v, yerr=s*s*e, fmt='o', color='#303F9F', label=r"$\xi_\perp$")
+    axes[i, 3].errorbar(s, s*s*v, yerr=s*s*e, fmt='o', color='#303F9F', label=r"$\xi_\perp$")
 
 
 for i,(s,v,e) in enumerate(zip(ssw, valsw_q, valsw_qe)):
     axes[i,0].errorbar(s, s*s*v, yerr=s*s*e, fmt='d', color='#4CAF50', label=r"$\xi_2$")
     axes[i,0].legend(frameon=False, loc=2)
          
-    
-for i,(s,v,e) in enumerate(zip(ss, vals_q, vals_qe)):
-    axes[i,1].errorbar(s, s*s*v, yerr=s*s*e, fmt='d', color='#4CAF50', label=r"$\xi_2$")
+for i,v in enumerate(wizcola_recon):
+    s = v['s']
+    t = v['t']
+    te = v['te']
+    l = v['l']
+    le = v['le']
+    axes[i,1].errorbar(s, s*s*t, yerr=s*s*te, fmt='d', color='#303F9F', label=r"$\xi_\perp$")
+    axes[i,1].errorbar(s, s*s*l, yerr=s*s*le, fmt='d', color='#4CAF50', label=r"$\xi_\parallel$")
     axes[i,1].legend(frameon=False, loc=2)
+
+for i,(s,v,e) in enumerate(zip(ss, vals_q, vals_qe)):
+    axes[i,2].errorbar(s, s*s*v, yerr=s*s*e, fmt='d', color='#4CAF50', label=r"$\xi_2$")
+    axes[i,2].legend(frameon=False, loc=2)
         
 for i,(s,v,e) in enumerate(zip(ssr, vals_l, vals_le)):
-    axes[i,2].errorbar(s, s*s*v, yerr=s*s*e, fmt='d', color='#4CAF50', label=r"$\xi_\parallel$")
-    axes[i,2].legend(frameon=False, loc=2)
+    axes[i,3].errorbar(s, s*s*v, yerr=s*s*e, fmt='d', color='#4CAF50', label=r"$\xi_\parallel$")
+    axes[i,3].legend(frameon=False, loc=2)
 
 #for i,(s,v,e) in enumerate(zip(ssr, vals_t, vals_te)):
 #    axes[2,i].errorbar(s, s*s*v, yerr=s*s*e, fmt='o', color='b', label="Transverse")
@@ -146,19 +166,24 @@ for i,(s,v,e) in enumerate(zip(ssr, vals_l, vals_le)):
 
 plt.setp(ax1.get_yticklabels(), visible=False)
 plt.setp(ax2.get_yticklabels(), visible=False)
+plt.setp(ax3.get_yticklabels(), visible=False)
 
 plt.setp(ax0.get_xticklabels(), visible=False)
 plt.setp(ax1.get_xticklabels(), visible=False)
 plt.setp(ax2.get_xticklabels(), visible=False)
-
 plt.setp(ax3.get_xticklabels(), visible=False)
+
 plt.setp(ax4.get_xticklabels(), visible=False)
 plt.setp(ax5.get_xticklabels(), visible=False)
+plt.setp(ax6.get_xticklabels(), visible=False)
+plt.setp(ax7.get_xticklabels(), visible=False)
 
-plt.setp(ax4.get_yticklabels(), visible=False)
 plt.setp(ax5.get_yticklabels(), visible=False)
+plt.setp(ax6.get_yticklabels(), visible=False)
 plt.setp(ax7.get_yticklabels(), visible=False)
-plt.setp(ax8.get_yticklabels(), visible=False)
+plt.setp(ax9.get_yticklabels(), visible=False)
+plt.setp(ax10.get_yticklabels(), visible=False)
+plt.setp(ax11.get_yticklabels(), visible=False)
 
 #plt.tight_layout()
 fig.savefig("dataplot.pdf", bbox_inches="tight", dpi=300)
