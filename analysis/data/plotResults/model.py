@@ -41,23 +41,29 @@ if __name__ == '__main__':
    
    
     f = 14
-    fig, axes = plt.subplots(3, 1, figsize=(5,11))
-    
-    axes[0].set_title("$0.2 < z < 0.6$")
-    axes[1].set_title("$0.4 < z < 0.8$")
-    axes[2].set_title("$0.6 < z < 1.0$")
+    fig, axes = plt.subplots(3, 1, figsize=(5,8), sharex=True)
+    fig.subplots_adjust(wspace=0, hspace=0)
+
+    axes[0].text(0.05, 0.06, "$0.2 < z < 0.6$", horizontalalignment='left', verticalalignment='center', transform=axes[0].transAxes, fontsize=f)
+    axes[1].text(0.05, 0.06, "$0.4 < z < 0.8$", horizontalalignment='left', verticalalignment='center', transform=axes[1].transAxes, fontsize=f)
+    axes[2].text(0.05, 0.06, "$0.6 < z < 1.0$", horizontalalignment='left', verticalalignment='center', transform=axes[2].transAxes, fontsize=f)
+    #axes[0].set_title("$0.2 < z < 0.6$")
+    #axes[1].set_title("$0.4 < z < 0.8$")
+    #axes[2].set_title("$0.6 < z < 1.0$")
     
     for i,(s,v,e) in enumerate(zip(ss, vals_m, vals_me)):
         axes[i].errorbar(s, s*s*v, yerr=s*s*e, fmt='o', color='b', ms=5, label="Monopole", alpha=0.5)
-        axes[i].set_xlabel(r"$s\ \  \left[{\rm Mpc}\, h^{-1}\right]$",fontsize=f)
         axes[i].set_ylabel(r"$s^2 \xi(s) \ \left[ {\rm Mpc}^{2} \, h^{-2}  \right]$",fontsize=f)
         
     for i,(s,v,e) in enumerate(zip(ss, vals_q, vals_qe)):
         axes[i].errorbar(s, s*s*v, yerr=s*s*e, fmt='o', color='r', ms=5, label="Quadrupole", alpha=0.5)
 
-            
+    axes[2].set_xlabel(r"$s\ \  \left[{\rm Mpc}\, h^{-1}\right]$",fontsize=f)
+         
 
-
+    axes[0].get_yticklabels()[0].set_visible(False)
+    axes[1].get_yticklabels()[0].set_visible(False)
+    axes[2].set_ylim(-150, 160)
     # Get params
     #fitters = [WigglezMultipoleBin(0),WigglezMultipoleBin(1),WigglezMultipoleBin(2)]
     params = [a[0] for a in fitters[0].getParams()]
@@ -94,6 +100,9 @@ if __name__ == '__main__':
         if i == 0:
             axes[i].legend(frameon=False, loc=2)
     plt.tight_layout()
-    fig.savefig("prerecon_result.pdf", bbox_inches='tight', dpi=300, transparent=True)    
+    fig.subplots_adjust(wspace=0, hspace=0)
+
+    fig.savefig("prerecon_result2.pdf", bbox_inches='tight', dpi=300, transparent=True)    
+    fig.savefig("prerecon_result2.png", bbox_inches='tight', dpi=600, transparent=True)    
     plt.show()
     

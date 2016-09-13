@@ -214,7 +214,7 @@ ax[2].yaxis.get_major_ticks()[-1].set_visible(False)
 
 ax[0].set_ylim(400, 1700)
 fig.savefig("karl.pdf", transparent=True, dpi=300, bbox_inches="tight")
-fig.savefig("karl.png", transparent=True, dpi=300, bbox_inches="tight")
+fig.savefig("karl.png", transparent=True, dpi=600, bbox_inches="tight")
 
 
 
