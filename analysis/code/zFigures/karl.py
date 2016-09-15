@@ -84,7 +84,7 @@ def get_r_s():
     return integral
 
 rs = get_r_s()
-print(rs)
+rs = 148.6
 
 # Adjust wig post recon to remove r_s
 wig_post_da = np.array(wig_post_da) * rs
