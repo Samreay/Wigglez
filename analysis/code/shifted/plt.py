@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 import os
 
-d = r"C:\Users\shint1\Desktop\shifted"
+d = r"."
 
 fs = []
 fs.append(r"Xi1D_integrated_CLiggleZ_m00001-03600%s_region_01_r001-100_nsep60_nmu30_ds05_mpch-1_min000max200_mpch-1_mod1_shifted.pickle")
@@ -35,7 +35,7 @@ for b in bins:
     tw = 1.0 / (tsd**2)
     lw = 1.0 / (lsd**2)
 
-    tsd = np.sqrt((tsd*tsd).sum(axis=0)) / len(fs)
+    tsd = np.sqrt((tsd*tsd).sum(axis=0)) /len(fs)
     lsd = np.sqrt((lsd*lsd).sum(axis=0)) / len(fs)
 
     ts = np.average(ts, axis=0, weights=tw)
