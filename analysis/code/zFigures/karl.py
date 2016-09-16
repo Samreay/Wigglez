@@ -25,7 +25,7 @@ alam_dadt_error = (alam_h_error / alam_h) * alam_dadt
 #Anderson 2014
 anderson_zs = np.array([0.57])
 anderson_dm = np.array([2209])
-anderson_dm_error = np.array([20])
+anderson_dm_error = np.array([31])
 anderson_da = anderson_dm / (1 + anderson_zs)
 anderson_da_error = anderson_dm_error / (1 + anderson_zs)
 anderson_h = np.array([97.8])
