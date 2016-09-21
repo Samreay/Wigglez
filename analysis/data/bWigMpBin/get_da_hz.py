@@ -1,6 +1,6 @@
 import numpy as np
 import os
-from chain import ChainConsumer
+from chainconsumer import ChainConsumer
 from scipy.integrate import simps, cumtrapz
 from scipy.interpolate import interp1d
 
@@ -94,6 +94,11 @@ if True:
     c.add_chain(convert_directory("../bWigMpBin/bWigMpBin_z0", 0.44), parameters=[r"$\Omega_c h^2$", r"$D_A(z)$", r"$H(z)$"], name="$0.2<z<0.6$")
     c.add_chain(convert_directory("../bWigMpBin/bWigMpBin_z1", 0.60), parameters=[r"$\Omega_c h^2$", r"$D_A(z)$", r"$H(z)$"], name="$0.4<z<0.8$")
     c.add_chain(convert_directory("../bWigMpBin/bWigMpBin_z2", 0.73), parameters=[r"$\Omega_c h^2$", r"$D_A(z)$", r"$H(z)$"], name="$0.6<z<1.0$")
+    for n, chain in zip(c.names, c.chains):
+        print(n)
+        print(chain.mean(axis=0))
+        print(np.std(chain, axis=0))
+        print("----")
     c.configure_contour(sigmas=[0,1,2])
     c.configure_general(bins=0.7)    
     c.plot(figsize="column", filename="wigglez_multipole_dah.pdf")

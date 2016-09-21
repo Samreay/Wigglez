@@ -191,14 +191,14 @@ ax[2].errorbar(anderson_zs + offset, anderson_dadt, yerr=anderson_dadt_error, fm
 # ax[2].errorbar(anderson_zs + offset, anderson_daonh, yerr=anderson_daonh_error, fmt='o', ms=4, color=g, mec=g)
 
 # Plot pre-recon
-ax[0].errorbar(wig_pre_zs - offset, wig_pre_da, yerr=[wig_pre_da_error_up, wig_pre_da_error_down], fmt='o', ms=ms, color=b, mec=be, label="WiggleZ pre-recon.")
-ax[1].errorbar(wig_pre_zs - offset, wig_pre_h, yerr=[wig_pre_h_error_up, wig_pre_h_error_down], fmt='o', ms=ms, color=b, mec=be)
+ax[0].errorbar(wig_pre_zs - offset, wig_pre_da, yerr=[wig_pre_da_error_down, wig_pre_da_error_up], fmt='o', ms=ms, color=b, mec=be, label="WiggleZ pre-recon.")
+ax[1].errorbar(wig_pre_zs - offset, wig_pre_h, yerr=[wig_pre_h_error_down, wig_pre_h_error_up], fmt='o', ms=ms, color=b, mec=be)
 ax[2].errorbar(wig_pre_zs - offset, wig_pre_dadt, yerr=wig_pre_dadt_error, fmt='o', ms=ms, color=b, mec=be)
 # ax[2].errorbar(wig_pre_zs - offset, wig_pre_daonh, yerr=wig_pre_daonh_error, fmt='o', ms=ms, mec=b, color=b)
 
 # Plot post-recon
-ax[0].errorbar(wig_post_zs + offset, wig_post_da, yerr=[wig_post_da_error_up, wig_post_da_error_down], fmt='s', ms=ms, mec=ce, color=c, label="WiggleZ post-recon.")
-ax[1].errorbar(wig_post_zs + offset, wig_post_h, yerr=[wig_post_h_error_up, wig_post_h_error_down], fmt='s', ms=ms, mec=ce,color=c)
+ax[0].errorbar(wig_post_zs + offset, wig_post_da, yerr=[wig_post_da_error_down, wig_post_da_error_up], fmt='s', ms=ms, mec=ce, color=c, label="WiggleZ post-recon.")
+ax[1].errorbar(wig_post_zs + offset, wig_post_h, yerr=[wig_post_h_error_down, wig_post_h_error_up], fmt='s', ms=ms, mec=ce,color=c)
 ax[2].errorbar(wig_post_zs + offset, wig_post_dadt, yerr=wig_post_dadt_error, fmt='s', ms=ms, color=c, mec=ce)
 # ax[2].errorbar(wig_post_zs + offset, wig_post_daonh, yerr=wig_post_daonh_error, fmt='s', mec=c,ms=ms, color=c)
 

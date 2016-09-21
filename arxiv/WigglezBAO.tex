@@ -134,7 +134,7 @@ Section \ref{sec:test} evaluates those models against the WizCOLA simulations, a
 	\begin{center}
 		\includegraphics[width=\textwidth]{dataplot.pdf}
 	\end{center}
-	\caption{The WizCOLA simulation mean data \citep{KazinKoda2014,KodaBlake2015} (both pr-e and post-reconstruction), unreconstructed WiggleZ multipoles, and reconstructed WiggleZ wedges shown in four respective columns. Rows represent different redshift bins in the data. For the multipole data, the monopole contribution and quadrupole contribution are shown in blue circles and green diamonds respectively. For the wedge data, we show the transverse component (blue circles) and line-of-sight component (green diamonds). Uncertainty is determined by looking at simulation variance over 600 realisations of fiducial cosmology. For details on multipole and wedge constructions of the 2D correlation function, see \S\ref{sec:model}.}
+	\caption{The WizCOLA simulation mean data \citep{KazinKoda2014,KodaBlake2015} (both pre-reconstruction multipoles and post-reconstruction wedges), unreconstructed WiggleZ multipoles, and reconstructed WiggleZ wedges shown in four respective columns. Rows represent different redshift bins in the data. For the multipole data, the monopole contribution and quadrupole contribution are shown in blue circles and green diamonds respectively. For the wedge data, we show the transverse component (blue circles) and line-of-sight component (green diamonds). Uncertainty is determined by looking at simulation variance over 600 realisations of fiducial cosmology. For details on multipole and wedge constructions of the 2D correlation function, see \S\ref{sec:model}.}
 	\label{fig:wizcola}
 \end{figure*}
 
@@ -720,7 +720,7 @@ Planck cosmology \citep{Planck2015Parameters}, as illustrated in Figure \ref{fig
 \begin{figure}
 \begin{center}
 \includegraphics[width=\columnwidth]{karl.pdf}
-\caption{The WiggleZ results of $D_{\rm A}(z)$ and $H(z)$ and $da/dt$ for the pre-reconstruction results (dark blue circles) and post-reconstruction results (light blue squares). This is plotted against results from BOSS (both the results from \citet{AndersonAubourg2014} in green and \citet{AlamAta2016} in red), all with 68$\%$ CL regions in the $y$-axis (and redshift range on the $x$). The thick gray bands show the $1\sigma$ contour using Planck final constraints (TT,TE,EE+lowP+lensing+ext) \citep{Planck2015Parameters}. The dashed line indicates a cosmology with no acceleration (assuming Planck $H_0$ as required).}
+\caption{The WiggleZ results of $D_{\rm A}(z)$, $H(z)$ and $da/dt$ for the pre-reconstruction results (dark blue circles) and post-reconstruction results (light blue squares). This is plotted against results from BOSS (both the results from \citet{AndersonAubourg2014} in green and \citet{AlamAta2016} in red), all with 68$\%$ CL regions in the $y$-axis (and redshift range on the $x$). The thick gray bands show the $1\sigma$ contour using Planck final constraints (TT,TE,EE+lowP+lensing+ext) \citep{Planck2015Parameters}. The dashed line indicates a cosmology with no acceleration (assuming Planck $H_0$).}
 \label{fig:hubble_diagram}
 \end{center}
 \end{figure}
@@ -891,14 +891,33 @@ The failure of correlation function models at small separations and their simila
 
 \section{Pre-reconstruction correlation} \label{app:cor}
 
-The correlation between output parameter results, calibrated from WizCOLA mocks, is shown in Table \ref{tab:cor}.
+Correlation coefficients corresponding to the outputs reported in Table~\ref{tab:wigglezBinsParams}, namely correlations between $Omega_c h^2$, $D_A(z)$, and $H(z)$ across the three redshift bins, are given in Table~\ref{tab:cor}.  These were calibrated using WizCOLA mocks.  We chose to report these in terms of $D_A(z)$ and $H(z)$, we could equivalently have reported the correlations in $\alpha$ and $\epsilon$.  To convert between the two one would use equations \ref{eq:alpha1} and \ref{eq:alpha2}.
+
+We note that the values reported in Table~\ref{tab:wigglezBinsParams} are determined using maximum likelihood statistics, and represent the best way to provide a summary statistic of the value as a data point. However, when combining these results by multivariate Gaussian approximation, the correct values to utilise change, and are given in Table~\ref{tab:gauss}.
+
+
 \begin{table}
+	\centering
+	\caption{Gaussian approximation of parameter summaries in Table \ref{tab:wigglezBinsParams}. $D_A(z)$ given in units of Mpc, and $H(z)$ is presented in ${\rm km}\,{\rm s}^{-1} \, {\rm Mpc}^{-1}$.}
+	\label{tab:gauss}
+	\begin{tabular}{cccc}
+		\hline
+		Sample & $\Omega_c h^2$ &  $D_A$ &  $H$ \\
+		\hline
+		$0.2 < z < 0.6$ & $0.126\pm0.028$ & $1300\pm170$ & $90\pm16$ \\
+		$0.4 < z < 0.8$ & $0.163\pm0.031$ & $1320\pm180$ & $95\pm16$ \\
+		$0.6 < z < 1.0$ & $0.153\pm0.030$ & $1380\pm150$ & $81\pm10$ \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table*}
 	\centering
 	\caption{Correlation values for the pre-reconstruction fits detailed in Table \ref{tab:wigglezBinsParams}. Redshift bins are placed in brackets after the parameter name.}
 	\label{tab:cor}
 	\begin{tabular}{rrrrrrrrrr}
 		\hline
-		~ & $\Omega_m h^2(0.44)$ &  $\Omega_m h^2(0.60)$ &   $\Omega_m h^2(0.73)$ &   $D_A(0.44)$ &   $D_A(0.60)$ &   $D_A(0.73)$ &    $H(0.44)$ &   $H(0.60)$ &   $H(0.73)$ \\
+		~ & $\Omega_c h^2(0.44)$ &  $\Omega_c h^2(0.60)$ &   $\Omega_c h^2(0.73)$ &   $D_A(0.44)$ &   $D_A(0.60)$ &   $D_A(0.73)$ &    $H(0.44)$ &   $H(0.60)$ &   $H(0.73)$ \\
 		\hline
 	    $\Omega_m h^2(0.44)$ &      1    &        0.33 &        0.3  &       -0.19 &        0.02 &       -0.08 &        0.13 &        0.05 &        0.02 \\
 	    $\Omega_m h^2(0.60)$ &      0.33 &        1    &        0.19 &       -0.07 &       -0.21 &       -0.03 &        0.06 &        0.2  &       -0    \\
@@ -911,7 +930,7 @@ The correlation between output parameter results, calibrated from WizCOLA mocks,
 	    $H(0.73)$            &      0.02 &       -0    &        0.2  &        0.03 &       -0.01 &        0.07 &        0.03 &        0    &        1    \\
 		\hline
 	\end{tabular}
-\end{table}
+\end{table*}
 
 % Don't change these lines
 \bsp	% typesetting comment
